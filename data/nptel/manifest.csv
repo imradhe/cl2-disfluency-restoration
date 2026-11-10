@@ -1,0 +1,5 @@
+file,segments,verified,fully_verified,english,minutes,audio,decision,reason
+EGp79Cv9_gI.rsml,18,18,True,False,3.8,MISSING,drop,drop: not English (non-Latin script 87%)
+JmLDdqvQ3C8.rsml,65,65,True,False,12.4,MISSING,drop,drop: not English (non-Latin script 50%)
+english_007_saikiran.rsml,375,32,False,True,34.4,MISSING,drop,drop: only 32/375 segments verified
+lecture_01.rsml,295,295,True,True,29.5,MISSING,keep,keep

@@ -38,5 +38,23 @@ Split by conversation id (Charniak & Johnson convention): test = sw4010–4153, 
 
 ## NPTEL lectures (out-of-domain test)
 
-Private Google Drive folder "BhashaCheck Data" → `en/` (`.wav` + `.rsml`). Not yet ingested (Phase 6).
-Selection rule (decided with the project owner): keep `.rsml` files whose segments are **all** flagged verified.
+Google Drive folder "BhashaCheck Data" → `en/`. Selection rule (decided with the project owner): keep `.rsml`
+files that are English and whose segments are **all** flagged `verified=1`; audit with `scripts/nptel_manifest.py`
+(→ `data/nptel/manifest.csv`).
+
+Ingested so far (`data/nptel/raw/english_001/`, fetched from Drive by file id; the files are link-accessible):
+
+| File | Drive id | Bytes |
+|---|---|---|
+| `english_001.wav` (44.1 kHz stereo PCM, 1937 s) | `1sFuCrYM9jQMiGw2aFdQubIpiXlMnREcS` | 341,688,364 |
+| `english_001.rsml` (295/295 segments verified, English) | `1ttgw-ZVCCeGoU2fHWNprItVzpNpHqUF0` | 50,367 |
+| `english_001.aligned.rsml` (word-level forced alignment: times, confidence, pauses) | `1s5CsVo55_ryGZRsi51yZRs0QiY6L_qky` | 952,522 |
+
+Other `.rsml` files seen locally were rejected by the rule: `english_007_saikiran` (32/375 verified),
+`JmLDdqvQ3C8` and `EGp79Cv9_gI` (Telugu code-mixed). Other `en/` lectures on Drive are not ingested yet.
+
+Derived: `data/nptel/wav16k/english_001.wav` (16 kHz mono) and `data/nptel/phones/english_001.jsonl`
+(wav2vec2-xlsr-53-espeak-cv-ft greedy CTC output with times, from `scripts/nptel_phones.py`).
+
+Gold tag taxonomy (from the RSML header): hesitations `@umm @uhh @hmm @ugh @huh @tsk @uh-huh @ehh`; spans
+`filler repetition broken-word repair false-start prolongation`. There is **no mispronunciation tag** in NPTEL.

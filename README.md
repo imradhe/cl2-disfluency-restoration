@@ -25,7 +25,7 @@ The full plan lives in the project's planning notes; status is tracked below.
 | 3 | Phoneme layer | lexicon + IPA map + noise simulator done; recognizer-calibrated noise in Phase 6 |
 | 4 | Gap datasets | done (262k train / 16k dev / 13k test examples) |
 | 5 | BERT training | smoke run locally; full run on Colab pending |
-| 6 | NPTEL ingestion | todo |
+| 6 | NPTEL ingestion | `english_001` ingested (audio, verified rsml, aligned rsml, recognized phones); other `en/` lectures pending |
 | 7 | Inference pipeline | todo |
 | 8 | Evaluation | todo |
 | 9 | Report | todo |

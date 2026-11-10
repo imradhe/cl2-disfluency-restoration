@@ -111,7 +111,7 @@ class GapDataset(Dataset):
             types[k] = 1
 
         tags = [IGNORE] * len(ids)
-        spans, targets = [], []
+        spans, targets, gold = [], [], []
         for u in units:
             s, e = u["s"], min(u["e"], len(phones))
             if s >= e:
@@ -120,9 +120,12 @@ class GapDataset(Dataset):
                 tags[ph_start + k] = TAG2ID[tag_for(u["label"], k == s)]
             spans.append((ph_start + s, ph_start + e))
             targets.append(self.rest2id.get(u["target"], self.unk))
+            gold.append((s, e, u["label"], u["target"]))
         return {
             "ids": ids, "types": types, "tags": tags, "spans": spans, "targets": targets,
             "ctx_pos": 1 + len(left),            # index of [GAP] / [WSPAN]
+            "ph_start": ph_start, "ph_end": ph_start + len(ph_ids),
+            "gold_units": gold,                  # phone-relative (s, e, label, target)
         }
 
 
