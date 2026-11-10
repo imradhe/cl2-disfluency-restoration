@@ -24,7 +24,7 @@ The full plan lives in the project's planning notes; status is tracked below.
 | 2 | Parse + label | done (gold + silver rules; spot-check precision still to be measured) |
 | 3 | Phoneme layer | lexicon + IPA map + noise simulator done; recognizer-calibrated noise in Phase 6 |
 | 4 | Gap datasets | done (262k train / 16k dev / 13k test examples) |
-| 5 | BERT training | smoke run locally; full run on Colab pending |
+| 5 | BERT training | full run done on Colab L4 (3 epochs, 261,868 examples, two replicate runs; dev unit-type acc 0.889, restoration acc 0.901). Notebook: `notebooks/train_colab.ipynb` |
 | 6 | NPTEL ingestion | `english_001` ingested (audio, verified rsml, aligned rsml, recognized phones); other `en/` lectures pending |
 | 7 | Inference pipeline | todo |
 | 8 | Evaluation | todo |

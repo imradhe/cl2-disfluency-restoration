@@ -1,0 +1,430 @@
+{
+  "ckpt": "ckpt/colab_main",
+  "phones": "recognized",
+  "nptel_files": [
+    {
+      "file": "english_001.rsml",
+      "segments": 295,
+      "minutes": 29.5
+    }
+  ],
+  "gold_tokens": {
+    "O": 4028,
+    "FILLER_HESITATION": 171,
+    "REPETITION": 70,
+    "FILLER_DM": 28,
+    "PARTIAL_WORD": 22,
+    "PROLONGATION": 2,
+    "FALSE_START": 48,
+    "REPAIR": 11
+  },
+  "dropped_tags": {
+    "@stutter-block": 12,
+    "@breathe": 1,
+    "@long-pause": 4,
+    "@unintelligible": 2,
+    "@short-pause": 5
+  },
+  "gold_units_without_phones": {
+    "FILLER_HESITATION": 75,
+    "REPETITION": 0,
+    "FILLER_DM": 4,
+    "PARTIAL_WORD": 0,
+    "PROLONGATION": 0,
+    "FALSE_START": 1,
+    "REPAIR": 0
+  },
+  "results": {
+    "nptel_clean": {
+      "per_type": {
+        "FALSE_START": {
+          "support": 47,
+          "predicted": 37,
+          "strict": {
+            "p": 0.027,
+            "r": 0.0213,
+            "f1": 0.0238
+          },
+          "lenient": {
+            "p": 0.2162,
+            "r": 0.1702,
+            "f1": 0.1905
+          }
+        },
+        "FILLER_DM": {
+          "support": 24,
+          "predicted": 22,
+          "strict": {
+            "p": 0.0909,
+            "r": 0.0833,
+            "f1": 0.087
+          },
+          "lenient": {
+            "p": 0.0909,
+            "r": 0.0833,
+            "f1": 0.087
+          }
+        },
+        "FILLER_HESITATION": {
+          "support": 96,
+          "predicted": 62,
+          "strict": {
+            "p": 0.8871,
+            "r": 0.5729,
+            "f1": 0.6962
+          },
+          "lenient": {
+            "p": 0.9355,
+            "r": 0.6042,
+            "f1": 0.7342
+          }
+        },
+        "NOISE": {
+          "support": 0,
+          "predicted": 4,
+          "strict": {
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "lenient": {
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          }
+        },
+        "PARTIAL_WORD": {
+          "support": 22,
+          "predicted": 75,
+          "strict": {
+            "p": 0.1067,
+            "r": 0.3636,
+            "f1": 0.1649
+          },
+          "lenient": {
+            "p": 0.1333,
+            "r": 0.4545,
+            "f1": 0.2062
+          }
+        },
+        "PROLONGATION": {
+          "support": 2,
+          "predicted": 2,
+          "strict": {
+            "p": 1.0,
+            "r": 1.0,
+            "f1": 1.0
+          },
+          "lenient": {
+            "p": 1.0,
+            "r": 1.0,
+            "f1": 1.0
+          }
+        },
+        "REPAIR": {
+          "support": 11,
+          "predicted": 59,
+          "strict": {
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "lenient": {
+            "p": 0.0169,
+            "r": 0.0909,
+            "f1": 0.0286
+          }
+        },
+        "REPETITION": {
+          "support": 70,
+          "predicted": 85,
+          "strict": {
+            "p": 0.2588,
+            "r": 0.3143,
+            "f1": 0.2839
+          },
+          "lenient": {
+            "p": 0.4353,
+            "r": 0.5286,
+            "f1": 0.4774
+          }
+        }
+      },
+      "macro_f1_strict": 0.3223,
+      "macro_f1_lenient": 0.3891,
+      "restoration_acc_on_strict_matches": 0.8222,
+      "strict_matches": 90,
+      "n_examples": 173
+    },
+    "nptel_noisy": {
+      "per_type": {
+        "FALSE_START": {
+          "support": 47,
+          "predicted": 22,
+          "strict": {
+            "p": 0.0455,
+            "r": 0.0213,
+            "f1": 0.029
+          },
+          "lenient": {
+            "p": 0.2727,
+            "r": 0.1277,
+            "f1": 0.1739
+          }
+        },
+        "FILLER_DM": {
+          "support": 24,
+          "predicted": 21,
+          "strict": {
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "lenient": {
+            "p": 0.0476,
+            "r": 0.0417,
+            "f1": 0.0444
+          }
+        },
+        "FILLER_HESITATION": {
+          "support": 96,
+          "predicted": 66,
+          "strict": {
+            "p": 0.8333,
+            "r": 0.5729,
+            "f1": 0.679
+          },
+          "lenient": {
+            "p": 0.8788,
+            "r": 0.6042,
+            "f1": 0.716
+          }
+        },
+        "NOISE": {
+          "support": 0,
+          "predicted": 6,
+          "strict": {
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "lenient": {
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          }
+        },
+        "PARTIAL_WORD": {
+          "support": 22,
+          "predicted": 77,
+          "strict": {
+            "p": 0.0909,
+            "r": 0.3182,
+            "f1": 0.1414
+          },
+          "lenient": {
+            "p": 0.1039,
+            "r": 0.3636,
+            "f1": 0.1616
+          }
+        },
+        "PROLONGATION": {
+          "support": 2,
+          "predicted": 1,
+          "strict": {
+            "p": 1.0,
+            "r": 0.5,
+            "f1": 0.6667
+          },
+          "lenient": {
+            "p": 1.0,
+            "r": 0.5,
+            "f1": 0.6667
+          }
+        },
+        "REPAIR": {
+          "support": 11,
+          "predicted": 51,
+          "strict": {
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "lenient": {
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          }
+        },
+        "REPETITION": {
+          "support": 70,
+          "predicted": 91,
+          "strict": {
+            "p": 0.2418,
+            "r": 0.3143,
+            "f1": 0.2733
+          },
+          "lenient": {
+            "p": 0.4176,
+            "r": 0.5429,
+            "f1": 0.472
+          }
+        }
+      },
+      "macro_f1_strict": 0.2556,
+      "macro_f1_lenient": 0.3192,
+      "restoration_acc_on_strict_matches": 0.8023,
+      "strict_matches": 86,
+      "n_examples": 173
+    },
+    "switchboard_dev_noisy": {
+      "per_type": {
+        "FALSE_START": {
+          "support": 60,
+          "predicted": 45,
+          "strict": {
+            "p": 0.5111,
+            "r": 0.3833,
+            "f1": 0.4381
+          },
+          "lenient": {
+            "p": 0.7111,
+            "r": 0.5333,
+            "f1": 0.6095
+          }
+        },
+        "FILLER_BACKCHANNEL": {
+          "support": 595,
+          "predicted": 581,
+          "strict": {
+            "p": 0.8021,
+            "r": 0.7832,
+            "f1": 0.7925
+          },
+          "lenient": {
+            "p": 0.8606,
+            "r": 0.8403,
+            "f1": 0.8503
+          }
+        },
+        "FILLER_DM": {
+          "support": 1407,
+          "predicted": 1479,
+          "strict": {
+            "p": 0.8979,
+            "r": 0.9439,
+            "f1": 0.9203
+          },
+          "lenient": {
+            "p": 0.9195,
+            "r": 0.9666,
+            "f1": 0.9425
+          }
+        },
+        "FILLER_HESITATION": {
+          "support": 1093,
+          "predicted": 1115,
+          "strict": {
+            "p": 0.896,
+            "r": 0.914,
+            "f1": 0.9049
+          },
+          "lenient": {
+            "p": 0.9103,
+            "r": 0.9286,
+            "f1": 0.9194
+          }
+        },
+        "MISPRONUNCIATION": {
+          "support": 6,
+          "predicted": 0,
+          "strict": {
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "lenient": {
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          }
+        },
+        "NOISE": {
+          "support": 226,
+          "predicted": 216,
+          "strict": {
+            "p": 0.8519,
+            "r": 0.8142,
+            "f1": 0.8326
+          },
+          "lenient": {
+            "p": 0.8657,
+            "r": 0.8274,
+            "f1": 0.8462
+          }
+        },
+        "PARTIAL_WORD": {
+          "support": 345,
+          "predicted": 296,
+          "strict": {
+            "p": 0.6182,
+            "r": 0.5304,
+            "f1": 0.571
+          },
+          "lenient": {
+            "p": 0.6926,
+            "r": 0.5942,
+            "f1": 0.6396
+          }
+        },
+        "PROLONGATION": {
+          "support": 170,
+          "predicted": 169,
+          "strict": {
+            "p": 1.0,
+            "r": 0.9941,
+            "f1": 0.9971
+          },
+          "lenient": {
+            "p": 1.0,
+            "r": 0.9941,
+            "f1": 0.9971
+          }
+        },
+        "REPAIR": {
+          "support": 169,
+          "predicted": 184,
+          "strict": {
+            "p": 0.4185,
+            "r": 0.4556,
+            "f1": 0.4363
+          },
+          "lenient": {
+            "p": 0.5272,
+            "r": 0.574,
+            "f1": 0.5496
+          }
+        },
+        "REPETITION": {
+          "support": 796,
+          "predicted": 861,
+          "strict": {
+            "p": 0.7503,
+            "r": 0.8116,
+            "f1": 0.7797
+          },
+          "lenient": {
+            "p": 0.7921,
+            "r": 0.8568,
+            "f1": 0.8232
+          }
+        }
+      },
+      "macro_f1_strict": 0.6673,
+      "macro_f1_lenient": 0.7177,
+      "restoration_acc_on_strict_matches": 0.96,
+      "strict_matches": 4075,
+      "n_examples": 3000
+    }
+  }
+}

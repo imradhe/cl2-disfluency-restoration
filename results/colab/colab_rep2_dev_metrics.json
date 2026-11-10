@@ -1,0 +1,269 @@
+[
+  {
+    "loss": 0.9406730102435235,
+    "unit_type_acc": 0.8630410654827969,
+    "unit_type_macro_f1": 0.731790909090909,
+    "restoration_acc": 0.8735109137994821,
+    "restoration_acc_known_targets": 0.8887088874656218,
+    "restoration_acc_by_label": {
+      "FILLER_DM": 0.985,
+      "FILLER_HESITATION": 0.9347,
+      "PARTIAL_WORD": 0.3261,
+      "REPETITION": 0.9089,
+      "FILLER_BACKCHANNEL": 0.9521,
+      "NOISE": 0.7451,
+      "PROLONGATION": 1.0,
+      "MISPRONUNCIATION": 1.0,
+      "O": 1.0,
+      "REPAIR": 0.5286,
+      "FALSE_START": 0.2396
+    },
+    "per_class": {
+      "O": {
+        "p": 0.9576,
+        "r": 0.9862,
+        "f1": 0.9717,
+        "support": 871
+      },
+      "FILLER_HESITATION": {
+        "p": 0.9083,
+        "r": 0.9322,
+        "f1": 0.9201,
+        "support": 5866
+      },
+      "FILLER_BACKCHANNEL": {
+        "p": 0.8432,
+        "r": 0.8959,
+        "f1": 0.8688,
+        "support": 3133
+      },
+      "FILLER_DM": {
+        "p": 0.9296,
+        "r": 0.9412,
+        "f1": 0.9354,
+        "support": 7487
+      },
+      "REPETITION": {
+        "p": 0.7499,
+        "r": 0.898,
+        "f1": 0.8173,
+        "support": 4236
+      },
+      "REPAIR": {
+        "p": 0.5807,
+        "r": 0.6059,
+        "f1": 0.5931,
+        "support": 944
+      },
+      "FALSE_START": {
+        "p": 0.8218,
+        "r": 0.4708,
+        "f1": 0.5987,
+        "support": 480
+      },
+      "PARTIAL_WORD": {
+        "p": 0.7602,
+        "r": 0.4,
+        "f1": 0.5242,
+        "support": 1855
+      },
+      "NOISE": {
+        "p": 0.9247,
+        "r": 0.7537,
+        "f1": 0.8305,
+        "support": 1287
+      },
+      "PROLONGATION": {
+        "p": 0.9858,
+        "r": 0.994,
+        "f1": 0.9899,
+        "support": 838
+      },
+      "MISPRONUNCIATION": {
+        "p": 0.0,
+        "r": 0.0,
+        "f1": 0.0,
+        "support": 33
+      }
+    },
+    "epoch": 1
+  },
+  {
+    "loss": 0.7956802395562972,
+    "unit_type_acc": 0.880507565387888,
+    "unit_type_macro_f1": 0.7920363636363635,
+    "restoration_acc": 0.8928267544670934,
+    "restoration_acc_known_targets": 0.9045358649789029,
+    "restoration_acc_by_label": {
+      "FILLER_DM": 0.9892,
+      "FILLER_HESITATION": 0.9405,
+      "PARTIAL_WORD": 0.4259,
+      "REPETITION": 0.9106,
+      "FILLER_BACKCHANNEL": 0.961,
+      "NOISE": 0.8197,
+      "PROLONGATION": 1.0,
+      "MISPRONUNCIATION": 1.0,
+      "O": 1.0,
+      "REPAIR": 0.6081,
+      "FALSE_START": 0.3771
+    },
+    "per_class": {
+      "O": {
+        "p": 0.9675,
+        "r": 0.9908,
+        "f1": 0.979,
+        "support": 871
+      },
+      "FILLER_HESITATION": {
+        "p": 0.9181,
+        "r": 0.9349,
+        "f1": 0.9264,
+        "support": 5866
+      },
+      "FILLER_BACKCHANNEL": {
+        "p": 0.8731,
+        "r": 0.8659,
+        "f1": 0.8695,
+        "support": 3132
+      },
+      "FILLER_DM": {
+        "p": 0.9255,
+        "r": 0.9581,
+        "f1": 0.9415,
+        "support": 7487
+      },
+      "REPETITION": {
+        "p": 0.8015,
+        "r": 0.8844,
+        "f1": 0.8409,
+        "support": 4238
+      },
+      "REPAIR": {
+        "p": 0.6527,
+        "r": 0.6769,
+        "f1": 0.6646,
+        "support": 944
+      },
+      "FALSE_START": {
+        "p": 0.7849,
+        "r": 0.7375,
+        "f1": 0.7605,
+        "support": 480
+      },
+      "PARTIAL_WORD": {
+        "p": 0.786,
+        "r": 0.5127,
+        "f1": 0.6206,
+        "support": 1855
+      },
+      "NOISE": {
+        "p": 0.9047,
+        "r": 0.8042,
+        "f1": 0.8515,
+        "support": 1287
+      },
+      "PROLONGATION": {
+        "p": 0.9905,
+        "r": 0.9988,
+        "f1": 0.9947,
+        "support": 838
+      },
+      "MISPRONUNCIATION": {
+        "p": 1.0,
+        "r": 0.1515,
+        "f1": 0.2632,
+        "support": 33
+      }
+    },
+    "epoch": 2
+  },
+  {
+    "loss": 0.7288050202112044,
+    "unit_type_acc": 0.8881530264910463,
+    "unit_type_macro_f1": 0.819190909090909,
+    "restoration_acc": 0.9008065709634453,
+    "restoration_acc_known_targets": 0.9112693568441279,
+    "restoration_acc_by_label": {
+      "FILLER_DM": 0.988,
+      "FILLER_HESITATION": 0.9313,
+      "PARTIAL_WORD": 0.4603,
+      "REPETITION": 0.929,
+      "FILLER_BACKCHANNEL": 0.9735,
+      "NOISE": 0.8547,
+      "PROLONGATION": 1.0,
+      "MISPRONUNCIATION": 1.0,
+      "O": 1.0,
+      "REPAIR": 0.6271,
+      "FALSE_START": 0.4479
+    },
+    "per_class": {
+      "O": {
+        "p": 0.9729,
+        "r": 0.9908,
+        "f1": 0.9818,
+        "support": 871
+      },
+      "FILLER_HESITATION": {
+        "p": 0.9287,
+        "r": 0.9344,
+        "f1": 0.9315,
+        "support": 5865
+      },
+      "FILLER_BACKCHANNEL": {
+        "p": 0.8796,
+        "r": 0.879,
+        "f1": 0.8793,
+        "support": 3133
+      },
+      "FILLER_DM": {
+        "p": 0.9332,
+        "r": 0.9586,
+        "f1": 0.9457,
+        "support": 7487
+      },
+      "REPETITION": {
+        "p": 0.8127,
+        "r": 0.8938,
+        "f1": 0.8513,
+        "support": 4237
+      },
+      "REPAIR": {
+        "p": 0.6719,
+        "r": 0.6377,
+        "f1": 0.6543,
+        "support": 944
+      },
+      "FALSE_START": {
+        "p": 0.8198,
+        "r": 0.7583,
+        "f1": 0.7879,
+        "support": 480
+      },
+      "PARTIAL_WORD": {
+        "p": 0.7813,
+        "r": 0.565,
+        "f1": 0.6558,
+        "support": 1853
+      },
+      "NOISE": {
+        "p": 0.8863,
+        "r": 0.8423,
+        "f1": 0.8637,
+        "support": 1287
+      },
+      "PROLONGATION": {
+        "p": 0.9905,
+        "r": 0.9988,
+        "f1": 0.9947,
+        "support": 838
+      },
+      "MISPRONUNCIATION": {
+        "p": 1.0,
+        "r": 0.303,
+        "f1": 0.4651,
+        "support": 33
+      }
+    },
+    "epoch": 3
+  }
+]

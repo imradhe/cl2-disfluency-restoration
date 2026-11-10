@@ -111,6 +111,7 @@ def main() -> None:
     ap.add_argument("--device", default="auto")
     ap.add_argument("--no-noise", action="store_true", help="ablation: train on clean phones")
     ap.add_argument("--no-phones", action="store_true", help="ablation: text-only BERT")
+    ap.add_argument("--amp", action="store_true", help="fp16 autocast + grad scaling (CUDA only)")
     ap.add_argument("--seed", type=int, default=13)
     ap.add_argument("--log-every", type=int, default=50)
     ap.add_argument("--save", action="store_true", help="write model weights to --out")
@@ -142,14 +143,18 @@ def main() -> None:
 
     step, t0 = 0, time.time()
     history = []
+    use_amp = a.amp and dev.type == "cuda"
+    scaler = torch.amp.GradScaler("cuda", enabled=use_amp)
     for ep in range(a.epochs):
         model.train()
         for batch in tl:
             b = to_device(batch, dev)
-            out = model(b)
-            out["loss"].backward()
+            with torch.autocast(device_type=dev.type, dtype=torch.float16, enabled=use_amp):
+                out = model(b)
+            scaler.scale(out["loss"]).backward()
+            scaler.unscale_(opt)
             torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
-            opt.step(); sched.step(); opt.zero_grad(set_to_none=True)
+            scaler.step(opt); scaler.update(); sched.step(); opt.zero_grad(set_to_none=True)
             step += 1
             if step % a.log_every == 0:
                 print(f"ep{ep} step {step}/{total} loss={float(out['loss']):.3f} "

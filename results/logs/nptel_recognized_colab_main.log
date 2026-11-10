@@ -1,0 +1,62 @@
+W1110 21:07:16.727000 51096 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 9168.83it/s]
+[transformers] [1mBertModel LOAD REPORT[0m from: bert-base-uncased
+Key                                        | Status     |  | 
+-------------------------------------------+------------+--+-
+cls.predictions.transform.dense.weight     | UNEXPECTED |  | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED |  | 
+cls.seq_relationship.weight                | UNEXPECTED |  | 
+cls.predictions.bias                       | UNEXPECTED |  | 
+cls.predictions.transform.dense.bias       | UNEXPECTED |  | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED |  | 
+cls.seq_relationship.bias                  | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+[transformers] The new embeddings will be initialized from a multivariate normal distribution that has old embeddings' mean and covariance. As described in this article: https://nlp.stanford.edu/~johnhew/vocab-expansion.html. To disable this, use `mean_resizing=False`
+phone source: recognized
+gold disfluent tokens with NO recognized phone in their span: FILLER_HESITATION 75/171, REPETITION 0/70, FILLER_DM 4/28, PARTIAL_WORD 0/22, PROLONGATION 0/2, FALSE_START 1/48, REPAIR 0/11
+NPTEL files: [{'file': 'english_001.rsml', 'segments': 295, 'minutes': 29.5}]
+G2P: 0 words from lexicon, 0 via espeak-ng
+gold token labels: {'O': 4028, 'FILLER_HESITATION': 171, 'REPETITION': 70, 'FILLER_DM': 28, 'PARTIAL_WORD': 22, 'PROLONGATION': 2, 'FALSE_START': 48, 'REPAIR': 11}
+examples: Counter({'gap': 169, 'wspan': 4})  units: {'FILLER_HESITATION': 96, 'REPETITION': 70, 'FILLER_DM': 24, 'PARTIAL_WORD': 22, 'FALSE_START': 47, 'REPAIR': 11, 'PROLONGATION': 2, 'O': 2}
+
+=== nptel_clean  (examples=173)  macroF1 strict=0.3223 lenient=0.3891  restoration acc on matched units=0.8222 (n=90)
+  type                 support   pred   strict P/R/F1        lenient P/R/F1
+  FALSE_START               47     37   0.03/0.02/0.02        0.22/0.17/0.19
+  FILLER_DM                 24     22   0.09/0.08/0.09        0.09/0.08/0.09
+  FILLER_HESITATION         96     62   0.89/0.57/0.70        0.94/0.60/0.73
+  NOISE                      0      4   0.00/0.00/0.00        0.00/0.00/0.00
+  PARTIAL_WORD              22     75   0.11/0.36/0.16        0.13/0.45/0.21
+  PROLONGATION               2      2   1.00/1.00/1.00        1.00/1.00/1.00
+  REPAIR                    11     59   0.00/0.00/0.00        0.02/0.09/0.03
+  REPETITION                70     85   0.26/0.31/0.28        0.44/0.53/0.48
+
+=== nptel_noisy  (examples=173)  macroF1 strict=0.2556 lenient=0.3192  restoration acc on matched units=0.8023 (n=86)
+  type                 support   pred   strict P/R/F1        lenient P/R/F1
+  FALSE_START               47     22   0.05/0.02/0.03        0.27/0.13/0.17
+  FILLER_DM                 24     21   0.00/0.00/0.00        0.05/0.04/0.04
+  FILLER_HESITATION         96     66   0.83/0.57/0.68        0.88/0.60/0.72
+  NOISE                      0      6   0.00/0.00/0.00        0.00/0.00/0.00
+  PARTIAL_WORD              22     77   0.09/0.32/0.14        0.10/0.36/0.16
+  PROLONGATION               2      1   1.00/0.50/0.67        1.00/0.50/0.67
+  REPAIR                    11     51   0.00/0.00/0.00        0.00/0.00/0.00
+  REPETITION                70     91   0.24/0.31/0.27        0.42/0.54/0.47
+
+=== switchboard_dev_noisy  (examples=3000)  macroF1 strict=0.6673 lenient=0.7177  restoration acc on matched units=0.96 (n=4075)
+  type                 support   pred   strict P/R/F1        lenient P/R/F1
+  FALSE_START               60     45   0.51/0.38/0.44        0.71/0.53/0.61
+  FILLER_BACKCHANNEL       595    581   0.80/0.78/0.79        0.86/0.84/0.85
+  FILLER_DM               1407   1479   0.90/0.94/0.92        0.92/0.97/0.94
+  FILLER_HESITATION       1093   1115   0.90/0.91/0.90        0.91/0.93/0.92
+  MISPRONUNCIATION           6      0   0.00/0.00/0.00        0.00/0.00/0.00
+  NOISE                    226    216   0.85/0.81/0.83        0.87/0.83/0.85
+  PARTIAL_WORD             345    296   0.62/0.53/0.57        0.69/0.59/0.64
+  PROLONGATION             170    169   1.00/0.99/1.00        1.00/0.99/1.00
+  REPAIR                   169    184   0.42/0.46/0.44        0.53/0.57/0.55
+  REPETITION               796    861   0.75/0.81/0.78        0.79/0.86/0.82
+
+--- NPTEL samples (clean phones) ---
+
+
+wrote /Users/imradhe/Courses/CL2 M26/Project/results/nptel_oracle_recognized_colab_main.json
