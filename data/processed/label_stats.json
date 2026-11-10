@@ -1,0 +1,52 @@
+{
+  "sides": 4876,
+  "tokens": 3131723,
+  "labels": {
+    "O": 2631755,
+    "FILLER_DM": 133671,
+    "FILLER_HESITATION": 94533,
+    "REPETITION": 86403,
+    "FILLER_BACKCHANNEL": 68152,
+    "NOISE": 45891,
+    "PARTIAL_WORD": 28564,
+    "REPAIR": 17310,
+    "PROLONGATION": 16017,
+    "FALSE_START": 9119,
+    "MISPRONUNCIATION": 308
+  },
+  "kinds": {
+    "WORD": 3043167,
+    "NOISE": 45891,
+    "PARTIAL": 28529,
+    "NOISE_WORD": 13423,
+    "COINAGE": 370,
+    "MISPRON": 343
+  },
+  "lexicon_coverage": {
+    "COINAGE": {
+      "hit": 370,
+      "miss": 0,
+      "rate": 1.0
+    },
+    "MISPRON": {
+      "hit": 343,
+      "miss": 0,
+      "rate": 1.0
+    },
+    "NOISE_WORD": {
+      "hit": 13423,
+      "miss": 0,
+      "rate": 1.0
+    },
+    "PARTIAL": {
+      "hit": 28529,
+      "miss": 0,
+      "rate": 1.0
+    },
+    "WORD": {
+      "hit": 3043167,
+      "miss": 0,
+      "rate": 1.0
+    }
+  }
+}

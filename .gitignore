@@ -1,0 +1,34 @@
+# Python / env
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+.cache/
+
+# Data (large / third-party; reproduced by scripts)
+data/raw/
+data/nptel/raw/
+data/nptel/wav16k/
+*.wav
+*.mp3
+*.flac
+
+# Large derived data (rebuilt by scripts/build_processed.py and scripts/build_gaps.py);
+# small stats / spot-check files stay tracked.
+data/processed/*.jsonl.gz
+data/gaps/*.jsonl.gz
+
+# Models / checkpoints
+ckpt/
+*.pt
+*.pth
+*.safetensors
+*.bin
+
+# OS / editor
+.DS_Store
+
+# Course handouts (not part of the repo)
+project-guidelines.pdf
+project-titles.pdf

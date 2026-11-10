@@ -1,0 +1,36 @@
+[project]
+name = "disfluency-restoration"
+version = "0.1.0"
+description = "Phone-informed disfluency restoration: train a BERT gap-filler on Switchboard transcripts, test on NPTEL lectures."
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "numpy",
+    "pandas",
+    "pyyaml",
+    "tqdm",
+    "torch",
+    "transformers",
+    "scikit-learn",
+    "jiwer",
+    "pytest",
+]
+
+[project.optional-dependencies]
+# Audio / inference path (Phases 6-7). Heavy; install only where needed.
+audio = [
+    "torchaudio",
+    "soundfile",
+    "librosa",
+    "phonemizer",
+    "g2p_en",
+    "silero-vad",
+    "mlx-whisper; sys_platform == 'darwin'",
+    "faster-whisper; sys_platform != 'darwin'",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

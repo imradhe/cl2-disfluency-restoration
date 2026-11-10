@@ -1,0 +1,70 @@
+{
+  "train": {
+    "examples": 261868,
+    "sides": 4244,
+    "phones": 1017983,
+    "kinds": {
+      "gap": 232534,
+      "wspan": 29334
+    },
+    "labels": {
+      "FILLER_DM": 120273,
+      "FILLER_HESITATION": 83983,
+      "REPETITION": 77893,
+      "FILLER_BACKCHANNEL": 62294,
+      "PARTIAL_WORD": 25375,
+      "NOISE": 20595,
+      "REPAIR": 15662,
+      "O": 14667,
+      "PROLONGATION": 14409,
+      "FALSE_START": 8286,
+      "MISPRONUNCIATION": 258
+    }
+  },
+  "dev": {
+    "examples": 15755,
+    "sides": 346,
+    "phones": 60532,
+    "kinds": {
+      "gap": 14013,
+      "wspan": 1742
+    },
+    "labels": {
+      "FILLER_DM": 7497,
+      "FILLER_HESITATION": 5867,
+      "REPETITION": 4239,
+      "FILLER_BACKCHANNEL": 3144,
+      "PARTIAL_WORD": 1858,
+      "NOISE": 1287,
+      "REPAIR": 946,
+      "O": 871,
+      "PROLONGATION": 838,
+      "FALSE_START": 480,
+      "MISPRONUNCIATION": 33
+    }
+  },
+  "test": {
+    "examples": 13392,
+    "sides": 286,
+    "phones": 51469,
+    "kinds": {
+      "gap": 11818,
+      "wspan": 1574
+    },
+    "labels": {
+      "FILLER_DM": 5901,
+      "FILLER_HESITATION": 4683,
+      "REPETITION": 4271,
+      "FILLER_BACKCHANNEL": 2714,
+      "PARTIAL_WORD": 1331,
+      "NOISE": 1069,
+      "O": 787,
+      "PROLONGATION": 770,
+      "REPAIR": 702,
+      "FALSE_START": 353,
+      "MISPRONUNCIATION": 17
+    }
+  },
+  "restoration_classes": 3368,
+  "unknown_phones": {}
+}
