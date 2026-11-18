@@ -27,9 +27,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 
 from nptel.rsml import parse_aligned  # noqa: E402
-
-MODEL = "facebook/wav2vec2-xlsr-53-espeak-cv-ft"
-STRIDE = 0.02           # wav2vec2 frame shift (s)
+from pipeline.phonerec import MODEL, collapse  # noqa: E402
 
 
 def to_16k_mono(src: Path, dst: Path) -> None:
@@ -45,20 +43,6 @@ def read_wav(path: Path) -> np.ndarray:
         assert w.getframerate() == 16000 and w.getnchannels() == 1 and w.getsampwidth() == 2
         pcm = np.frombuffer(w.readframes(w.getnframes()), dtype=np.int16)
     return pcm.astype(np.float32) / 32768.0
-
-
-def collapse(ids: np.ndarray, probs: np.ndarray, vocab: list[str], t_off: float) -> list[dict]:
-    """Greedy CTC: merge repeats, drop blanks (<pad>=0). Times from the frames of each run."""
-    out, i, n = [], 0, len(ids)
-    while i < n:
-        j = i
-        while j + 1 < n and ids[j + 1] == ids[i]:
-            j += 1
-        if ids[i] != 0:
-            out.append({"tok": vocab[ids[i]], "start": round(t_off + i * STRIDE, 3),
-                        "end": round(t_off + (j + 1) * STRIDE, 3), "p": round(float(probs[i:j + 1].mean()), 3)})
-        i = j + 1
-    return out
 
 
 def main() -> None:

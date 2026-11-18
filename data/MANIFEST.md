@@ -53,6 +53,10 @@ Ingested so far (`data/nptel/raw/english_001/`, fetched from Drive by file id; t
 Other `.rsml` files seen locally were rejected by the rule: `english_007_saikiran` (32/375 verified),
 `JmLDdqvQ3C8` and `EGp79Cv9_gI` (Telugu code-mixed). Other `en/` lectures on Drive are not ingested yet.
 
+Space note: the 44.1 kHz original `english_001.wav` and `data/raw/switchboard_ms98/extracted/` were deleted to free disk.
+Restore the audio with `curl -L -o data/nptel/raw/english_001/english_001.wav "https://drive.usercontent.google.com/download?id=1sFuCrYM9jQMiGw2aFdQubIpiXlMnREcS&export=download&confirm=t"`
+and the corpus with `mkdir -p data/raw/switchboard_ms98/extracted && tar -xzf data/raw/switchboard_ms98/switchboard_word_alignments.tar.gz -C data/raw/switchboard_ms98/extracted`.
+
 Derived: `data/nptel/wav16k/english_001.wav` (16 kHz mono) and `data/nptel/phones/english_001.jsonl`
 (wav2vec2-xlsr-53-espeak-cv-ft greedy CTC output with times, from `scripts/nptel_phones.py`).
 

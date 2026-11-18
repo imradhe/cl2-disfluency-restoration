@@ -29,16 +29,10 @@ sys.path.insert(0, str(ROOT / "src"))
 from model.bert_gap import BertGap  # noqa: E402
 from model.dataset import TAGS, GapDataset, load_jsonl  # noqa: E402
 from model.gaps import WordDur, build_side  # noqa: E402
-from model.infer import predict, unit_prf  # noqa: E402
+from model.infer import pick_device, predict, unit_prf  # noqa: E402
 from nptel.rsml import aligned_to_side, parse_rsml, to_side  # noqa: E402
 from phones.g2p import G2P  # noqa: E402
 from phones.noise import PhoneNoise  # noqa: E402
-
-
-def pick_device() -> torch.device:
-    if torch.cuda.is_available():
-        return torch.device("cuda")
-    return torch.device("mps") if torch.backends.mps.is_available() else torch.device("cpu")
 
 
 def load_recognized(path: Path) -> tuple[list[float], list[dict]]:

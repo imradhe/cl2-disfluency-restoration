@@ -1,0 +1,106 @@
+[18:16:44] audio 1937.0s
+/Users/imradhe/Courses/CL2 M26/Project/.venv/lib/python3.12/site-packages/torch/jit/_serialization.py:176: FutureWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+[18:16:49] VAD: 176 chunks, 1812s of speech
+[18:17:43]   ASR 20/176
+[18:18:39]   ASR 40/176
+[18:19:37]   ASR 60/176
+[18:20:31]   ASR 80/176
+[18:21:10]   ASR 100/176
+[18:21:50]   ASR 120/176
+[18:22:29]   ASR 140/176
+[18:23:21]   ASR 160/176
+[18:24:03] ASR: 4209 words
+W1118 18:24:05.689000 29316 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/424 [00:00<?, ?it/s]Loading weights: 100%|██████████| 424/424 [00:00<00:00, 45813.41it/s]
+[18:24:17]   phones 20/176
+[18:24:25]   phones 40/176
+[18:24:32]   phones 60/176
+[18:24:39]   phones 80/176
+[18:24:40]   phones 100/176
+[18:24:42]   phones 120/176
+[18:24:44]   phones 140/176
+[18:24:50]   phones 160/176
+[18:24:54] phones: 15789 recognized
+[18:24:55] gaps: 310 kept of 310 candidates
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 8279.60it/s]
+[transformers] [1mBertModel LOAD REPORT[0m from: bert-base-uncased
+Key                                        | Status     |  | 
+-------------------------------------------+------------+--+-
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED |  | 
+cls.predictions.bias                       | UNEXPECTED |  | 
+cls.seq_relationship.weight                | UNEXPECTED |  | 
+cls.predictions.transform.dense.weight     | UNEXPECTED |  | 
+cls.seq_relationship.bias                  | UNEXPECTED |  | 
+cls.predictions.transform.dense.bias       | UNEXPECTED |  | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+[transformers] The new embeddings will be initialized from a multivariate normal distribution that has old embeddings' mean and covariance. As described in this article: https://nlp.stanford.edu/~johnhew/vocab-expansion.html. To disable this, use `mean_resizing=False`
+[18:25:00] restored 332 tokens in 310 gaps
+{
+  "audio": "data/nptel/wav16k/english_001.wav",
+  "seconds": 1937.0,
+  "chunks": 176,
+  "asr_words": 4209,
+  "gap_stats": {
+    "exp_phones": 15728,
+    "rec_phones": 15789,
+    "inserted": 644,
+    "inside_word": 159,
+    "too_short": 0,
+    "too_long": 0,
+    "low_prob": 0,
+    "kept": 310,
+    "matched": 12018,
+    "substituted": 3127,
+    "deleted": 583
+  },
+  "gaps": 310,
+  "restored_tokens": 332,
+  "restored_by_type": {
+    "PARTIAL_WORD": 225,
+    "REPETITION": 53,
+    "FILLER_HESITATION": 37,
+    "FILLER_DM": 8,
+    "REPAIR": 1,
+    "FALSE_START": 3,
+    "NOISE": 5
+  },
+  "ckpt": "ckpt/colab_main",
+  "whisper": "mlx-community/whisper-large-v3-turbo",
+  "elapsed_s": 495.4
+}
+
+--- restored gaps (left context [restored] right context) ---
+setup we have two cameras and [[d]] in this these two
+      -> PARTIAL_WORD:DROP
+we have two cameras and in [[n]] this these two cameras
+      -> PARTIAL_WORD:COPY_R2
+and ah sin point x for [[l]] which you will be
+      -> PARTIAL_WORD:W:long
+the first camera whose camera center [[r]] is given as c
+      -> REPETITION:COPY_R1
+by the camera center c prime [[ae]] forms an image of
+      -> FILLER_HESITATION:FIL:uh
+point at x prime in its [[w]] own image plane so
+      -> PARTIAL_WORD:COPY_R2
+this is what you will get [[t]] in a stereo setup
+      -> NOISE:DROP
+get in a stereo setup for [[d]] every scene point there
+      -> PARTIAL_WORD:W:to
+point there are two image points [[aa]] if they are viewable
+      -> FILLER_HESITATION:FIL:uh
+there are two image points if [[ax]] they are viewable from
+      -> FILLER_HESITATION:FIL:uh
+c and the if i consider [[d]] a plane formed by
+      -> PARTIAL_WORD:COPY_R2
+image points x and x prime [[d]] they also lie on
+      -> PARTIAL_WORD:COPY_R2
+
+--- WER sanity check (4380 verbatim / 4030 fluent gold words) ---
+ASR vs verbatim gold:       0.096
+restored vs verbatim gold:  0.139
+ASR vs fluent gold:         0.091
+restored vs fluent gold:    0.164

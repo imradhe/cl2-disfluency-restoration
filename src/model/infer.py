@@ -6,11 +6,38 @@ Unlike ``train.evaluate`` (which is handed the gold unit spans), this needs no o
 """
 from __future__ import annotations
 
+import json
 from collections import defaultdict
+from pathlib import Path
 
 import torch
 
+from .bert_gap import BertGap
 from .dataset import TAGS, collate
+
+
+def pick_device() -> torch.device:
+    if torch.cuda.is_available():
+        return torch.device("cuda")
+    return torch.device("mps") if torch.backends.mps.is_available() else torch.device("cpu")
+
+
+def load_gap_model(ckpt: str | Path, rest_vocab_path: str | Path | None = None, bert: str = "bert-base-uncased",
+                   dev: torch.device | None = None):
+    """Load a trained checkpoint directory -> ``(model, tokenizer, rest_vocab, device)``.
+
+    ``rest_vocab_path`` defaults to ``<ckpt>/restoration_vocab.json`` (saved by the Colab runs).
+    """
+    from transformers import AutoTokenizer
+
+    ckpt, dev = Path(ckpt), dev or pick_device()
+    vocab_path = Path(rest_vocab_path) if rest_vocab_path else ckpt / "restoration_vocab.json"
+    tok = AutoTokenizer.from_pretrained(ckpt / "tokenizer")
+    rest_vocab = json.loads(vocab_path.read_text())
+    model = BertGap(bert, len(tok), len(TAGS), len(rest_vocab)).to(dev)
+    model.load_state_dict(torch.load(ckpt / "model.pt", map_location=dev))
+    model.eval()
+    return model, tok, rest_vocab, dev
 
 
 def decode_units(tags: list[str]) -> list[tuple[int, int, str]]:
