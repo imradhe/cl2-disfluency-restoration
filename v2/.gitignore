@@ -1,6 +1,0 @@
-data/*.jsonl.gz
-data/tokenizer/
-checkpoints/
-reports/*.jsonl.gz
-colab/*.zip
-colab/latest_saved_run.ipynb
