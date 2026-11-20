@@ -1,0 +1,21 @@
+,Switchboard source,RSML representation,spoken,intended,primary label,tokens
+0,[tranged/changed],[tranged](changed),tranged,changed,MISPRONUNCIATION,2
+1,[what'n/wasn't],[what'n](wasn't),what'n,wasn't,MISPRONUNCIATION,2
+2,[hem/hormones],[hem](hormones),hem,hormones,MISPRONUNCIATION,2
+3,[bidness/business],[bidness](business),bidness,business,MISPRONUNCIATION,2
+4,[Discover/Discovery],[discover](discovery),discover,discovery,MISPRONUNCIATION,2
+5,[burgalies/burglaries],[burgalies](burglaries),burgalies,burglaries,MISPRONUNCIATION,2
+6,[decifit/deficit],[decifit](deficit),decifit,deficit,MISPRONUNCIATION,2
+7,[disea[l]-/diesel],[disea](diesel),disea,diesel,PARTIAL_WORD,1
+8,[cha[pe]-/shape],[cha](shape),cha,shape,PARTIAL_WORD,1
+9,[ananimous/unanimous],[ananimous](unanimous),ananimous,unanimous,MISPRONUNCIATION,1
+10,[Cam[pany]-/Company],[cam](company),cam,company,PARTIAL_WORD,1
+11,[ler/word],[ler](word),ler,word,MISPRONUNCIATION,1
+12,[abrode/abroad],[abrode](abroad),abrode,abroad,MISPRONUNCIATION,1
+13,[ogen/oven],[ogen](oven),ogen,oven,MISPRONUNCIATION,1
+14,[compooter/computer],[compooter](computer),compooter,computer,MISPRONUNCIATION,1
+15,[determent/deterrent],[determent](deterrent),determent,deterrent,MISPRONUNCIATION,1
+16,[polly/party],[polly](party),polly,party,MISPRONUNCIATION,1
+17,[commutiv/computerized],[commutiv](computerized),commutiv,computerized,MISPRONUNCIATION,1
+18,[evalu/evaluate],[evalu](evaluate),evalu,evaluate,MISPRONUNCIATION,1
+19,[-[Can]sego/Canseco],[sego](canseco),sego,canseco,MISPRONUNCIATION,1

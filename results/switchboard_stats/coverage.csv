@@ -1,0 +1,52 @@
+,RSML group,RSML tag / notation,construct type,Switchboard equivalent,dataset label,provenance,tokens
+0,hesitations,@uhh,tag,"uh, uhh",FILLER_HESITATION,gold,69814
+1,hesitations,@umm,tag,"um, umm",FILLER_HESITATION,gold,21196
+2,hesitations,@hmm,tag,"hm, hmm",FILLER_HESITATION,gold,1010
+3,hesitations,@ehh,tag,"eh, ehh",FILLER_HESITATION,gold,16
+4,hesitations,@huh,tag,huh,FILLER_HESITATION,gold,1862
+5,hesitations,@ooh,tag,ooh,FILLER_HESITATION,silver (rule),226
+6,hesitations,@ohh,tag,ohh (plain oh is not labelled),FILLER_HESITATION,silver (rule),0
+7,hesitations,@uhh-oh,tag,"uh-oh, uhh-oh",FILLER_HESITATION,silver (rule),19
+8,hesitations,@uh-huh,tag,"uh-huh, um-hum, huh-uh, hum-um, uh-hum",FILLER_BACKCHANNEL,gold,32665
+9,hesitations,@ugh,tag,ugh,FILLER_HESITATION,silver (rule),22
+10,hesitations,@tsk,tag,explicit click/tsk markers or labelled tsk/tut lexemes; see raw audit,FILLER_HESITATION,not annotated in Switchboard,0
+11,hesitations,@ho,tag,ho,FILLER_HESITATION,silver (rule),15
+12,disfluencySpans,filler,tag,"discourse markers (you know, i mean, well, like, so ...)",FILLER_DM,silver (rule),133671
+13,disfluencySpans,repetition,tag,adjacent repeated n-gram,REPETITION,silver (rule),86403
+14,disfluencySpans,broken-word,tag,"partial word x-, x[yz]-",PARTIAL_WORD,gold,28564
+15,disfluencySpans,repair,tag,reparandum + correction,REPAIR,silver (rule),17310
+16,disfluencySpans,false-start,tag,abandoned clause start,FALSE_START,silver (rule),9119
+17,disfluencySpans,prolongation,tag,unusually long function word,PROLONGATION,silver (rule),16017
+18,isolatedParalinguistics,@laughter,tag,[laughter],NOISE,gold,22209
+19,isolatedParalinguistics,@cry,tag,only generic [noise] / [vocalized-noise],-,not annotated in Switchboard,0
+20,isolatedParalinguistics,@hum,tag,only generic [noise] / [vocalized-noise],-,not annotated in Switchboard,0
+21,isolatedParalinguistics,@breathe,tag,only generic [noise] / [vocalized-noise],-,not annotated in Switchboard,0
+22,isolatedParalinguistics,@sniff,tag,only generic [noise] / [vocalized-noise],-,not annotated in Switchboard,0
+23,isolatedParalinguistics,@nose-blowing,tag,only generic [noise] / [vocalized-noise],-,not annotated in Switchboard,0
+24,isolatedParalinguistics,@cough,tag,only generic [noise] / [vocalized-noise],-,not annotated in Switchboard,0
+25,isolatedParalinguistics,@sneeze,tag,only generic [noise] / [vocalized-noise],-,not annotated in Switchboard,0
+26,isolatedParalinguistics,@throat-clearing,tag,only generic [noise] / [vocalized-noise],-,not annotated in Switchboard,0
+27,isolatedParalinguistics,@yawn,tag,only generic [noise] / [vocalized-noise],-,not annotated in Switchboard,0
+28,isolatedParalinguistics,@eating-sounds,tag,only generic [noise] / [vocalized-noise],-,not annotated in Switchboard,0
+29,isolatedParalinguistics,@snore,tag,only generic [noise] / [vocalized-noise],-,not annotated in Switchboard,0
+30,isolatedParalinguistics,@groan,tag,only generic [noise] / [vocalized-noise],-,not annotated in Switchboard,0
+31,isolatedParalinguistics,@sigh,tag,only generic [noise] / [vocalized-noise],-,not annotated in Switchboard,0
+32,isolatedOther,@unintelligible,tag,-,-,not annotated in Switchboard,0
+33,isolatedOther,@stutter-block,tag,-,-,not annotated in Switchboard,0
+34,isolatedOther,@short-pause,tag,"[silence] rows exist, no short/long split marked",-,not annotated in Switchboard,0
+35,isolatedOther,@long-pause,tag,"[silence] rows exist, no short/long split marked",-,not annotated in Switchboard,0
+36,paralinguisticSpans,laughing,tag,"[laughter-word], a word spoken while laughing",(kind NOISE_WORD),gold,13423
+37,paralinguisticSpans,crying,tag,-,-,not annotated in Switchboard,0
+38,paralinguisticSpans,yelling,tag,-,-,not annotated in Switchboard,0
+39,paralinguisticSpans,singing,tag,-,-,not annotated in Switchboard,0
+40,paralinguisticSpans,humming,tag,-,-,not annotated in Switchboard,0
+41,paralinguisticSpans,whistling,tag,-,-,not annotated in Switchboard,0
+42,paralinguisticSpans,whispering,tag,-,-,not annotated in Switchboard,0
+43,prosodySpans,emphasis,tag,-,-,not annotated in Switchboard,0
+44,prosodySpans,falling-pitch,tag,-,-,not annotated in Switchboard,0
+45,prosodySpans,raising-pitch,tag,-,-,not annotated in Switchboard,0
+46,prosodySpans,high-pitch,tag,-,-,not annotated in Switchboard,0
+47,prosodySpans,low-pitch,tag,-,-,not annotated in Switchboard,0
+48,prosodySpans,fast-speech,tag,-,-,not annotated in Switchboard,0
+49,prosodySpans,slow-speech,tag,-,-,not annotated in Switchboard,0
+50,mispronunciations,[spoken](intended),notation,[spoken/intended] (non-cut-off primary labels),MISPRONUNCIATION,gold,308

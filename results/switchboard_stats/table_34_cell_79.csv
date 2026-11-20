@@ -1,0 +1,25 @@
+,value
+conversations,2438
+speaker sides,4876
+hours of conversation audio,259.1466719791667
+speech tokens,3085832
+word types,27365
+RSML tags in the taxonomy,50
+RSML tags with 1+ token in the dataset,18
+RSML notations covered,1
+mispronunciation notation,[spoken](intended)
+explicit raw click/tsk markers,0
+FILLER_HESITATION per 100 speech tokens,3.0634525794016003
+FILLER_BACKCHANNEL per 100 speech tokens,2.208545377713369
+FILLER_DM per 100 speech tokens,4.331765306730891
+REPETITION per 100 speech tokens,2.799990407773333
+REPAIR per 100 speech tokens,0.5609508229871231
+FALSE_START per 100 speech tokens,0.29551187491736425
+PARTIAL_WORD per 100 speech tokens,0.925649873356683
+PROLONGATION per 100 speech tokens,0.5190496436617418
+MISPRONUNCIATION per 100 speech tokens,0.009981100720972497
+NOISE per 100 speech tokens,1.4871516012537298
+removable tokens per 100 speech tokens,14.185866242880365
+utterances changed by removal,0.766520847354421
+mean gap length (tokens),1.487343621525017
+share of gaps that are exactly 1 token,0.6863698448616802

@@ -1,0 +1,9 @@
+,most frequent strings
+[laughter-word]  (word spoken while laughing),"[laughter-yeah] (743),  [laughter-know] (546),  [laughter-you] (470),  [laughter-i] (443),  [laughter-it] (311),  [laughter-right] (309)"
+<b_aside> / <e_aside>  (aside markers),"<b_aside> (164),  <e_aside> (164)"
+"partial word with annotated completion, th[e]-","i[t]- (784),  y[ou]- (734),  an[d]- (495),  th[e]- (393),  a[nd]- (334),  tha[t]- (299)"
+"partial word, bare fragment, i-","i- (4,733)"
+"partial word, word-final fragment, -[o]kay","-[o]kay (63),  -[un]til (31),  -[w]ell (26),  -[th]at's (15),  -[a]nother (11),  -[ok]ay (11)"
+"mispronunciation, [spoken/intended]","[tranged/changed] (2),  [what'n/wasn't] (2),  [hem/hormones] (2),  [bidness/business] (2),  [Discover/Discovery] (2),  [burgalies/burglaries] (2)"
+"coinage, {word}","{alrighty} (33),  {maxed} (13),  {jazzercise} (13),  {himmy} (8),  {weatherwise} (5),  {kiddos} (5)"
+"pronunciation variant, word_1","them_1 (3,915),  because_1 (2,958),  about_1 (393),  okay_1 (139),  especially_1 (33),  them's_1 (6)"

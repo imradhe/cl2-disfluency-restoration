@@ -1,0 +1,12 @@
+,value
+conversations,2438.0
+speaker sides,4876.0
+utterance segments (incl. silence-only),391593.0
+word-level rows,4051206.0
+lexical tokens (denominator for all rates),3085832.0
+distinct token strings,38649.0
+hours of conversation audio,259.1466719791667
+hours summed over both sides,518.2933439583334
+mean side length (minutes),6.377686759126334
+share of side time that is [silence]*,0.5610169203490071
+rows with end <= start (alignment glitches),1172.0

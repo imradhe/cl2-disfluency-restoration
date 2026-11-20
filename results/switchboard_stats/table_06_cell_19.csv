@@ -1,0 +1,26 @@
+,raw token,rows,evidence
+0,[click],0,explicit event marker: usable for @tsk
+1,[clicks],0,explicit event marker: usable for @tsk
+2,[tongue-click],0,explicit event marker: usable for @tsk
+3,[tongue_click],0,explicit event marker: usable for @tsk
+4,[tongue-clicks],0,explicit event marker: usable for @tsk
+5,[dental-click],0,explicit event marker: usable for @tsk
+6,[mouth-click],0,explicit event marker: usable for @tsk
+7,[tsk],0,explicit event marker: usable for @tsk
+8,[tsk-tsk],0,explicit event marker: usable for @tsk
+9,[tut],0,explicit event marker: usable for @tsk
+10,[tut-tut],0,explicit event marker: usable for @tsk
+11,tsk,0,candidate lexeme: requires hesitation label
+12,tsk-tsk,0,candidate lexeme: requires hesitation label
+13,tut,0,candidate lexeme: requires hesitation label
+14,tut-tut,0,candidate lexeme: requires hesitation label
+15,click,12,ordinary lexical word: excluded
+16,clicks,1,ordinary lexical word: excluded
+17,clicked,2,ordinary lexical word: excluded
+18,clicking,2,ordinary lexical word: excluded
+19,clicker,1,ordinary lexical word: excluded
+20,smack,10,ordinary lexical word: excluded
+21,smacking,1,ordinary lexical word: excluded
+22,cluck,0,ordinary lexical word: excluded
+23,[noise],17962,generic noise: sound is unspecified
+24,[vocalized-noise],5720,generic noise: sound is unspecified

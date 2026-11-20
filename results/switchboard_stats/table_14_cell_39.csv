@@ -1,0 +1,6 @@
+,tokens,per 100 speech tokens
+"backchannel words as short turns (yeah, right, okay ...), silver",35487,1.1499977963803603
+"hesitation `ah` (explicit ISIP lexeme, no RSML tag)",353,0.011439378423711984
+[noise] (generic noise),17962,0.5820796465912597
+[vocalized-noise] (generic vocal noise),5720,0.18536329910377491
+coinages {word},370,0.01199028333363579

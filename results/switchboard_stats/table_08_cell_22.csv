@@ -1,0 +1,12 @@
+,lexical tokens per utterance
+count,249624.0
+mean,12.361920328173573
+std,12.742912479560008
+min,1.0
+5%,1.0
+25%,1.0
+50%,8.0
+75%,20.0
+95%,39.0
+max,81.0
+utterance duration median (s),3.1859375000000068
