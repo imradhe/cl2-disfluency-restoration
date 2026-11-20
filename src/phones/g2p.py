@@ -43,17 +43,6 @@ class G2P:
                 i += 1
         return phones
 
-    def variants(self, word: str) -> list[list[str]]:
-        """All known pronunciations: every lexicon entry, else the single espeak-ng guess."""
-        prons = self.lex.get(word.lower())
-        if not prons:
-            return [self.phones(word)]
-        uniq: list[list[str]] = []
-        for p in prons:
-            if p not in uniq:
-                uniq.append(p)
-        return uniq
-
     def phones(self, word: str) -> list[str]:
         w = word.lower()
         if w in self._cache:

@@ -1,0 +1,24 @@
+{
+  "audio": "data/nptel/wav16k/english_001.wav",
+  "seconds": 1937.0,
+  "chunks": 176,
+  "asr_words": 4209,
+  "windows": 354,
+  "predicted_units": 176,
+  "predicted_by_type": {
+    "FILLER_HESITATION": 33,
+    "FILLER_DM": 28,
+    "NOISE": 41,
+    "FILLER_BACKCHANNEL": 6,
+    "REPETITION": 47,
+    "REPAIR": 2,
+    "PARTIAL_WORD": 19
+  },
+  "inserted_tokens": 135,
+  "skipped_types": [],
+  "none_bias": 0.0,
+  "normalized_fillers": 45,
+  "ckpt": "ckpt/seq_cal",
+  "whisper": "mlx-community/whisper-large-v3-turbo",
+  "elapsed_s": 7.9
+}

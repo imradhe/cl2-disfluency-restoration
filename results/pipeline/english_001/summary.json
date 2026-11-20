@@ -3,31 +3,21 @@
   "seconds": 1937.0,
   "chunks": 176,
   "asr_words": 4209,
-  "gap_stats": {
-    "exp_phones": 15728,
-    "rec_phones": 15789,
-    "inserted": 644,
-    "inside_word": 159,
-    "too_short": 0,
-    "too_long": 0,
-    "low_prob": 0,
-    "too_brief": 171,
-    "kept": 139,
-    "matched": 12018,
-    "substituted": 3127,
-    "deleted": 583
+  "windows": 354,
+  "predicted_units": 434,
+  "predicted_by_type": {
+    "REPETITION": 98,
+    "NOISE": 155,
+    "FILLER_HESITATION": 42,
+    "PARTIAL_WORD": 75,
+    "FILLER_DM": 53,
+    "REPAIR": 4,
+    "FILLER_BACKCHANNEL": 7
   },
-  "gaps": 139,
-  "restored_tokens": 91,
-  "restored_by_type": {
-    "FILLER_HESITATION": 34,
-    "REPETITION": 43,
-    "FILLER_DM": 7,
-    "REPAIR": 1,
-    "FALSE_START": 3,
-    "NOISE": 3
-  },
-  "ckpt": "ckpt/colab_main",
+  "inserted_tokens": 279,
+  "skipped_types": [],
+  "none_bias": 0.0,
+  "ckpt": "ckpt/seq_colab",
   "whisper": "mlx-community/whisper-large-v3-turbo",
-  "elapsed_s": 3.1
+  "elapsed_s": 6.8
 }

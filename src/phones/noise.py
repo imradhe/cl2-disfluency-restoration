@@ -42,9 +42,13 @@ class PhoneNoise:
                         neigh[p].append(q)
         self._neigh = neigh
 
-    def corrupt(self, phones: list[str]) -> list[str]:
-        rng, out = self._rng, []
-        for p in phones:
+    def corrupt_idx(self, phones: list[str], groups: list[int] | None = None,
+                    classes: list[str] | None = None) -> tuple[list[str], list[int]]:
+        """Corrupted phones and, for each, the index of the input phone it stems from (a substitution or an
+        insertion inherits the index of the phone it follows), so per-phone labels can follow the noise.
+        ``groups`` / ``classes`` (token structure of the stream) are ignored here; ``ProfileNoise`` uses them."""
+        rng, out, src = self._rng, [], []
+        for k, p in enumerate(phones):
             r = rng.random()
             if r < self.p_del and len(phones) > 1:
                 continue
@@ -52,9 +56,14 @@ class PhoneNoise:
                 out.append(rng.choice(self._neigh[p]))
             else:
                 out.append(p)
+            src.append(k)
             if rng.random() < self.p_ins:
                 out.append(rng.choice(FILLER_INSERT_POOL))
-        return out or list(phones[:1])
+                src.append(k)
+        return (out, src) if out else (list(phones[:1]), [0] * len(phones[:1]))
+
+    def corrupt(self, phones: list[str]) -> list[str]:
+        return self.corrupt_idx(phones)[0]
 
     def spurious(self, max_len: int = 3) -> list[str]:
         """A short phone string the recognizer 'hears' where there was only noise."""

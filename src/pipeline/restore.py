@@ -1,12 +1,11 @@
-"""Turn BERT's per-gap predictions into restored tokens and a restored transcript."""
+"""Turn the sequence model's per-slot predictions into restored tokens and a restored transcript."""
 from __future__ import annotations
 
 from dataclasses import dataclass
 
 from model.gaps import COPY_L, COPY_R
 
-from .asr import Word
-from .extract import GapCand
+from .windows import Window
 
 UNKNOWN = "<unk>"        # a unit was detected (e.g. a partial word) but its identity cannot be restored
 
@@ -19,11 +18,11 @@ class Token:
     end: float
     label: str = ""           # disfluency type (restored tokens)
     rest: str = ""            # restoration class the model predicted (restored tokens)
-    gap: int = -1
+    window: int = -1
 
     def to_json(self) -> dict:
         return {"text": self.text, "source": self.source, "start": round(self.start, 3), "end": round(self.end, 3),
-                "label": self.label, "rest": self.rest, "gap": self.gap}
+                "label": self.label, "rest": self.rest, "window": self.window}
 
 
 def render_restoration(rest: str, left: list[str], right: list[str]) -> str | None:
@@ -41,31 +40,32 @@ def render_restoration(rest: str, left: list[str], right: list[str]) -> str | No
     return None             # DROP (noise), SELF, <pad>
 
 
-def restore(words: list[Word], gaps: list[GapCand], preds: list[list[dict]], ctx: int = 16,
-            skip_types: frozenset[str] = frozenset()) -> list[Token]:
-    """Merge the ASR words with the units predicted for every gap.
+def restore_windows(windows: list[Window], preds: list[list[list[str]]],
+                    skip_types: frozenset[str] = frozenset()) -> list[Token]:
+    """Merge every window's ASR words with the units predicted for its slots.
 
-    ``preds[g]`` are the predicted units of ``gaps[g]`` (``{s, e, type, restoration}``, phone-relative).
-    Units whose type is in ``skip_types`` are detected but not inserted into the transcript.
+    ``preds[w][s]`` are the ``"LABEL|TARGET"`` units of slot ``s`` of window ``w`` (slot ``s`` = in front of word
+    ``s``; the last slot follows the last word). Units whose type is in ``skip_types`` are detected but not
+    inserted. The model gives no times, so the units of a slot share the pause between its two neighbouring words.
     """
-    by_slot: dict[int, list[Token]] = {}
-    texts = [w.text for w in words]
-    for g, (cand, units) in enumerate(zip(gaps, preds)):
-        left, right = texts[max(0, cand.slot - ctx):cand.slot], texts[cand.slot:cand.slot + ctx]
-        for u in sorted(units, key=lambda u: u["s"]):
-            if u["type"] in skip_types:
-                continue
-            surface = render_restoration(u["restoration"], left, right)
-            if surface is None:
-                continue
-            t0, t1 = cand.times[u["s"]][0], cand.times[min(u["e"], len(cand.times)) - 1][1]
-            by_slot.setdefault(cand.slot, []).append(
-                Token(surface, "restored", t0, t1, label=u["type"], rest=u["restoration"], gap=g))
     out: list[Token] = []
-    for k, w in enumerate(words):
-        out += by_slot.get(k, [])
-        out.append(Token(w.text, "asr", w.start, w.end))
-    out += by_slot.get(len(words), [])
+    for wi, (win, slots) in enumerate(zip(windows, preds)):
+        texts = [w.text for w in win.words]
+        n = len(texts)
+        for s in range(n + 1):
+            units = [u.split("|", 1) for u in slots[s] if u.split("|", 1)[0] not in skip_types] if s < len(slots) else []
+            t0 = win.words[s - 1].end if s > 0 else win.t0
+            t1 = win.words[s].start if s < n else win.t1
+            t1 = max(t0, t1)
+            rendered = [(lab, tgt, render_restoration(tgt, texts[:s], texts[s:])) for lab, tgt in units]
+            rendered = [r for r in rendered if r[2] is not None]
+            for k, (lab, tgt, surface) in enumerate(rendered):
+                a = t0 + (t1 - t0) * k / len(rendered)
+                b = t0 + (t1 - t0) * (k + 1) / len(rendered)
+                out.append(Token(surface, "restored", a, b, label=lab, rest=tgt, window=wi))
+            if s < n:
+                w = win.words[s]
+                out.append(Token(w.text, "asr", w.start, w.end, window=wi))
     return out
 
 

@@ -1,13 +1,12 @@
-"""Pipeline pieces that need no model: VAD chunking, ASR word normalisation, phone alignment,
-gap extraction and restoration rendering."""
+"""Pipeline pieces that need no model: VAD chunking, ASR word normalisation, CTC collapse, windowing of
+words + recognized phones, and restoration rendering."""
 import pytest
 
-from pipeline.align import align_phones, insertion_slots
-from pipeline.asr import Word, norm_word, words_from_segments
+from pipeline.asr import FILLER_SPELLING, Word, norm_word, normalize_fillers, words_from_segments
 from pipeline.audio import chunk_speech
-from pipeline.extract import GapParams, build_examples, find_gaps, phone_durations
 from pipeline.phonerec import RecPhone, collapse, to_swb
-from pipeline.restore import UNKNOWN, render_restoration, restore, to_text
+from pipeline.restore import UNKNOWN, render_restoration, restore_windows, to_text
+from pipeline.windows import Window, make_windows
 
 
 # ------------------------------------------------------------------ audio / asr
@@ -37,6 +36,16 @@ def test_norm_word_strips_edges_keeps_inner_apostrophe():
     assert norm_word(" ...") == ""
 
 
+def test_normalize_fillers_respells_whisper_ah_and_touches_nothing_else():
+    ws = [Word("so", 0.0, 0.2), Word("ah", 0.3, 0.6, 0.4), Word("yes", 0.7, 0.9), Word("ah", 1.0, 1.2), Word("um", 1.3, 1.5)]
+    out, n = normalize_fillers(ws)
+    assert [w.text for w in out] == ["so", "uh", "yes", "uh", "um"] and n == 2           # "um" is already Switchboard spelling
+    assert (out[1].start, out[1].end, out[1].prob) == (0.3, 0.6, 0.4)                       # times and confidence are kept
+    assert ws[1].text == "ah" and out[0] is ws[0]                                           # input is not modified
+    assert normalize_fillers(ws, {})[1] == 0 and normalize_fillers([])[0] == []
+    assert normalize_fillers(ws, {"yes": "yeah"})[0][2].text == "yeah" and FILLER_SPELLING == {"ah": "uh"}
+
+
 def test_words_from_segments_offsets_and_drops_empty():
     segs = [{"words": [{"word": " So", "start": 0.0, "end": 0.2, "probability": 0.9},
                        {"word": ",", "start": 0.2, "end": 0.2},
@@ -54,129 +63,6 @@ def test_collapse_merges_repeats_and_drops_blank():
     assert toks[0]["start"] == pytest.approx(1.02) and toks[0]["end"] == pytest.approx(1.06)
 
 
-# ------------------------------------------------------------------ alignment
-
-def run_align(words, rec, times=None):
-    """words: list of (phones) per word, each 0.3 s long back to back; rec: list of (phone, time)."""
-    exp_ph, exp_wi, exp_t = [], [], []
-    for k, ph in enumerate(words):
-        for q, p in enumerate(ph):
-            exp_ph.append(p)
-            exp_wi.append(k)
-            exp_t.append(k * 0.3 + (q + 0.5) / len(ph) * 0.3)
-    rec_ph = [p for p, _ in rec]
-    rec_t = [t for _, t in rec]
-    ops = align_phones(exp_ph, exp_wi, exp_t, rec_ph, rec_t)
-    return ops, insertion_slots(ops, exp_wi, len(words))
-
-
-def test_perfect_recognition_has_no_insertions():
-    words = [["dh", "ax"], ["k", "ae", "t"]]
-    rec = [("dh", 0.07), ("ax", 0.22), ("k", 0.35), ("ae", 0.45), ("t", 0.55)]
-    ops, (slots, inside) = run_align(words, rec)
-    assert all(o[0] == "M" for o in ops) and slots == {} and inside == 0
-
-
-def test_filler_between_words_becomes_a_gap_at_the_boundary():
-    words = [["dh", "ax"], ["k", "ae", "t"]]
-    # dh ax [ah m] k ae t -- the filler sits in the 0.3-0.6 s window, words shifted to make room
-    exp = words
-    rec = [("dh", 0.07), ("ax", 0.22), ("ah", 0.3), ("m", 0.4), ("k", 0.65), ("ae", 0.75), ("t", 0.85)]
-    _, (slots, inside) = run_align(exp, rec)
-    assert slots == {1: [2, 3]} and inside == 0
-
-
-def test_repeated_word_inserts_at_boundary_not_inside_word():
-    words = [["dh", "ax"], ["k", "ae", "t"]]
-    rec = [("dh", 0.07), ("ax", 0.22), ("dh", 0.35), ("ax", 0.45), ("k", 0.6), ("ae", 0.7), ("t", 0.8)]
-    _, (slots, inside) = run_align(words, rec)
-    assert inside == 0 and list(slots) == [1]                    # gap between "the" and "cat"
-    assert [rec[j][0] for j in slots[1]] == ["dh", "ax"]
-
-
-def test_leading_and_trailing_insertions_use_edge_slots():
-    words = [["k", "ae", "t"]]
-    rec = [("ah", 0.0), ("k", 0.05), ("ae", 0.15), ("t", 0.25), ("m", 0.5)]
-    _, (slots, _) = run_align(words, rec)
-    assert slots == {0: [0], 1: [4]}
-
-
-def test_missed_phone_is_a_deletion_not_a_gap():
-    words = [["k", "ae", "t"], ["s", "ae", "t"]]
-    rec = [("k", 0.05), ("t", 0.25), ("s", 0.35), ("ae", 0.45), ("t", 0.55)]     # "ae" of cat missed
-    ops, (slots, _) = run_align(words, rec)
-    assert slots == {} and sum(o[0] == "D" for o in ops) == 1
-
-
-def test_substitution_of_confusable_phone_is_not_an_insertion():
-    words = [["b", "ae", "t"]]
-    rec = [("p", 0.05), ("ae", 0.15), ("t", 0.25)]
-    ops, (slots, _) = run_align(words, rec)
-    assert [o[0] for o in ops] == ["S", "M", "M"] and slots == {}
-
-
-def test_empty_sides():
-    assert align_phones([], [], [], ["ah"], [0.1]) == [("I", None, 0)]
-    assert align_phones(["ah"], [0], [0.1], [], []) == [("D", 0, None)]
-    slots, inside = insertion_slots([("I", None, 0), ("I", None, 1)], [], 0)
-    assert slots == {0: [0, 1]} and inside == 0
-
-
-# ------------------------------------------------------------------ gap extraction
-
-class FakeG2P:
-    table = {"the": ["dh", "ax"], "cat": ["k", "ae", "t"], "sat": ["s", "ae", "t"]}
-
-    def phones(self, w):
-        return self.table[w]
-
-    def variants(self, w):
-        return [self.table[w]] + self.extra.get(w, [])
-
-    extra: dict = {}
-
-
-def rec(ph, t0, step=0.1):
-    return [RecPhone(p, t0 + k * step, t0 + k * step + 0.04, 0.9) for k, p in enumerate(ph)]
-
-
-def test_find_gaps_global_slot_and_stats():
-    words = [Word("the", 0.0, 0.3), Word("cat", 0.6, 0.9)]
-    r = rec(["dh", "ax"], 0.05) + rec(["ah", "m"], 0.3) + rec(["k", "ae", "t"], 0.62)
-    gaps, st = find_gaps(words, r, FakeG2P(), base_word=10)
-    assert [(g.slot, g.phones) for g in gaps] == [(11, ["ah", "m"])]
-    assert st["kept"] == 1 and st["matched"] == 5 and st["deleted"] == 0
-    g = gaps[0]
-    # "ah" lasts until "m" (0.1 s); "m" until "k" (0.22 s away) but is capped at 0.15 s
-    assert g.start == pytest.approx(0.3) and g.dur == pytest.approx(0.25)
-
-
-def test_find_gaps_filters():
-    words = [Word("the", 0.0, 0.3), Word("cat", 0.6, 0.9)]
-    r = rec(["dh", "ax"], 0.05) + rec(["ah"], 0.3) + rec(["k", "ae", "t"], 0.62)
-    assert find_gaps(words, r, FakeG2P(), params=GapParams(min_phones=2))[1]["too_short"] == 1
-    assert find_gaps(words, r, FakeG2P(), params=GapParams(max_phones=0))[1]["too_long"] == 1
-    assert find_gaps(words, r, FakeG2P(), params=GapParams(min_prob=0.95))[1]["low_prob"] == 1
-    assert find_gaps(words, r, FakeG2P(), params=GapParams(min_dur=0.2))[1]["too_brief"] == 1   # 0.15 s (capped)
-    assert find_gaps(words, r, FakeG2P(), params=GapParams(min_dur=0.15))[1]["kept"] == 1
-
-
-def test_chunk_with_no_words_turns_all_phones_into_one_gap():
-    gaps, st = find_gaps([], rec(["ah", "m"], 1.0), FakeG2P(), base_word=7, params=GapParams(min_dur=0.0))
-    assert [(g.slot, g.phones) for g in gaps] == [(7, ["ah", "m"])]
-
-
-def test_phone_durations_clip_to_cap_and_floor():
-    r = [RecPhone("a", 0.0, 0.02, 1), RecPhone("b", 0.01, 0.03, 1), RecPhone("c", 1.0, 1.02, 1)]
-    assert phone_durations(r, cap=0.15, floor=0.04) == [0.04, 0.15, 0.04]
-
-
-def test_build_examples_context_windows():
-    cand = find_gaps([Word("the", 0.0, 0.3), Word("cat", 0.6, 0.9)],
-                     rec(["dh", "ax"], 0.05) + rec(["ah"], 0.3) + rec(["k", "ae", "t"], 0.62), FakeG2P())[0]
-    ex = build_examples(cand, ["the", "cat"], sid="x", ctx=16)
-    assert ex[0]["left"] == ["the"] and ex[0]["right"] == ["cat"] and ex[0]["units"] == [] and ex[0]["kind"] == "gap"
-
 
 def test_to_swb_splits_multi_phone_tokens():
     class M:
@@ -184,6 +70,49 @@ def test_to_swb_splits_multi_phone_tokens():
             return {"aɪ": ["ay"], "ɑːɹ": ["aa", "r"], "?": []}[t]
     out = to_swb([{"tok": "ɑːɹ", "start": 1.0, "end": 1.2, "p": 0.5}, {"tok": "?", "start": 2, "end": 2.1, "p": 1}], M())
     assert [(p.ph, round(p.start, 2), round(p.end, 2)) for p in out] == [("aa", 1.0, 1.1), ("r", 1.1, 1.2)]
+
+
+# ------------------------------------------------------------------ windows
+
+class FakeG2P:
+    table = {"the": ["dh", "ax"], "cat": ["k", "ae", "t"], "sat": ["s", "ae", "t"], "on": ["aa", "n"]}
+
+    def phones(self, w):
+        return self.table.get(w, ["ax"])
+
+
+def rec(ph, t0, step=0.1):
+    return [RecPhone(p, t0 + k * step, t0 + k * step + 0.04, 0.9) for k, p in enumerate(ph)]
+
+
+def test_make_windows_single_window_keeps_all_phones_in_order():
+    words = [Word("the", 0.0, 0.3), Word("cat", 0.6, 0.9)]
+    r = rec(["dh", "ax"], 0.05) + rec(["ah", "m"], 0.3) + rec(["k", "ae", "t"], 0.62)
+    (w,) = make_windows(words, r, FakeG2P(), 0.0, 1.0)
+    assert [x.text for x in w.words] == ["the", "cat"] and w.final
+    assert w.exp == [["dh", "ax"], ["k", "ae", "t"]]
+    assert w.rec == ["dh", "ax", "ah", "m", "k", "ae", "t"]            # the filler is kept, nothing is aligned away
+    ex = w.example("x", 3)
+    assert ex["id"] == "x:w3" and ex["slots"] == [[], [], []] and ex["wtags"] == [0, 0]
+
+
+def test_make_windows_splits_by_word_count_at_the_longest_pause_and_by_time():
+    words = [Word("cat", k * 0.5, k * 0.5 + 0.3) for k in range(12)]
+    words[8] = Word("cat", 4.4, 4.7)                                       # 0.1 s later than the rest: a pause before word 8
+    r = []
+    for k, w in enumerate(words):
+        r += rec(["k", "ae", "t"], w.start + 0.02, step=0.08)
+    wins = make_windows(words, r, FakeG2P(), 0.0, 6.5, max_words=10)
+    assert [len(w.words) for w in wins] == [8, 4]                           # cut moved back to the pause before word 8
+    assert [w.final for w in wins] == [False, True]
+    assert sum(len(w.rec) for w in wins) == len(r) and len(wins[0].rec) == 8 * 3 and len(wins[1].rec) == 4 * 3
+    assert wins[0].t1 == wins[1].t0
+
+
+def test_make_windows_lone_filler_chunk_and_empty_chunk():
+    (w,) = make_windows([], rec(["ah", "m"], 1.0), FakeG2P(), 0.5, 2.0)
+    assert w.words == [] and w.rec == ["ah", "m"] and w.final and w.example("x", 0)["slots"] == [[]]
+    assert make_windows([], [], FakeG2P(), 0.0, 1.0) == []
 
 
 # ------------------------------------------------------------------ restoration
@@ -200,65 +129,32 @@ def test_render_restoration_classes():
     assert render_restoration("SELF", left, right) is None
 
 
-def test_restore_inserts_in_order_and_to_text():
-    from pipeline.extract import GapCand
-    words = [Word("so", 0, .2), Word("the", .5, .7), Word("store", .8, 1.0)]
-    gap = GapCand(slot=1, phones=["ah", "m", "dh", "ax"], start=.2, end=.45, dur=.3, probs=[1] * 4,
-                  times=[(.2, .24), (.3, .34), (.35, .39), (.4, .44)])
-    preds = [[{"s": 2, "e": 4, "type": "REPETITION", "restoration": "COPY_R1"},
-              {"s": 0, "e": 2, "type": "FILLER_HESITATION", "restoration": "FIL:um"}]]
-    toks = restore(words, [gap], preds)
+def _win(words, t0=0.0, t1=5.0):
+    ws = [Word(w, 0.5 + k * 0.5, 0.8 + k * 0.5) for k, w in enumerate(words)]
+    return Window(ws, [["ax"]] * len(ws), [], t0, t1, True)
+
+
+def test_restore_windows_inserts_in_front_of_the_slot_word_in_order():
+    win = _win(["so", "the", "store"])
+    slots = [[], ["FILLER_HESITATION|FIL:um", "REPETITION|COPY_R1"], [], []]
+    toks = restore_windows([win], [slots])
     assert to_text(toks) == "so um the the store"
     assert to_text(toks, annotate=True) == "so [FILLER_HESITATION:um] [REPETITION:the] the store"
-    assert [t.start for t in toks if t.source == "restored"] == [.2, .35]
+    um, rep = [t for t in toks if t.source == "restored"]
+    assert 0.8 <= um.start < um.end <= rep.end <= 1.0 and um.end == pytest.approx(rep.start)   # the pause after "so"
 
 
-def test_restore_drops_noise_and_handles_trailing_slot():
-    from pipeline.extract import GapCand
-    words = [Word("so", 0, .2)]
-    gaps = [GapCand(1, ["s"], .3, .4, .1, [1], [(.3, .4)]), GapCand(1, ["ah"], .5, .6, .1, [1], [(.5, .6)])]
-    preds = [[{"s": 0, "e": 1, "type": "NOISE", "restoration": "DROP"}], [{"s": 0, "e": 1, "type": "FILLER_HESITATION", "restoration": "FIL:uh"}]]
-    assert to_text(restore(words, gaps, preds)) == "so uh"
+def test_restore_windows_end_slot_noise_and_skip_types():
+    win = _win(["so"])
+    slots = [["PARTIAL_WORD|COPY_R1"], ["NOISE|DROP", "FILLER_HESITATION|FIL:uh"]]
+    assert to_text(restore_windows([win], [slots])) == "so so uh"          # the partial-word unit copies "so"
+    toks = restore_windows([win], [slots], skip_types=frozenset({"PARTIAL_WORD"}))
+    assert to_text(toks) == "so uh"                                       # NOISE|DROP inserts nothing; end slot works
+    assert toks[-1].end == 5.0                                            # the end slot runs to the window end
 
 
-# ------------------------------------------------------------------ pronunciation variants
-
-def test_fit_cost_ignores_surrounding_phones_and_charges_missing_ones():
-    from pipeline.align import fit_cost
-    assert fit_cost(["k", "ae", "t"], ["s", "k", "ae", "t", "z"]) == 0.0           # neighbours are free
-    assert fit_cost(["k", "ae", "t"], ["k", "t"]) == pytest.approx(1.0)            # one deletion
-    assert fit_cost(["k", "ae", "t"], []) == pytest.approx(3.0)
-    assert fit_cost(["b"], ["p"]) == pytest.approx(0.4)                            # confusable substitution
-
-
-def test_choose_pronunciation_prefers_variant_supported_by_the_audio():
-    from pipeline.align import AlignParams
-    from pipeline.extract import choose_pronunciation
-    w = Word("and", 1.0, 1.3)
-    heard = [RecPhone("s", 0.7, 0.74, 1), RecPhone("ae", 1.05, 1.1, 1), RecPhone("n", 1.15, 1.2, 1), RecPhone("d", 1.25, 1.3, 1)]
-    full, reduced = ["ae", "n", "d"], ["ax", "n"]
-    assert choose_pronunciation(w, [reduced, full], heard, 0.25, AlignParams()) == full
-    assert choose_pronunciation(w, [full, reduced], heard, 0.25, AlignParams()) == full
-    assert choose_pronunciation(w, [full], [], 0.25, AlignParams()) == full        # single variant: no search
-    assert choose_pronunciation(w, [reduced, full], [], 0.25, AlignParams()) == reduced   # nothing heard: first wins
-
-
-def test_variant_choice_removes_a_spurious_gap():
-    # "and" has a full and a reduced form; the speaker said the full one, so no "d" gap may appear
-    class G(FakeG2P):
-        table = {"and": ["ax", "n"], "cat": ["k", "ae", "t"]}
-        extra = {"and": [["ae", "n", "d"]]}
-    words = [Word("and", 0.0, 0.3), Word("cat", 0.4, 0.7)]
-    r = rec(["ae", "n", "d"], 0.02) + rec(["k", "ae", "t"], 0.42)
-    assert find_gaps(words, r, G())[0] == []
-    assert [g.phones for g in find_gaps(words, r, G(), params=GapParams(choose_variants=False))[0]] == [["d"]]
-
-
-def test_restore_skips_requested_types_but_keeps_the_rest():
-    from pipeline.extract import GapCand
-    words = [Word("so", 0, .2), Word("the", .5, .7)]
-    gap = GapCand(1, ["d", "ah"], .2, .4, .3, [1, 1], [(.2, .3), (.3, .4)])
-    preds = [[{"s": 0, "e": 1, "type": "PARTIAL_WORD", "restoration": "COPY_R1"},
-              {"s": 1, "e": 2, "type": "FILLER_HESITATION", "restoration": "FIL:uh"}]]
-    assert to_text(restore(words, [gap], preds)) == "so the uh the"      # COPY_R1 repeats "the", then the filler
-    assert to_text(restore(words, [gap], preds, skip_types=frozenset({"PARTIAL_WORD"}))) == "so uh the"
+def test_restore_windows_across_windows():
+    a, b = _win(["so"]), _win(["yes"])
+    toks = restore_windows([a, b], [[[], []], [["FILLER_DM|FIL:well"], []]])
+    assert to_text(toks) == "so well yes"
+    assert [t.window for t in toks] == [0, 1, 1]

@@ -1,91 +1,60 @@
-[18:30:34] audio 1937.0s
-[18:30:34] VAD: 176 chunks, 1812s of speech
-[18:30:34] ASR: 4209 words
-[18:30:34] phones: 15789 recognized
-[18:30:35] gaps: 139 kept of 310 candidates
-W1118 18:30:35.999000 33614 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
-Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 25244.73it/s]
+[21:49:35] audio 1937.0s
+[21:49:35] VAD: 176 chunks, 1812s of speech
+[21:49:35] ASR: 4209 words
+[21:49:35] phones: 15789 recognized
+W1118 21:49:36.901000 69718 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 19773.20it/s]
 [transformers] [1mBertModel LOAD REPORT[0m from: bert-base-uncased
 Key                                        | Status     |  | 
 -------------------------------------------+------------+--+-
-cls.predictions.transform.dense.weight     | UNEXPECTED |  | 
 cls.predictions.transform.LayerNorm.bias   | UNEXPECTED |  | 
-cls.predictions.transform.dense.bias       | UNEXPECTED |  | 
-cls.seq_relationship.bias                  | UNEXPECTED |  | 
 cls.predictions.bias                       | UNEXPECTED |  | 
+cls.predictions.transform.dense.weight     | UNEXPECTED |  | 
+cls.predictions.transform.dense.bias       | UNEXPECTED |  | 
 cls.seq_relationship.weight                | UNEXPECTED |  | 
+cls.seq_relationship.bias                  | UNEXPECTED |  | 
 cls.predictions.transform.LayerNorm.weight | UNEXPECTED |  | 
 
 Notes:
 - UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
 [transformers] The new embeddings will be initialized from a multivariate normal distribution that has old embeddings' mean and covariance. As described in this article: https://nlp.stanford.edu/~johnhew/vocab-expansion.html. To disable this, use `mean_resizing=False`
-[18:30:37] restored 91 tokens in 139 gaps
+[21:49:42] 354 windows; 434 units predicted, 279 inserted
 {
   "audio": "data/nptel/wav16k/english_001.wav",
   "seconds": 1937.0,
   "chunks": 176,
   "asr_words": 4209,
-  "gap_stats": {
-    "exp_phones": 15728,
-    "rec_phones": 15789,
-    "inserted": 644,
-    "inside_word": 159,
-    "too_short": 0,
-    "too_long": 0,
-    "low_prob": 0,
-    "too_brief": 171,
-    "kept": 139,
-    "matched": 12018,
-    "substituted": 3127,
-    "deleted": 583
+  "windows": 354,
+  "predicted_units": 434,
+  "predicted_by_type": {
+    "REPETITION": 98,
+    "NOISE": 155,
+    "FILLER_HESITATION": 42,
+    "PARTIAL_WORD": 75,
+    "FILLER_DM": 53,
+    "REPAIR": 4,
+    "FILLER_BACKCHANNEL": 7
   },
-  "gaps": 139,
-  "restored_tokens": 91,
-  "restored_by_type": {
-    "FILLER_HESITATION": 34,
-    "REPETITION": 43,
-    "FILLER_DM": 7,
-    "REPAIR": 1,
-    "FALSE_START": 3,
-    "NOISE": 3
-  },
-  "ckpt": "ckpt/colab_main",
+  "inserted_tokens": 279,
+  "skipped_types": [],
+  "none_bias": 0.0,
+  "ckpt": "ckpt/seq_colab",
   "whisper": "mlx-community/whisper-large-v3-turbo",
-  "elapsed_s": 3.1
+  "elapsed_s": 6.8
 }
 
---- restored gaps (left context [restored] right context) ---
-setup we have two cameras and [[d]] in this these two
-      -> PARTIAL_WORD:DROP
-by the camera center c prime [[ae]] forms an image of
-      -> FILLER_HESITATION:FIL:uh
-this is what you will get [[t]] in a stereo setup
-      -> NOISE:DROP
-get in a stereo setup for [[d]] every scene point there
-      -> PARTIAL_WORD:W:to
-point there are two image points [[aa]] if they are viewable
-      -> FILLER_HESITATION:FIL:uh
-there are two image points if [[ax]] they are viewable from
-      -> FILLER_HESITATION:FIL:uh
-line between c and c prime [[aa hh]] which is called you
-      -> FILLER_HESITATION:FIL:uh
-points in the image plane and [[d ax]] in fact as you
-      -> PARTIAL_WORD:DROP
-is here which can be interpreted [[er r p r ih t ih d]] as the image of
-      -> REPETITION:COPY_R1 + REPETITION:COPY_R2 + REPETITION:COPY_R2
-these two points these are called [[ow]] epipose and they are
-      -> PARTIAL_WORD:COPY_R1
-by e and e prime and [[ax]] the line joining e
-      -> FILLER_HESITATION:FIL:uh
-the line joining e and x [[s]] which is nothing but
-      -> FILLER_DM:FIL:so
-with the first image plane it [[iy ih t]] will be giving you
-      -> REPETITION:COPY_R2
-giving you another line say and [[d]] similarly you get two
-      -> PARTIAL_WORD:COPY_R1
+--- restored tokens in context ---
+  a new topic that is on [REPETITION:stereo] stereo geometry so let us consider
+  setup we have two cameras and [REPETITION:in] in this these two cameras they
+  capital x in the first camera [REPETITION:whose] whose camera center is given as
+  camera given by the camera center [FILLER_HESITATION:uh] c prime [FILLER_HESITATION:uh] forms an image
+  the camera center [FILLER_HESITATION:uh] c prime [FILLER_HESITATION:uh] forms an image of that same
+  point at x prime in its [PARTIAL_WORD:own] own image plane so you have
+  point there are two image points [FILLER_DM:so] if they are viewable from the
+  line between c and c prime [FILLER_HESITATION:uh] which is called you know for
 
 --- WER sanity check (4380 verbatim / 4030 fluent gold words) ---
 ASR vs verbatim gold:       0.096
-restored vs verbatim gold:  0.096
+restored vs verbatim gold:  0.137
 ASR vs fluent gold:         0.091
-restored vs fluent gold:    0.109
+restored vs fluent gold:    0.154

@@ -1,0 +1,1743 @@
+{
+  "ckpt": "ckpt/seq_colab",
+  "nptel_files": [
+    {
+      "file": "english_001.rsml",
+      "segments": 295,
+      "minutes": 29.5,
+      "windows": 83,
+      "from_token": 2633
+    }
+  ],
+  "gold_units": {
+    "FILLER_HESITATION": 59,
+    "FILLER_DM": 16,
+    "FALSE_START": 29,
+    "REPETITION": 33,
+    "REPAIR": 9,
+    "PARTIAL_WORD": 7
+  },
+  "dropped_tags": {
+    "@stutter-block": 12,
+    "@breathe": 1,
+    "@long-pause": 4,
+    "@unintelligible": 2,
+    "@short-pause": 5
+  },
+  "words_per_window": 20,
+  "from_frac": 0.6,
+  "results": {
+    "nptel_g2p_clean": {
+      "0.0": {
+        "per_type": {
+          "FALSE_START": {
+            "support": 21,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "FILLER_DM": {
+            "support": 16,
+            "predicted": 21,
+            "p": 0.5714,
+            "r": 0.75,
+            "f1": 0.6486
+          },
+          "FILLER_HESITATION": {
+            "support": 59,
+            "predicted": 51,
+            "p": 1.0,
+            "r": 0.8644,
+            "f1": 0.9273
+          },
+          "PARTIAL_WORD": {
+            "support": 6,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "REPAIR": {
+            "support": 9,
+            "predicted": 4,
+            "p": 0.25,
+            "r": 0.1111,
+            "f1": 0.1538
+          },
+          "REPETITION": {
+            "support": 29,
+            "predicted": 36,
+            "p": 0.4167,
+            "r": 0.5172,
+            "f1": 0.4615
+          }
+        },
+        "macro_f1": 0.3652,
+        "exact": {
+          "p": 0.6518,
+          "r": 0.5214,
+          "f1": 0.5794,
+          "tp": 73
+        },
+        "slot": {
+          "p": 0.9405,
+          "r": 0.908,
+          "f1": 0.924
+        },
+        "restoration_acc_on_type_matches": 0.9241,
+        "word_tags": {
+          "PROLONGATION": {
+            "support": 0,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "MISPRONUNCIATION": {
+            "support": 0,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          }
+        },
+        "n_windows": 83
+      },
+      "1.0": {
+        "per_type": {
+          "FALSE_START": {
+            "support": 21,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "FILLER_DM": {
+            "support": 16,
+            "predicted": 24,
+            "p": 0.5,
+            "r": 0.75,
+            "f1": 0.6
+          },
+          "FILLER_HESITATION": {
+            "support": 59,
+            "predicted": 56,
+            "p": 0.9643,
+            "r": 0.9153,
+            "f1": 0.9391
+          },
+          "PARTIAL_WORD": {
+            "support": 6,
+            "predicted": 1,
+            "p": 1.0,
+            "r": 0.1667,
+            "f1": 0.2857
+          },
+          "REPAIR": {
+            "support": 9,
+            "predicted": 5,
+            "p": 0.2,
+            "r": 0.1111,
+            "f1": 0.1429
+          },
+          "REPETITION": {
+            "support": 29,
+            "predicted": 48,
+            "p": 0.4167,
+            "r": 0.6897,
+            "f1": 0.5195
+          }
+        },
+        "macro_f1": 0.4145,
+        "exact": {
+          "p": 0.6045,
+          "r": 0.5786,
+          "f1": 0.5912,
+          "tp": 81
+        },
+        "slot": {
+          "p": 0.9121,
+          "r": 0.954,
+          "f1": 0.9326
+        },
+        "restoration_acc_on_type_matches": 0.9205,
+        "word_tags": {
+          "PROLONGATION": {
+            "support": 0,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "MISPRONUNCIATION": {
+            "support": 0,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          }
+        },
+        "n_windows": 83
+      },
+      "2.0": {
+        "per_type": {
+          "FALSE_START": {
+            "support": 21,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "FILLER_DM": {
+            "support": 16,
+            "predicted": 25,
+            "p": 0.48,
+            "r": 0.75,
+            "f1": 0.5854
+          },
+          "FILLER_HESITATION": {
+            "support": 59,
+            "predicted": 63,
+            "p": 0.8571,
+            "r": 0.9153,
+            "f1": 0.8852
+          },
+          "PARTIAL_WORD": {
+            "support": 6,
+            "predicted": 1,
+            "p": 1.0,
+            "r": 0.1667,
+            "f1": 0.2857
+          },
+          "REPAIR": {
+            "support": 9,
+            "predicted": 12,
+            "p": 0.0833,
+            "r": 0.1111,
+            "f1": 0.0952
+          },
+          "REPETITION": {
+            "support": 29,
+            "predicted": 58,
+            "p": 0.3621,
+            "r": 0.7241,
+            "f1": 0.4828
+          }
+        },
+        "macro_f1": 0.389,
+        "exact": {
+          "p": 0.5157,
+          "r": 0.5857,
+          "f1": 0.5485,
+          "tp": 82
+        },
+        "slot": {
+          "p": 0.8485,
+          "r": 0.9655,
+          "f1": 0.9032
+        },
+        "restoration_acc_on_type_matches": 0.9213,
+        "word_tags": {
+          "PROLONGATION": {
+            "support": 0,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "MISPRONUNCIATION": {
+            "support": 0,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          }
+        },
+        "n_windows": 83
+      },
+      "3.0": {
+        "per_type": {
+          "FALSE_START": {
+            "support": 21,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "FILLER_DM": {
+            "support": 16,
+            "predicted": 27,
+            "p": 0.4444,
+            "r": 0.75,
+            "f1": 0.5581
+          },
+          "FILLER_HESITATION": {
+            "support": 59,
+            "predicted": 66,
+            "p": 0.8182,
+            "r": 0.9153,
+            "f1": 0.864
+          },
+          "PARTIAL_WORD": {
+            "support": 6,
+            "predicted": 1,
+            "p": 1.0,
+            "r": 0.1667,
+            "f1": 0.2857
+          },
+          "REPAIR": {
+            "support": 9,
+            "predicted": 20,
+            "p": 0.05,
+            "r": 0.1111,
+            "f1": 0.069
+          },
+          "REPETITION": {
+            "support": 29,
+            "predicted": 75,
+            "p": 0.32,
+            "r": 0.8276,
+            "f1": 0.4615
+          }
+        },
+        "macro_f1": 0.3731,
+        "exact": {
+          "p": 0.4497,
+          "r": 0.6071,
+          "f1": 0.5167,
+          "tp": 85
+        },
+        "slot": {
+          "p": 0.7963,
+          "r": 0.9885,
+          "f1": 0.8821
+        },
+        "restoration_acc_on_type_matches": 0.9239,
+        "word_tags": {
+          "PROLONGATION": {
+            "support": 0,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "MISPRONUNCIATION": {
+            "support": 0,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          }
+        },
+        "n_windows": 83
+      }
+    },
+    "nptel_g2p_noisy": {
+      "0.0": {
+        "per_type": {
+          "FALSE_START": {
+            "support": 21,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "FILLER_DM": {
+            "support": 16,
+            "predicted": 12,
+            "p": 0.6667,
+            "r": 0.5,
+            "f1": 0.5714
+          },
+          "FILLER_HESITATION": {
+            "support": 59,
+            "predicted": 43,
+            "p": 0.814,
+            "r": 0.5932,
+            "f1": 0.6863
+          },
+          "NOISE": {
+            "support": 0,
+            "predicted": 1,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "PARTIAL_WORD": {
+            "support": 6,
+            "predicted": 1,
+            "p": 1.0,
+            "r": 0.1667,
+            "f1": 0.2857
+          },
+          "REPAIR": {
+            "support": 9,
+            "predicted": 4,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "REPETITION": {
+            "support": 29,
+            "predicted": 33,
+            "p": 0.4242,
+            "r": 0.4828,
+            "f1": 0.4516
+          }
+        },
+        "macro_f1": 0.3325,
+        "exact": {
+          "p": 0.5745,
+          "r": 0.3857,
+          "f1": 0.4615,
+          "tp": 54
+        },
+        "slot": {
+          "p": 0.8082,
+          "r": 0.6782,
+          "f1": 0.7375
+        },
+        "restoration_acc_on_type_matches": 0.931,
+        "word_tags": {
+          "PROLONGATION": {
+            "support": 0,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "MISPRONUNCIATION": {
+            "support": 0,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          }
+        },
+        "n_windows": 83
+      },
+      "1.0": {
+        "per_type": {
+          "FALSE_START": {
+            "support": 21,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "FILLER_DM": {
+            "support": 16,
+            "predicted": 13,
+            "p": 0.6154,
+            "r": 0.5,
+            "f1": 0.5517
+          },
+          "FILLER_HESITATION": {
+            "support": 59,
+            "predicted": 56,
+            "p": 0.7321,
+            "r": 0.6949,
+            "f1": 0.713
+          },
+          "NOISE": {
+            "support": 0,
+            "predicted": 1,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "PARTIAL_WORD": {
+            "support": 6,
+            "predicted": 1,
+            "p": 1.0,
+            "r": 0.1667,
+            "f1": 0.2857
+          },
+          "REPAIR": {
+            "support": 9,
+            "predicted": 7,
+            "p": 0.1429,
+            "r": 0.1111,
+            "f1": 0.125
+          },
+          "REPETITION": {
+            "support": 29,
+            "predicted": 42,
+            "p": 0.3571,
+            "r": 0.5172,
+            "f1": 0.4225
+          }
+        },
+        "macro_f1": 0.3497,
+        "exact": {
+          "p": 0.5083,
+          "r": 0.4357,
+          "f1": 0.4692,
+          "tp": 61
+        },
+        "slot": {
+          "p": 0.7667,
+          "r": 0.7931,
+          "f1": 0.7797
+        },
+        "restoration_acc_on_type_matches": 0.9242,
+        "word_tags": {
+          "PROLONGATION": {
+            "support": 0,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "MISPRONUNCIATION": {
+            "support": 0,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          }
+        },
+        "n_windows": 83
+      },
+      "2.0": {
+        "per_type": {
+          "FALSE_START": {
+            "support": 21,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "FILLER_DM": {
+            "support": 16,
+            "predicted": 17,
+            "p": 0.5882,
+            "r": 0.625,
+            "f1": 0.6061
+          },
+          "FILLER_HESITATION": {
+            "support": 59,
+            "predicted": 73,
+            "p": 0.6027,
+            "r": 0.7458,
+            "f1": 0.6667
+          },
+          "NOISE": {
+            "support": 0,
+            "predicted": 2,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "PARTIAL_WORD": {
+            "support": 6,
+            "predicted": 3,
+            "p": 0.3333,
+            "r": 0.1667,
+            "f1": 0.2222
+          },
+          "REPAIR": {
+            "support": 9,
+            "predicted": 14,
+            "p": 0.0714,
+            "r": 0.1111,
+            "f1": 0.087
+          },
+          "REPETITION": {
+            "support": 29,
+            "predicted": 56,
+            "p": 0.3214,
+            "r": 0.6207,
+            "f1": 0.4235
+          }
+        },
+        "macro_f1": 0.3342,
+        "exact": {
+          "p": 0.4,
+          "r": 0.4714,
+          "f1": 0.4328,
+          "tp": 66
+        },
+        "slot": {
+          "p": 0.6754,
+          "r": 0.8851,
+          "f1": 0.7662
+        },
+        "restoration_acc_on_type_matches": 0.8919,
+        "word_tags": {
+          "PROLONGATION": {
+            "support": 0,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "MISPRONUNCIATION": {
+            "support": 0,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          }
+        },
+        "n_windows": 83
+      },
+      "3.0": {
+        "per_type": {
+          "FALSE_START": {
+            "support": 21,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "FILLER_DM": {
+            "support": 16,
+            "predicted": 18,
+            "p": 0.5556,
+            "r": 0.625,
+            "f1": 0.5882
+          },
+          "FILLER_HESITATION": {
+            "support": 59,
+            "predicted": 102,
+            "p": 0.4314,
+            "r": 0.7458,
+            "f1": 0.5466
+          },
+          "NOISE": {
+            "support": 0,
+            "predicted": 4,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "PARTIAL_WORD": {
+            "support": 6,
+            "predicted": 3,
+            "p": 0.3333,
+            "r": 0.1667,
+            "f1": 0.2222
+          },
+          "REPAIR": {
+            "support": 9,
+            "predicted": 17,
+            "p": 0.0588,
+            "r": 0.1111,
+            "f1": 0.0769
+          },
+          "REPETITION": {
+            "support": 29,
+            "predicted": 73,
+            "p": 0.3014,
+            "r": 0.7586,
+            "f1": 0.4314
+          }
+        },
+        "macro_f1": 0.3109,
+        "exact": {
+          "p": 0.318,
+          "r": 0.4929,
+          "f1": 0.3866,
+          "tp": 69
+        },
+        "slot": {
+          "p": 0.5423,
+          "r": 0.8851,
+          "f1": 0.6725
+        },
+        "restoration_acc_on_type_matches": 0.8846,
+        "word_tags": {
+          "PROLONGATION": {
+            "support": 0,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "MISPRONUNCIATION": {
+            "support": 0,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          }
+        },
+        "n_windows": 83
+      }
+    },
+    "nptel_recognized": {
+      "0.0": {
+        "per_type": {
+          "FALSE_START": {
+            "support": 21,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "FILLER_BACKCHANNEL": {
+            "support": 0,
+            "predicted": 4,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "FILLER_DM": {
+            "support": 16,
+            "predicted": 39,
+            "p": 0.2821,
+            "r": 0.6875,
+            "f1": 0.4
+          },
+          "FILLER_HESITATION": {
+            "support": 59,
+            "predicted": 28,
+            "p": 0.6071,
+            "r": 0.2881,
+            "f1": 0.3908
+          },
+          "NOISE": {
+            "support": 0,
+            "predicted": 29,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "PARTIAL_WORD": {
+            "support": 6,
+            "predicted": 11,
+            "p": 0.0909,
+            "r": 0.1667,
+            "f1": 0.1176
+          },
+          "REPAIR": {
+            "support": 9,
+            "predicted": 7,
+            "p": 0.1429,
+            "r": 0.1111,
+            "f1": 0.125
+          },
+          "REPETITION": {
+            "support": 29,
+            "predicted": 38,
+            "p": 0.3421,
+            "r": 0.4483,
+            "f1": 0.3881
+          }
+        },
+        "macro_f1": 0.2369,
+        "exact": {
+          "p": 0.2372,
+          "r": 0.2643,
+          "f1": 0.25,
+          "tp": 37
+        },
+        "slot": {
+          "p": 0.3723,
+          "r": 0.5862,
+          "f1": 0.4554
+        },
+        "restoration_acc_on_type_matches": 0.8605,
+        "word_tags": {
+          "PROLONGATION": {
+            "support": 0,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "MISPRONUNCIATION": {
+            "support": 0,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          }
+        },
+        "n_windows": 83
+      },
+      "1.0": {
+        "per_type": {
+          "FALSE_START": {
+            "support": 21,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "FILLER_BACKCHANNEL": {
+            "support": 0,
+            "predicted": 4,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "FILLER_DM": {
+            "support": 16,
+            "predicted": 48,
+            "p": 0.25,
+            "r": 0.75,
+            "f1": 0.375
+          },
+          "FILLER_HESITATION": {
+            "support": 59,
+            "predicted": 34,
+            "p": 0.5,
+            "r": 0.2881,
+            "f1": 0.3656
+          },
+          "NOISE": {
+            "support": 0,
+            "predicted": 39,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "PARTIAL_WORD": {
+            "support": 6,
+            "predicted": 22,
+            "p": 0.0455,
+            "r": 0.1667,
+            "f1": 0.0714
+          },
+          "REPAIR": {
+            "support": 9,
+            "predicted": 16,
+            "p": 0.0625,
+            "r": 0.1111,
+            "f1": 0.08
+          },
+          "REPETITION": {
+            "support": 29,
+            "predicted": 60,
+            "p": 0.25,
+            "r": 0.5172,
+            "f1": 0.3371
+          }
+        },
+        "macro_f1": 0.2049,
+        "exact": {
+          "p": 0.1704,
+          "r": 0.2714,
+          "f1": 0.2094,
+          "tp": 38
+        },
+        "slot": {
+          "p": 0.291,
+          "r": 0.6322,
+          "f1": 0.3986
+        },
+        "restoration_acc_on_type_matches": 0.8261,
+        "word_tags": {
+          "PROLONGATION": {
+            "support": 0,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "MISPRONUNCIATION": {
+            "support": 0,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          }
+        },
+        "n_windows": 83
+      },
+      "2.0": {
+        "per_type": {
+          "FALSE_START": {
+            "support": 21,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "FILLER_BACKCHANNEL": {
+            "support": 0,
+            "predicted": 4,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "FILLER_DM": {
+            "support": 16,
+            "predicted": 62,
+            "p": 0.1935,
+            "r": 0.75,
+            "f1": 0.3077
+          },
+          "FILLER_HESITATION": {
+            "support": 59,
+            "predicted": 48,
+            "p": 0.3542,
+            "r": 0.2881,
+            "f1": 0.3178
+          },
+          "NOISE": {
+            "support": 0,
+            "predicted": 50,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "PARTIAL_WORD": {
+            "support": 6,
+            "predicted": 29,
+            "p": 0.069,
+            "r": 0.3333,
+            "f1": 0.1143
+          },
+          "REPAIR": {
+            "support": 9,
+            "predicted": 28,
+            "p": 0.0714,
+            "r": 0.2222,
+            "f1": 0.1081
+          },
+          "REPETITION": {
+            "support": 29,
+            "predicted": 92,
+            "p": 0.1848,
+            "r": 0.5862,
+            "f1": 0.281
+          }
+        },
+        "macro_f1": 0.1882,
+        "exact": {
+          "p": 0.1278,
+          "r": 0.2857,
+          "f1": 0.1766,
+          "tp": 40
+        },
+        "slot": {
+          "p": 0.2449,
+          "r": 0.6897,
+          "f1": 0.3614
+        },
+        "restoration_acc_on_type_matches": 0.8,
+        "word_tags": {
+          "PROLONGATION": {
+            "support": 0,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "MISPRONUNCIATION": {
+            "support": 0,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          }
+        },
+        "n_windows": 83
+      },
+      "3.0": {
+        "per_type": {
+          "FALSE_START": {
+            "support": 21,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "FILLER_BACKCHANNEL": {
+            "support": 0,
+            "predicted": 4,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "FILLER_DM": {
+            "support": 16,
+            "predicted": 73,
+            "p": 0.1644,
+            "r": 0.75,
+            "f1": 0.2697
+          },
+          "FILLER_HESITATION": {
+            "support": 59,
+            "predicted": 67,
+            "p": 0.2985,
+            "r": 0.339,
+            "f1": 0.3175
+          },
+          "NOISE": {
+            "support": 0,
+            "predicted": 73,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "PARTIAL_WORD": {
+            "support": 6,
+            "predicted": 48,
+            "p": 0.0417,
+            "r": 0.3333,
+            "f1": 0.0741
+          },
+          "REPAIR": {
+            "support": 9,
+            "predicted": 45,
+            "p": 0.0444,
+            "r": 0.2222,
+            "f1": 0.0741
+          },
+          "REPETITION": {
+            "support": 29,
+            "predicted": 144,
+            "p": 0.1458,
+            "r": 0.7241,
+            "f1": 0.2428
+          }
+        },
+        "macro_f1": 0.163,
+        "exact": {
+          "p": 0.1013,
+          "r": 0.3286,
+          "f1": 0.1549,
+          "tp": 46
+        },
+        "slot": {
+          "p": 0.1934,
+          "r": 0.7356,
+          "f1": 0.3062
+        },
+        "restoration_acc_on_type_matches": 0.807,
+        "word_tags": {
+          "PROLONGATION": {
+            "support": 0,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "MISPRONUNCIATION": {
+            "support": 0,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          }
+        },
+        "n_windows": 83
+      }
+    },
+    "switchboard_dev_noisy": {
+      "0.0": {
+        "per_type": {
+          "FALSE_START": {
+            "support": 54,
+            "predicted": 3,
+            "p": 0.3333,
+            "r": 0.0185,
+            "f1": 0.0351
+          },
+          "FILLER_BACKCHANNEL": {
+            "support": 594,
+            "predicted": 609,
+            "p": 0.7521,
+            "r": 0.771,
+            "f1": 0.7614
+          },
+          "FILLER_DM": {
+            "support": 1389,
+            "predicted": 1339,
+            "p": 0.8753,
+            "r": 0.8438,
+            "f1": 0.8592
+          },
+          "FILLER_HESITATION": {
+            "support": 1113,
+            "predicted": 864,
+            "p": 0.7894,
+            "r": 0.6128,
+            "f1": 0.6899
+          },
+          "NOISE": {
+            "support": 231,
+            "predicted": 167,
+            "p": 0.6587,
+            "r": 0.4762,
+            "f1": 0.5528
+          },
+          "PARTIAL_WORD": {
+            "support": 305,
+            "predicted": 112,
+            "p": 0.5893,
+            "r": 0.2164,
+            "f1": 0.3165
+          },
+          "REPAIR": {
+            "support": 139,
+            "predicted": 49,
+            "p": 0.449,
+            "r": 0.1583,
+            "f1": 0.234
+          },
+          "REPETITION": {
+            "support": 795,
+            "predicted": 607,
+            "p": 0.7891,
+            "r": 0.6025,
+            "f1": 0.6833
+          }
+        },
+        "macro_f1": 0.5165,
+        "exact": {
+          "p": 0.7467,
+          "r": 0.6061,
+          "f1": 0.6691,
+          "tp": 2800
+        },
+        "slot": {
+          "p": 0.9262,
+          "r": 0.8331,
+          "f1": 0.8772
+        },
+        "restoration_acc_on_type_matches": 0.9365,
+        "word_tags": {
+          "PROLONGATION": {
+            "support": 177,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "MISPRONUNCIATION": {
+            "support": 6,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          }
+        },
+        "n_windows": 1500
+      },
+      "1.0": {
+        "per_type": {
+          "FALSE_START": {
+            "support": 54,
+            "predicted": 4,
+            "p": 0.5,
+            "r": 0.037,
+            "f1": 0.069
+          },
+          "FILLER_BACKCHANNEL": {
+            "support": 594,
+            "predicted": 673,
+            "p": 0.7043,
+            "r": 0.798,
+            "f1": 0.7482
+          },
+          "FILLER_DM": {
+            "support": 1389,
+            "predicted": 1465,
+            "p": 0.83,
+            "r": 0.8754,
+            "f1": 0.8521
+          },
+          "FILLER_HESITATION": {
+            "support": 1113,
+            "predicted": 1066,
+            "p": 0.7345,
+            "r": 0.7035,
+            "f1": 0.7187
+          },
+          "NOISE": {
+            "support": 231,
+            "predicted": 199,
+            "p": 0.5879,
+            "r": 0.5065,
+            "f1": 0.5442
+          },
+          "PARTIAL_WORD": {
+            "support": 305,
+            "predicted": 131,
+            "p": 0.5573,
+            "r": 0.2393,
+            "f1": 0.3349
+          },
+          "REPAIR": {
+            "support": 139,
+            "predicted": 60,
+            "p": 0.4667,
+            "r": 0.2014,
+            "f1": 0.2814
+          },
+          "REPETITION": {
+            "support": 795,
+            "predicted": 775,
+            "p": 0.7006,
+            "r": 0.683,
+            "f1": 0.6917
+          }
+        },
+        "macro_f1": 0.53,
+        "exact": {
+          "p": 0.6904,
+          "r": 0.6535,
+          "f1": 0.6714,
+          "tp": 3019
+        },
+        "slot": {
+          "p": 0.8835,
+          "r": 0.8885,
+          "f1": 0.886
+        },
+        "restoration_acc_on_type_matches": 0.9329,
+        "word_tags": {
+          "PROLONGATION": {
+            "support": 177,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "MISPRONUNCIATION": {
+            "support": 6,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          }
+        },
+        "n_windows": 1500
+      },
+      "2.0": {
+        "per_type": {
+          "FALSE_START": {
+            "support": 54,
+            "predicted": 4,
+            "p": 0.5,
+            "r": 0.037,
+            "f1": 0.069
+          },
+          "FILLER_BACKCHANNEL": {
+            "support": 594,
+            "predicted": 737,
+            "p": 0.6567,
+            "r": 0.8148,
+            "f1": 0.7273
+          },
+          "FILLER_DM": {
+            "support": 1389,
+            "predicted": 1579,
+            "p": 0.7866,
+            "r": 0.8942,
+            "f1": 0.8369
+          },
+          "FILLER_HESITATION": {
+            "support": 1113,
+            "predicted": 1275,
+            "p": 0.6541,
+            "r": 0.7493,
+            "f1": 0.6985
+          },
+          "NOISE": {
+            "support": 231,
+            "predicted": 246,
+            "p": 0.5,
+            "r": 0.5325,
+            "f1": 0.5157
+          },
+          "PARTIAL_WORD": {
+            "support": 305,
+            "predicted": 153,
+            "p": 0.5229,
+            "r": 0.2623,
+            "f1": 0.3493
+          },
+          "REPAIR": {
+            "support": 139,
+            "predicted": 81,
+            "p": 0.3951,
+            "r": 0.2302,
+            "f1": 0.2909
+          },
+          "REPETITION": {
+            "support": 795,
+            "predicted": 954,
+            "p": 0.609,
+            "r": 0.7308,
+            "f1": 0.6644
+          }
+        },
+        "macro_f1": 0.519,
+        "exact": {
+          "p": 0.623,
+          "r": 0.6781,
+          "f1": 0.6494,
+          "tp": 3133
+        },
+        "slot": {
+          "p": 0.8225,
+          "r": 0.9139,
+          "f1": 0.8658
+        },
+        "restoration_acc_on_type_matches": 0.9275,
+        "word_tags": {
+          "PROLONGATION": {
+            "support": 177,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "MISPRONUNCIATION": {
+            "support": 6,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          }
+        },
+        "n_windows": 1500
+      },
+      "3.0": {
+        "per_type": {
+          "FALSE_START": {
+            "support": 54,
+            "predicted": 4,
+            "p": 0.5,
+            "r": 0.037,
+            "f1": 0.069
+          },
+          "FILLER_BACKCHANNEL": {
+            "support": 594,
+            "predicted": 779,
+            "p": 0.6264,
+            "r": 0.8215,
+            "f1": 0.7109
+          },
+          "FILLER_DM": {
+            "support": 1389,
+            "predicted": 1714,
+            "p": 0.7363,
+            "r": 0.9086,
+            "f1": 0.8134
+          },
+          "FILLER_HESITATION": {
+            "support": 1113,
+            "predicted": 1589,
+            "p": 0.5437,
+            "r": 0.7763,
+            "f1": 0.6395
+          },
+          "NOISE": {
+            "support": 231,
+            "predicted": 348,
+            "p": 0.3764,
+            "r": 0.5671,
+            "f1": 0.4525
+          },
+          "PARTIAL_WORD": {
+            "support": 305,
+            "predicted": 205,
+            "p": 0.4439,
+            "r": 0.2984,
+            "f1": 0.3569
+          },
+          "REPAIR": {
+            "support": 139,
+            "predicted": 101,
+            "p": 0.3366,
+            "r": 0.2446,
+            "f1": 0.2833
+          },
+          "REPETITION": {
+            "support": 795,
+            "predicted": 1225,
+            "p": 0.4955,
+            "r": 0.7635,
+            "f1": 0.601
+          }
+        },
+        "macro_f1": 0.4908,
+        "exact": {
+          "p": 0.5393,
+          "r": 0.6963,
+          "f1": 0.6078,
+          "tp": 3217
+        },
+        "slot": {
+          "p": 0.7407,
+          "r": 0.9348,
+          "f1": 0.8265
+        },
+        "restoration_acc_on_type_matches": 0.9247,
+        "word_tags": {
+          "PROLONGATION": {
+            "support": 177,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "MISPRONUNCIATION": {
+            "support": 6,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          }
+        },
+        "n_windows": 1500
+      }
+    },
+    "nptel_g2p_profile": {
+      "0.0": {
+        "per_type": {
+          "FALSE_START": {
+            "support": 21,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "FILLER_DM": {
+            "support": 16,
+            "predicted": 37,
+            "p": 0.2432,
+            "r": 0.5625,
+            "f1": 0.3396
+          },
+          "FILLER_HESITATION": {
+            "support": 59,
+            "predicted": 19,
+            "p": 0.4211,
+            "r": 0.1356,
+            "f1": 0.2051
+          },
+          "NOISE": {
+            "support": 0,
+            "predicted": 24,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "PARTIAL_WORD": {
+            "support": 6,
+            "predicted": 17,
+            "p": 0.0588,
+            "r": 0.1667,
+            "f1": 0.087
+          },
+          "REPAIR": {
+            "support": 9,
+            "predicted": 6,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "REPETITION": {
+            "support": 29,
+            "predicted": 38,
+            "p": 0.2368,
+            "r": 0.3103,
+            "f1": 0.2687
+          }
+        },
+        "macro_f1": 0.1501,
+        "exact": {
+          "p": 0.1631,
+          "r": 0.1643,
+          "f1": 0.1637,
+          "tp": 23
+        },
+        "slot": {
+          "p": 0.3475,
+          "r": 0.4713,
+          "f1": 0.4
+        },
+        "restoration_acc_on_type_matches": 0.8519,
+        "word_tags": {
+          "PROLONGATION": {
+            "support": 0,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "MISPRONUNCIATION": {
+            "support": 0,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          }
+        },
+        "n_windows": 83
+      },
+      "1.0": {
+        "per_type": {
+          "FALSE_START": {
+            "support": 21,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "FILLER_DM": {
+            "support": 16,
+            "predicted": 53,
+            "p": 0.1698,
+            "r": 0.5625,
+            "f1": 0.2609
+          },
+          "FILLER_HESITATION": {
+            "support": 59,
+            "predicted": 27,
+            "p": 0.4074,
+            "r": 0.1864,
+            "f1": 0.2558
+          },
+          "NOISE": {
+            "support": 0,
+            "predicted": 37,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "PARTIAL_WORD": {
+            "support": 6,
+            "predicted": 25,
+            "p": 0.04,
+            "r": 0.1667,
+            "f1": 0.0645
+          },
+          "REPAIR": {
+            "support": 9,
+            "predicted": 13,
+            "p": 0.0769,
+            "r": 0.1111,
+            "f1": 0.0909
+          },
+          "REPETITION": {
+            "support": 29,
+            "predicted": 59,
+            "p": 0.2203,
+            "r": 0.4483,
+            "f1": 0.2955
+          }
+        },
+        "macro_f1": 0.1613,
+        "exact": {
+          "p": 0.1449,
+          "r": 0.2214,
+          "f1": 0.1751,
+          "tp": 31
+        },
+        "slot": {
+          "p": 0.2989,
+          "r": 0.5977,
+          "f1": 0.3985
+        },
+        "restoration_acc_on_type_matches": 0.8857,
+        "word_tags": {
+          "PROLONGATION": {
+            "support": 0,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "MISPRONUNCIATION": {
+            "support": 0,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          }
+        },
+        "n_windows": 83
+      },
+      "2.0": {
+        "per_type": {
+          "FALSE_START": {
+            "support": 21,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "FILLER_BACKCHANNEL": {
+            "support": 0,
+            "predicted": 3,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "FILLER_DM": {
+            "support": 16,
+            "predicted": 61,
+            "p": 0.1803,
+            "r": 0.6875,
+            "f1": 0.2857
+          },
+          "FILLER_HESITATION": {
+            "support": 59,
+            "predicted": 46,
+            "p": 0.2609,
+            "r": 0.2034,
+            "f1": 0.2286
+          },
+          "NOISE": {
+            "support": 0,
+            "predicted": 47,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "PARTIAL_WORD": {
+            "support": 6,
+            "predicted": 35,
+            "p": 0.0286,
+            "r": 0.1667,
+            "f1": 0.0488
+          },
+          "REPAIR": {
+            "support": 9,
+            "predicted": 26,
+            "p": 0.0385,
+            "r": 0.1111,
+            "f1": 0.0571
+          },
+          "REPETITION": {
+            "support": 29,
+            "predicted": 96,
+            "p": 0.1771,
+            "r": 0.5862,
+            "f1": 0.272
+          }
+        },
+        "macro_f1": 0.1487,
+        "exact": {
+          "p": 0.1146,
+          "r": 0.2571,
+          "f1": 0.1586,
+          "tp": 36
+        },
+        "slot": {
+          "p": 0.2373,
+          "r": 0.6437,
+          "f1": 0.3467
+        },
+        "restoration_acc_on_type_matches": 0.8571,
+        "word_tags": {
+          "PROLONGATION": {
+            "support": 0,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "MISPRONUNCIATION": {
+            "support": 0,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          }
+        },
+        "n_windows": 83
+      },
+      "3.0": {
+        "per_type": {
+          "FALSE_START": {
+            "support": 21,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "FILLER_BACKCHANNEL": {
+            "support": 0,
+            "predicted": 4,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "FILLER_DM": {
+            "support": 16,
+            "predicted": 80,
+            "p": 0.1375,
+            "r": 0.6875,
+            "f1": 0.2292
+          },
+          "FILLER_HESITATION": {
+            "support": 59,
+            "predicted": 69,
+            "p": 0.2029,
+            "r": 0.2373,
+            "f1": 0.2187
+          },
+          "NOISE": {
+            "support": 0,
+            "predicted": 61,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "PARTIAL_WORD": {
+            "support": 6,
+            "predicted": 47,
+            "p": 0.0426,
+            "r": 0.3333,
+            "f1": 0.0755
+          },
+          "REPAIR": {
+            "support": 9,
+            "predicted": 35,
+            "p": 0.0286,
+            "r": 0.1111,
+            "f1": 0.0455
+          },
+          "REPETITION": {
+            "support": 29,
+            "predicted": 142,
+            "p": 0.1479,
+            "r": 0.7241,
+            "f1": 0.2456
+          }
+        },
+        "macro_f1": 0.1358,
+        "exact": {
+          "p": 0.0959,
+          "r": 0.3,
+          "f1": 0.1453,
+          "tp": 42
+        },
+        "slot": {
+          "p": 0.202,
+          "r": 0.7011,
+          "f1": 0.3136
+        },
+        "restoration_acc_on_type_matches": 0.8571,
+        "word_tags": {
+          "PROLONGATION": {
+            "support": 0,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "MISPRONUNCIATION": {
+            "support": 0,
+            "predicted": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          }
+        },
+        "n_windows": 83
+      }
+    }
+  }
+}

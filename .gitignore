@@ -18,6 +18,7 @@ data/nptel/wav16k/
 # small stats / spot-check files stay tracked.
 data/processed/*.jsonl.gz
 data/gaps/*.jsonl.gz
+data/seq/*.jsonl.gz
 
 # Models / checkpoints
 ckpt/
@@ -32,3 +33,6 @@ ckpt/
 # Course handouts (not part of the repo)
 project-guidelines.pdf
 project-titles.pdf
+
+# Colab result download (installed into ckpt/ by scripts/install_colab_ckpt.sh)
+/main.zip

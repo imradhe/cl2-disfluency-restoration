@@ -30,31 +30,10 @@ from model.bert_gap import BertGap  # noqa: E402
 from model.dataset import TAGS, GapDataset, load_jsonl  # noqa: E402
 from model.gaps import WordDur, build_side  # noqa: E402
 from model.infer import pick_device, predict, unit_prf  # noqa: E402
+from nptel.recognized import load_recognized, recognized_phones  # noqa: E402
 from nptel.rsml import aligned_to_side, parse_rsml, to_side  # noqa: E402
 from phones.g2p import G2P  # noqa: E402
 from phones.noise import PhoneNoise  # noqa: E402
-
-
-def load_recognized(path: Path) -> tuple[list[float], list[dict]]:
-    """Flatten the recognizer output of one lecture into time-sorted tokens (+ their centres)."""
-    toks = []
-    for line in path.read_text().splitlines():
-        toks.extend(json.loads(line)["tokens"])
-    toks.sort(key=lambda t: t["start"])
-    # segments are padded and may overlap: drop duplicates at (almost) the same time
-    uniq, last = [], None
-    for t in toks:
-        if last and t["tok"] == last["tok"] and abs(t["start"] - last["start"]) < 0.03:
-            continue
-        uniq.append(t); last = t
-    return [(t["start"] + t["end"]) / 2 for t in uniq], uniq
-
-
-def recognized_phones(centres: list[float], toks: list[dict], ipa, t0: float, t1: float, tol: float = 0.03) -> list[str]:
-    import bisect
-    lo = bisect.bisect_left(centres, t0 - tol)
-    hi = bisect.bisect_right(centres, t1 + tol)
-    return ipa.map_sequence([t["tok"] for t in toks[lo:hi]])
 
 
 def build_nptel_examples(rsml_dir: Path, g2p: G2P, ctx: int, phones_dir: Path | None = None) -> tuple[list[dict], dict]:

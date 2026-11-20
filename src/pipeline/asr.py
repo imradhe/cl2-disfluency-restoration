@@ -46,6 +46,26 @@ def words_from_segments(segments: list[dict], offset: float = 0.0) -> list[Word]
     return out
 
 
+# Whisper writes a filled pause as "ah" (45 times, never "uh", in the 32-minute NPTEL lecture whose gold writes it
+# "uh" 170 times and never "ah"). The restoration model is trained on Switchboard spelling ("uh" / "um"), so a lone
+# "ah" is respelled before windowing. Anything else is left alone: there is no evidence for other mappings.
+FILLER_SPELLING = {"ah": "uh"}
+
+
+def normalize_fillers(words: list[Word], spelling: dict[str, str] | None = None) -> tuple[list[Word], int]:
+    """New words with Whisper's filler spellings replaced, and the number of words changed (input untouched)."""
+    spelling = FILLER_SPELLING if spelling is None else spelling
+    out, n = [], 0
+    for w in words:
+        s = spelling.get(w.text)
+        if s is None:
+            out.append(w)
+        else:
+            out.append(Word(s, w.start, w.end, w.prob))
+            n += 1
+    return out, n
+
+
 class MlxWhisper:
     def __init__(self, repo: str = DEFAULT_MODEL) -> None:
         self.repo = repo

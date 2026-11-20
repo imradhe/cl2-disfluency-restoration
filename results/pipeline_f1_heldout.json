@@ -1,0 +1,474 @@
+{
+  "from_frac": 0.6,
+  "gold_counts": {
+    "FILLER_HESITATION": 59,
+    "FILLER_BACKCHANNEL": 0,
+    "FILLER_DM": 16,
+    "REPETITION": 33,
+    "REPAIR": 9,
+    "FALSE_START": 29,
+    "PARTIAL_WORD": 7
+  },
+  "results": {
+    "english_001_colab_norm: Whisper alone": {
+      "untyped": {
+        "tp": 27,
+        "system": 32,
+        "gold": 153,
+        "p": 0.8438,
+        "r": 0.1765,
+        "f1": 0.2919
+      },
+      "typed": {
+        "tp": 25,
+        "system": 32,
+        "gold": 153,
+        "p": 0.7812,
+        "r": 0.1634,
+        "f1": 0.2703
+      },
+      "per_type": {
+        "FILLER_HESITATION": {
+          "tp": 22,
+          "system": 23,
+          "gold": 59,
+          "p": 0.9565,
+          "r": 0.3729,
+          "f1": 0.5366
+        },
+        "FILLER_DM": {
+          "tp": 0,
+          "system": 0,
+          "gold": 16,
+          "p": 0.0,
+          "r": 0.0,
+          "f1": 0.0
+        },
+        "REPETITION": {
+          "tp": 3,
+          "system": 9,
+          "gold": 33,
+          "p": 0.3333,
+          "r": 0.0909,
+          "f1": 0.1429
+        },
+        "REPAIR": {
+          "tp": 0,
+          "system": 0,
+          "gold": 9,
+          "p": 0.0,
+          "r": 0.0,
+          "f1": 0.0
+        },
+        "FALSE_START": {
+          "tp": 0,
+          "system": 0,
+          "gold": 29,
+          "p": 0.0,
+          "r": 0.0,
+          "f1": 0.0
+        },
+        "PARTIAL_WORD": {
+          "tp": 0,
+          "system": 0,
+          "gold": 7,
+          "p": 0.0,
+          "r": 0.0,
+          "f1": 0.0
+        }
+      },
+      "correct_by_source": {
+        "rule": 27
+      },
+      "gold_present_but_untagged": 62
+    },
+    "english_001_colab_norm: restored": {
+      "untyped": {
+        "tp": 37,
+        "system": 141,
+        "gold": 153,
+        "p": 0.2624,
+        "r": 0.2418,
+        "f1": 0.2517
+      },
+      "typed": {
+        "tp": 35,
+        "system": 141,
+        "gold": 153,
+        "p": 0.2482,
+        "r": 0.2288,
+        "f1": 0.2381
+      },
+      "per_type": {
+        "FILLER_HESITATION": {
+          "tp": 29,
+          "system": 40,
+          "gold": 59,
+          "p": 0.725,
+          "r": 0.4915,
+          "f1": 0.5859
+        },
+        "FILLER_BACKCHANNEL": {
+          "tp": 0,
+          "system": 5,
+          "gold": 0,
+          "p": 0.0,
+          "r": 0.0,
+          "f1": 0.0
+        },
+        "FILLER_DM": {
+          "tp": 1,
+          "system": 30,
+          "gold": 16,
+          "p": 0.0333,
+          "r": 0.0625,
+          "f1": 0.0435
+        },
+        "REPETITION": {
+          "tp": 5,
+          "system": 37,
+          "gold": 33,
+          "p": 0.1351,
+          "r": 0.1515,
+          "f1": 0.1429
+        },
+        "REPAIR": {
+          "tp": 0,
+          "system": 2,
+          "gold": 9,
+          "p": 0.0,
+          "r": 0.0,
+          "f1": 0.0
+        },
+        "FALSE_START": {
+          "tp": 0,
+          "system": 0,
+          "gold": 29,
+          "p": 0.0,
+          "r": 0.0,
+          "f1": 0.0
+        },
+        "PARTIAL_WORD": {
+          "tp": 0,
+          "system": 27,
+          "gold": 7,
+          "p": 0.0,
+          "r": 0.0,
+          "f1": 0.0
+        }
+      },
+      "correct_by_source": {
+        "rule": 27,
+        "restored": 10
+      },
+      "gold_present_but_untagged": 61,
+      "restoration_only": {
+        "untyped": {
+          "tp": 10,
+          "system": 109,
+          "gold": 64,
+          "p": 0.0917,
+          "r": 0.1562,
+          "f1": 0.1156
+        },
+        "typed": {
+          "tp": 10,
+          "system": 109,
+          "gold": 64,
+          "p": 0.0917,
+          "r": 0.1562,
+          "f1": 0.1156
+        },
+        "per_type": {
+          "FILLER_HESITATION": {
+            "tp": 7,
+            "system": 17,
+            "gold": 37,
+            "p": 0.4118,
+            "r": 0.1892,
+            "f1": 0.2593
+          },
+          "FILLER_BACKCHANNEL": {
+            "tp": 0,
+            "system": 5,
+            "gold": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "FILLER_DM": {
+            "tp": 1,
+            "system": 30,
+            "gold": 5,
+            "p": 0.0333,
+            "r": 0.2,
+            "f1": 0.0571
+          },
+          "REPETITION": {
+            "tp": 2,
+            "system": 28,
+            "gold": 10,
+            "p": 0.0714,
+            "r": 0.2,
+            "f1": 0.1053
+          },
+          "REPAIR": {
+            "tp": 0,
+            "system": 2,
+            "gold": 1,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "FALSE_START": {
+            "tp": 0,
+            "system": 0,
+            "gold": 4,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "PARTIAL_WORD": {
+            "tp": 0,
+            "system": 27,
+            "gold": 7,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          }
+        },
+        "gold_missing_from_whisper": 64
+      }
+    },
+    "english_001_cal_norm: Whisper alone": {
+      "untyped": {
+        "tp": 27,
+        "system": 32,
+        "gold": 153,
+        "p": 0.8438,
+        "r": 0.1765,
+        "f1": 0.2919
+      },
+      "typed": {
+        "tp": 25,
+        "system": 32,
+        "gold": 153,
+        "p": 0.7812,
+        "r": 0.1634,
+        "f1": 0.2703
+      },
+      "per_type": {
+        "FILLER_HESITATION": {
+          "tp": 22,
+          "system": 23,
+          "gold": 59,
+          "p": 0.9565,
+          "r": 0.3729,
+          "f1": 0.5366
+        },
+        "FILLER_DM": {
+          "tp": 0,
+          "system": 0,
+          "gold": 16,
+          "p": 0.0,
+          "r": 0.0,
+          "f1": 0.0
+        },
+        "REPETITION": {
+          "tp": 3,
+          "system": 9,
+          "gold": 33,
+          "p": 0.3333,
+          "r": 0.0909,
+          "f1": 0.1429
+        },
+        "REPAIR": {
+          "tp": 0,
+          "system": 0,
+          "gold": 9,
+          "p": 0.0,
+          "r": 0.0,
+          "f1": 0.0
+        },
+        "FALSE_START": {
+          "tp": 0,
+          "system": 0,
+          "gold": 29,
+          "p": 0.0,
+          "r": 0.0,
+          "f1": 0.0
+        },
+        "PARTIAL_WORD": {
+          "tp": 0,
+          "system": 0,
+          "gold": 7,
+          "p": 0.0,
+          "r": 0.0,
+          "f1": 0.0
+        }
+      },
+      "correct_by_source": {
+        "rule": 27
+      },
+      "gold_present_but_untagged": 62
+    },
+    "english_001_cal_norm: restored": {
+      "untyped": {
+        "tp": 36,
+        "system": 81,
+        "gold": 153,
+        "p": 0.4444,
+        "r": 0.2353,
+        "f1": 0.3077
+      },
+      "typed": {
+        "tp": 34,
+        "system": 81,
+        "gold": 153,
+        "p": 0.4198,
+        "r": 0.2222,
+        "f1": 0.2906
+      },
+      "per_type": {
+        "FILLER_HESITATION": {
+          "tp": 27,
+          "system": 34,
+          "gold": 59,
+          "p": 0.7941,
+          "r": 0.4576,
+          "f1": 0.5806
+        },
+        "FILLER_BACKCHANNEL": {
+          "tp": 0,
+          "system": 2,
+          "gold": 0,
+          "p": 0.0,
+          "r": 0.0,
+          "f1": 0.0
+        },
+        "FILLER_DM": {
+          "tp": 1,
+          "system": 13,
+          "gold": 16,
+          "p": 0.0769,
+          "r": 0.0625,
+          "f1": 0.069
+        },
+        "REPETITION": {
+          "tp": 6,
+          "system": 24,
+          "gold": 33,
+          "p": 0.25,
+          "r": 0.1818,
+          "f1": 0.2105
+        },
+        "REPAIR": {
+          "tp": 0,
+          "system": 0,
+          "gold": 9,
+          "p": 0.0,
+          "r": 0.0,
+          "f1": 0.0
+        },
+        "FALSE_START": {
+          "tp": 0,
+          "system": 0,
+          "gold": 29,
+          "p": 0.0,
+          "r": 0.0,
+          "f1": 0.0
+        },
+        "PARTIAL_WORD": {
+          "tp": 0,
+          "system": 8,
+          "gold": 7,
+          "p": 0.0,
+          "r": 0.0,
+          "f1": 0.0
+        }
+      },
+      "correct_by_source": {
+        "rule": 27,
+        "restored": 9
+      },
+      "gold_present_but_untagged": 61,
+      "restoration_only": {
+        "untyped": {
+          "tp": 9,
+          "system": 49,
+          "gold": 64,
+          "p": 0.1837,
+          "r": 0.1406,
+          "f1": 0.1593
+        },
+        "typed": {
+          "tp": 9,
+          "system": 49,
+          "gold": 64,
+          "p": 0.1837,
+          "r": 0.1406,
+          "f1": 0.1593
+        },
+        "per_type": {
+          "FILLER_HESITATION": {
+            "tp": 5,
+            "system": 11,
+            "gold": 37,
+            "p": 0.4545,
+            "r": 0.1351,
+            "f1": 0.2083
+          },
+          "FILLER_BACKCHANNEL": {
+            "tp": 0,
+            "system": 2,
+            "gold": 0,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "FILLER_DM": {
+            "tp": 1,
+            "system": 13,
+            "gold": 5,
+            "p": 0.0769,
+            "r": 0.2,
+            "f1": 0.1111
+          },
+          "REPETITION": {
+            "tp": 3,
+            "system": 15,
+            "gold": 10,
+            "p": 0.2,
+            "r": 0.3,
+            "f1": 0.24
+          },
+          "REPAIR": {
+            "tp": 0,
+            "system": 0,
+            "gold": 1,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "FALSE_START": {
+            "tp": 0,
+            "system": 0,
+            "gold": 4,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          },
+          "PARTIAL_WORD": {
+            "tp": 0,
+            "system": 8,
+            "gold": 7,
+            "p": 0.0,
+            "r": 0.0,
+            "f1": 0.0
+          }
+        },
+        "gold_missing_from_whisper": 64
+      }
+    }
+  }
+}
