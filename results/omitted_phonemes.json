@@ -1,0 +1,194 @@
+{
+  "espeak recognizer (current) | gold transcript, disfluencies ignored": {
+    "phones": 15722,
+    "omitted": 932,
+    "omitted_by_verbatim": {
+      "nothing": 396,
+      "disfluent token": 419,
+      "fluent token": 117
+    },
+    "accounted_by_verbatim": {
+      "fluent token": 14638,
+      "disfluent token": 146,
+      "nothing": 6
+    },
+    "disfluent_phones_in_P": 565,
+    "token_fate": {
+      "not heard (no phone aligned to it)": 83,
+      "found in the omitted phonemes (>= half of its phones)": 201,
+      "heard but absorbed by the transcript's G2P": 66
+    },
+    "by_type": {
+      "FILLER_HESITATION": {
+        "not heard (no phone aligned to it)": 76,
+        "found in the omitted phonemes (>= half of its phones)": 64,
+        "heard but absorbed by the transcript's G2P": 31
+      },
+      "REPETITION": {
+        "heard but absorbed by the transcript's G2P": 17,
+        "not heard (no phone aligned to it)": 2,
+        "found in the omitted phonemes (>= half of its phones)": 51
+      },
+      "FILLER_DM": {
+        "found in the omitted phonemes (>= half of its phones)": 17,
+        "not heard (no phone aligned to it)": 5,
+        "heard but absorbed by the transcript's G2P": 6
+      },
+      "PARTIAL_WORD": {
+        "found in the omitted phonemes (>= half of its phones)": 20,
+        "heard but absorbed by the transcript's G2P": 2
+      },
+      "FALSE_START": {
+        "heard but absorbed by the transcript's G2P": 9,
+        "found in the omitted phonemes (>= half of its phones)": 39
+      },
+      "REPAIR": {
+        "found in the omitted phonemes (>= half of its phones)": 10,
+        "heard but absorbed by the transcript's G2P": 1
+      }
+    }
+  },
+  "espeak recognizer (current) | Whisper's words": {
+    "phones": 15722,
+    "omitted": 1140,
+    "omitted_by_verbatim": {
+      "fluent token": 607,
+      "nothing": 360,
+      "disfluent token": 173
+    },
+    "accounted_by_verbatim": {
+      "fluent token": 14148,
+      "disfluent token": 392,
+      "nothing": 42
+    },
+    "disfluent_phones_in_P": 565,
+    "token_fate": {
+      "not heard (no phone aligned to it)": 83,
+      "found in the omitted phonemes (>= half of its phones)": 104,
+      "heard but absorbed by the transcript's G2P": 163
+    },
+    "by_type": {
+      "FILLER_HESITATION": {
+        "not heard (no phone aligned to it)": 76,
+        "found in the omitted phonemes (>= half of its phones)": 55,
+        "heard but absorbed by the transcript's G2P": 40
+      },
+      "REPETITION": {
+        "heard but absorbed by the transcript's G2P": 44,
+        "not heard (no phone aligned to it)": 2,
+        "found in the omitted phonemes (>= half of its phones)": 24
+      },
+      "FILLER_DM": {
+        "heard but absorbed by the transcript's G2P": 19,
+        "not heard (no phone aligned to it)": 5,
+        "found in the omitted phonemes (>= half of its phones)": 4
+      },
+      "PARTIAL_WORD": {
+        "heard but absorbed by the transcript's G2P": 7,
+        "found in the omitted phonemes (>= half of its phones)": 15
+      },
+      "FALSE_START": {
+        "heard but absorbed by the transcript's G2P": 42,
+        "found in the omitted phonemes (>= half of its phones)": 6
+      },
+      "REPAIR": {
+        "heard but absorbed by the transcript's G2P": 11
+      }
+    }
+  },
+  "Telugu recognizer | gold transcript, disfluencies ignored": {
+    "phones": 16865,
+    "omitted": 1977,
+    "omitted_by_verbatim": {
+      "nothing": 1354,
+      "fluent token": 231,
+      "disfluent token": 392
+    },
+    "accounted_by_verbatim": {
+      "fluent token": 14616,
+      "disfluent token": 240,
+      "nothing": 32
+    },
+    "disfluent_phones_in_P": 632,
+    "token_fate": {
+      "heard but absorbed by the transcript's G2P": 111,
+      "found in the omitted phonemes (>= half of its phones)": 213,
+      "not heard (no phone aligned to it)": 26
+    },
+    "by_type": {
+      "FILLER_HESITATION": {
+        "heard but absorbed by the transcript's G2P": 62,
+        "found in the omitted phonemes (>= half of its phones)": 84,
+        "not heard (no phone aligned to it)": 25
+      },
+      "REPETITION": {
+        "heard but absorbed by the transcript's G2P": 26,
+        "found in the omitted phonemes (>= half of its phones)": 43,
+        "not heard (no phone aligned to it)": 1
+      },
+      "FILLER_DM": {
+        "found in the omitted phonemes (>= half of its phones)": 22,
+        "heard but absorbed by the transcript's G2P": 6
+      },
+      "PARTIAL_WORD": {
+        "heard but absorbed by the transcript's G2P": 9,
+        "found in the omitted phonemes (>= half of its phones)": 13
+      },
+      "FALSE_START": {
+        "found in the omitted phonemes (>= half of its phones)": 43,
+        "heard but absorbed by the transcript's G2P": 5
+      },
+      "REPAIR": {
+        "found in the omitted phonemes (>= half of its phones)": 8,
+        "heard but absorbed by the transcript's G2P": 3
+      }
+    }
+  },
+  "Telugu recognizer | Whisper's words": {
+    "phones": 16865,
+    "omitted": 2146,
+    "omitted_by_verbatim": {
+      "fluent token": 686,
+      "nothing": 1309,
+      "disfluent token": 151
+    },
+    "accounted_by_verbatim": {
+      "fluent token": 14161,
+      "disfluent token": 481,
+      "nothing": 77
+    },
+    "disfluent_phones_in_P": 632,
+    "token_fate": {
+      "heard but absorbed by the transcript's G2P": 224,
+      "found in the omitted phonemes (>= half of its phones)": 100,
+      "not heard (no phone aligned to it)": 26
+    },
+    "by_type": {
+      "FILLER_HESITATION": {
+        "heard but absorbed by the transcript's G2P": 82,
+        "found in the omitted phonemes (>= half of its phones)": 64,
+        "not heard (no phone aligned to it)": 25
+      },
+      "REPETITION": {
+        "heard but absorbed by the transcript's G2P": 56,
+        "found in the omitted phonemes (>= half of its phones)": 13,
+        "not heard (no phone aligned to it)": 1
+      },
+      "FILLER_DM": {
+        "heard but absorbed by the transcript's G2P": 21,
+        "found in the omitted phonemes (>= half of its phones)": 7
+      },
+      "PARTIAL_WORD": {
+        "heard but absorbed by the transcript's G2P": 13,
+        "found in the omitted phonemes (>= half of its phones)": 9
+      },
+      "FALSE_START": {
+        "heard but absorbed by the transcript's G2P": 41,
+        "found in the omitted phonemes (>= half of its phones)": 7
+      },
+      "REPAIR": {
+        "heard but absorbed by the transcript's G2P": 11
+      }
+    }
+  }
+}

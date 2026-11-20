@@ -36,3 +36,6 @@ project-titles.pdf
 
 # Colab result download (installed into ckpt/ by scripts/install_colab_ckpt.sh)
 /main.zip
+
+# Over GitHub's 100 MB per-file limit (kept locally only)
+/v2_pretrained_bert_results.zip

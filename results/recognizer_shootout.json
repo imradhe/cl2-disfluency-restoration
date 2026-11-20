@@ -1,0 +1,122 @@
+{
+  "current": {
+    "fit": {
+      "uh": 111,
+      "uh_any_token": 56,
+      "uh_vowel_token": 52,
+      "uh_vowel_within_100ms": 67,
+      "fluent_words": 2237,
+      "fluent_any_token": 2225,
+      "pauses_ge_0.4s": 393,
+      "pauses_with_token": 67,
+      "pauses_with_vowel": 11
+    },
+    "held-out": {
+      "uh": 59,
+      "uh_any_token": 31,
+      "uh_vowel_token": 29,
+      "uh_vowel_within_100ms": 32,
+      "fluent_words": 1446,
+      "fluent_any_token": 1440,
+      "pauses_ge_0.4s": 366,
+      "pauses_with_token": 76,
+      "pauses_with_vowel": 26
+    }
+  },
+  "vakyansh-te": {
+    "fit": {
+      "uh": 111,
+      "uh_any_token": 7,
+      "uh_vowel_token": 2,
+      "uh_vowel_within_100ms": 14,
+      "fluent_words": 2237,
+      "fluent_any_token": 1574,
+      "pauses_ge_0.4s": 393,
+      "pauses_with_token": 32,
+      "pauses_with_vowel": 3
+    },
+    "held-out": {
+      "uh": 59,
+      "uh_any_token": 1,
+      "uh_vowel_token": 0,
+      "uh_vowel_within_100ms": 0,
+      "fluent_words": 1446,
+      "fluent_any_token": 1055,
+      "pauses_ge_0.4s": 366,
+      "pauses_with_token": 40,
+      "pauses_with_vowel": 9
+    }
+  },
+  "xlsr53-te": {
+    "fit": {
+      "uh": 111,
+      "uh_any_token": 76,
+      "uh_vowel_token": 64,
+      "uh_vowel_within_100ms": 75,
+      "fluent_words": 2237,
+      "fluent_any_token": 2202,
+      "pauses_ge_0.4s": 393,
+      "pauses_with_token": 106,
+      "pauses_with_vowel": 9
+    },
+    "held-out": {
+      "uh": 59,
+      "uh_any_token": 43,
+      "uh_vowel_token": 40,
+      "uh_vowel_within_100ms": 44,
+      "fluent_words": 1446,
+      "fluent_any_token": 1436,
+      "pauses_ge_0.4s": 366,
+      "pauses_with_token": 91,
+      "pauses_with_vowel": 18
+    }
+  },
+  "mms-tel": {
+    "fit": {
+      "uh": 111,
+      "uh_any_token": 7,
+      "uh_vowel_token": 0,
+      "uh_vowel_within_100ms": 0,
+      "fluent_words": 2237,
+      "fluent_any_token": 2203,
+      "pauses_ge_0.4s": 393,
+      "pauses_with_token": 44,
+      "pauses_with_vowel": 0
+    },
+    "held-out": {
+      "uh": 59,
+      "uh_any_token": 7,
+      "uh_vowel_token": 0,
+      "uh_vowel_within_100ms": 0,
+      "fluent_words": 1446,
+      "fluent_any_token": 1424,
+      "pauses_ge_0.4s": 366,
+      "pauses_with_token": 57,
+      "pauses_with_vowel": 4
+    }
+  },
+  "mms-eng": {
+    "fit": {
+      "uh": 111,
+      "uh_any_token": 4,
+      "uh_vowel_token": 1,
+      "uh_vowel_within_100ms": 11,
+      "fluent_words": 2237,
+      "fluent_any_token": 2204,
+      "pauses_ge_0.4s": 393,
+      "pauses_with_token": 8,
+      "pauses_with_vowel": 3
+    },
+    "held-out": {
+      "uh": 59,
+      "uh_any_token": 1,
+      "uh_vowel_token": 1,
+      "uh_vowel_within_100ms": 4,
+      "fluent_words": 1446,
+      "fluent_any_token": 1427,
+      "pauses_ge_0.4s": 366,
+      "pauses_with_token": 27,
+      "pauses_with_vowel": 6
+    }
+  }
+}

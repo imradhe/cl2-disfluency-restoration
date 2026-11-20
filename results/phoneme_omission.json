@@ -1,0 +1,278 @@
+{
+  "espeak recognizer (current)": {
+    "verbatim": {
+      "g2p_phones": 16115,
+      "omitted_from_recognized": 795,
+      "omitted_pct": 0.049332919640086875,
+      "recognized_not_in_g2p": 402,
+      "recognized_not_in_g2p_pct": 0.02556926599669253,
+      "substituted_pct": 0.2179956562209122,
+      "by_span": {
+        "D": {
+          "unexplained": 48,
+          "phones": 582
+        },
+        "F": {
+          "unexplained": 307,
+          "phones": 14202
+        },
+        "G": {
+          "unexplained": 47,
+          "phones": 938
+        }
+      },
+      "odds_ratio_D_vs_F": {
+        "value": 4.1003703788207195,
+        "ci95": [
+          2.769212716589648,
+          5.844176337506375
+        ]
+      }
+    },
+    "fluent": {
+      "g2p_phones": 15442,
+      "omitted_from_recognized": 652,
+      "omitted_pct": 0.042222510037559904,
+      "recognized_not_in_g2p": 932,
+      "recognized_not_in_g2p_pct": 0.05927998982317771,
+      "substituted_pct": 0.21551612485429347,
+      "by_span": {
+        "D": {
+          "unexplained": 429,
+          "phones": 582
+        },
+        "F": {
+          "unexplained": 417,
+          "phones": 14202
+        },
+        "G": {
+          "unexplained": 86,
+          "phones": 938
+        }
+      },
+      "odds_ratio_D_vs_F": {
+        "value": 92.38912013107335,
+        "ci95": [
+          56.75793210574139,
+          153.3068873967399
+        ]
+      },
+      "share_of_unexplained_in_D": 0.46030042918454933,
+      "share_of_D_phones_unexplained": 0.7371134020618557,
+      "share_of_all_phones_in_D": 0.03701819106983844
+    },
+    "whisper": {
+      "g2p_phones": 15153,
+      "omitted_from_recognized": 571,
+      "omitted_pct": 0.037682307133900875,
+      "recognized_not_in_g2p": 1140,
+      "recognized_not_in_g2p_pct": 0.07250985879659076,
+      "substituted_pct": 0.22226621791064477,
+      "by_span": {
+        "D": {
+          "unexplained": 195,
+          "phones": 582
+        },
+        "F": {
+          "unexplained": 857,
+          "phones": 14202
+        },
+        "G": {
+          "unexplained": 88,
+          "phones": 938
+        }
+      },
+      "odds_ratio_D_vs_F": {
+        "value": 7.851918367346939,
+        "ci95": [
+          5.577857760272918,
+          11.152440331630068
+        ]
+      },
+      "share_of_unexplained_in_D": 0.17105263157894737,
+      "share_of_D_phones_unexplained": 0.33505154639175255,
+      "share_of_all_phones_in_D": 0.03701819106983844
+    },
+    "per_type": {
+      "FILLER_HESITATION": {
+        "tokens": 171,
+        "any_phone": 88,
+        "any_unexplained": 62,
+        "any_unexplained_vs_whisper": 53
+      },
+      "FILLER_DM": {
+        "tokens": 28,
+        "any_phone": 24,
+        "any_unexplained": 18,
+        "any_unexplained_vs_whisper": 5
+      },
+      "REPETITION": {
+        "tokens": 70,
+        "any_phone": 70,
+        "any_unexplained": 56,
+        "any_unexplained_vs_whisper": 32
+      },
+      "REPAIR": {
+        "tokens": 11,
+        "any_phone": 11,
+        "any_unexplained": 10,
+        "any_unexplained_vs_whisper": 2
+      },
+      "FALSE_START": {
+        "tokens": 48,
+        "any_phone": 46,
+        "any_unexplained": 39,
+        "any_unexplained_vs_whisper": 9
+      },
+      "PARTIAL_WORD": {
+        "tokens": 22,
+        "any_phone": 22,
+        "any_unexplained": 21,
+        "any_unexplained_vs_whisper": 16
+      }
+    },
+    "spearman_utterance": {
+      "verbatim": 0.3635177450949884,
+      "fluent": 0.7329189132691369,
+      "whisper": 0.3126585533413082
+    }
+  },
+  "Telugu recognizer": {
+    "verbatim": {
+      "g2p_phones": 16115,
+      "omitted_from_recognized": 636,
+      "omitted_pct": 0.0394663357120695,
+      "recognized_not_in_g2p": 1386,
+      "recognized_not_in_g2p_pct": 0.0821820337978061,
+      "substituted_pct": 0.42475954080049644,
+      "by_span": {
+        "D": {
+          "unexplained": 94,
+          "phones": 663
+        },
+        "F": {
+          "unexplained": 1196,
+          "phones": 15225
+        },
+        "G": {
+          "unexplained": 96,
+          "phones": 977
+        }
+      },
+      "odds_ratio_D_vs_F": {
+        "value": 1.9456627777755355,
+        "ci95": [
+          1.4489233548328617,
+          2.5061140971625284
+        ]
+      }
+    },
+    "fluent": {
+      "g2p_phones": 15442,
+      "omitted_from_recognized": 554,
+      "omitted_pct": 0.035876181841730345,
+      "recognized_not_in_g2p": 1977,
+      "recognized_not_in_g2p_pct": 0.11722502223539875,
+      "substituted_pct": 0.4208004144540863,
+      "by_span": {
+        "D": {
+          "unexplained": 426,
+          "phones": 663
+        },
+        "F": {
+          "unexplained": 1415,
+          "phones": 15225
+        },
+        "G": {
+          "unexplained": 136,
+          "phones": 977
+        }
+      },
+      "odds_ratio_D_vs_F": {
+        "value": 17.520841064158102,
+        "ci95": [
+          12.870459090247069,
+          24.0903384629029
+        ]
+      },
+      "share_of_unexplained_in_D": 0.21547799696509864,
+      "share_of_D_phones_unexplained": 0.6425339366515838,
+      "share_of_all_phones_in_D": 0.03931218499851764
+    },
+    "whisper": {
+      "g2p_phones": 15153,
+      "omitted_from_recognized": 434,
+      "omitted_pct": 0.028641193163070018,
+      "recognized_not_in_g2p": 2146,
+      "recognized_not_in_g2p_pct": 0.12724577527423658,
+      "substituted_pct": 0.4271761367385996,
+      "by_span": {
+        "D": {
+          "unexplained": 198,
+          "phones": 663
+        },
+        "F": {
+          "unexplained": 1815,
+          "phones": 15225
+        },
+        "G": {
+          "unexplained": 133,
+          "phones": 977
+        }
+      },
+      "odds_ratio_D_vs_F": {
+        "value": 3.1498476095420123,
+        "ci95": [
+          2.4504867134695774,
+          4.121126469934766
+        ]
+      },
+      "share_of_unexplained_in_D": 0.09226467847157502,
+      "share_of_D_phones_unexplained": 0.2986425339366516,
+      "share_of_all_phones_in_D": 0.03931218499851764
+    },
+    "per_type": {
+      "FILLER_HESITATION": {
+        "tokens": 171,
+        "any_phone": 117,
+        "any_unexplained": 81,
+        "any_unexplained_vs_whisper": 61
+      },
+      "FILLER_DM": {
+        "tokens": 28,
+        "any_phone": 25,
+        "any_unexplained": 20,
+        "any_unexplained_vs_whisper": 11
+      },
+      "REPETITION": {
+        "tokens": 70,
+        "any_phone": 66,
+        "any_unexplained": 46,
+        "any_unexplained_vs_whisper": 22
+      },
+      "REPAIR": {
+        "tokens": 11,
+        "any_phone": 10,
+        "any_unexplained": 7,
+        "any_unexplained_vs_whisper": 2
+      },
+      "FALSE_START": {
+        "tokens": 48,
+        "any_phone": 45,
+        "any_unexplained": 41,
+        "any_unexplained_vs_whisper": 19
+      },
+      "PARTIAL_WORD": {
+        "tokens": 22,
+        "any_phone": 22,
+        "any_unexplained": 16,
+        "any_unexplained_vs_whisper": 15
+      }
+    },
+    "spearman_utterance": {
+      "verbatim": 0.34913514739715124,
+      "fluent": 0.6678328233508747,
+      "whisper": 0.38499168056110183
+    }
+  }
+}

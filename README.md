@@ -165,7 +165,7 @@ windows: 59 hesitations, 33 repetitions, 29 false starts, 16 DM, 9 repairs, 7 pa
 | "uh" **not** written as a vowel (nothing, or a neighbour's consonant) | 58.6% (n=111) | 49.2% (n=59) | 8% |
 
 When an "uh" is written it is mostly `ax`, `aa` or `ah`. Replaying the fitted channel on the held-out reference
-phones reproduces these statistics (deleted 3.9% vs 4.0%, substituted 21.4% vs 21.4%, "uh" 50.8% vs 49.2%), and at
+phones reproduces these statistics (deleted 3.9% vs 4.0%, substituted 21.4% vs 21.4%, "uh" 51.7% vs 49.2%), and at
 window level the phone error rate against the clean G2P phones is 28.0% for the noised stream and 28.6% for the real
 recognizer. A first version aligned each word against the phones inside its own time span; that books a phone that
 the recognizer places a few tens of ms across a word boundary as a deletion in one word and an insertion in the
@@ -227,6 +227,117 @@ recognizer writes nothing for an "uh", no phone-based model can restore it.
 
 Next: calibrate on more NPTEL lectures once their audio is available, and look for filler evidence that does not
 depend on this recognizer (e.g. voiced energy in a stretch with no phone).
+
+## Why the end-to-end F1 is low (`scripts/disfluency_funnel.py`)
+
+Each of the 153 gold disfluent tokens of the held-out part was traced through the pipeline (`seq_cal`, bias 0,
+"ah" respelled). The phone recognizers are only one of three places where tokens are lost, and not the biggest:
+
+| type | gold | written by Whisper, tagged by rules | written by Whisper, **not tagged** | restored by the model | missing from the output | missing, but heard by espeak / Telugu / either |
+|---|---|---|---|---|---|---|
+| hesitation | 59 | 22 | 0 | 5 | 32 | 15 / 24 / 25 |
+| DM filler | 16 | 0 | 11 | 1 | 4 | 2 / 2 / 2 |
+| repetition | 33 | 3 | 20 | 3 | 7 | 3 / 2 / 3 |
+| repair | 9 | 1 | 6 | 0 | 2 | 1 / 1 / 1 |
+| false start | 29 | 1 | 24 | 0 | 4 | 4 / 2 / 4 |
+| partial word | 7 | 0 | 0 | 0 | 7 | 5 / 5 / 5 |
+| **all** | **153** | 27 | **61** | 9 | 56 | 30 / 36 / 40 |
+
+"Heard" = the recognizer's phones in the token's forced-aligned span match at least half of its G2P phones in order
+(for the one-phone "uh": any vowel).
+
+1. **40% of the gold disfluent tokens (61) are not dropped at all.** Whisper wrote them as ordinary words: multi-word
+   false starts and repairs ("that is", "they are called"), phrase repeats ("from these ... from these", "so so"), DM
+   fillers ("you know"). The pipeline can only *insert* tokens; nothing tags a word that is already there, so these
+   count as misses however good the model is. Whisper also writes "yeah" or "you know" where the speaker says "uh".
+2. **The phone recognizers do lose the "uh"s, but little else.** Of the 32 hesitations missing from the transcript,
+   the espeak recognizer heard 15 (47%), the Telugu one 24 (75%), either 25 (78%). Of the 24 missing tokens of the
+   other types, espeak heard 15 (62%).
+3. **The model recovers few of what the recognizers heard**: 40 of the 56 missing tokens were heard by at least one
+   recognizer, 9 were restored. With a perfect gold transcript and clean G2P phones of everything said, the model's own
+   slot F1 per type is (real recognizer phones in brackets):
+
+   | type | gold units | perfect inputs | real phones |
+   |---|---|---|---|
+   | hesitation | 59 | 0.86 | 0.38 |
+   | DM filler | 16 | 0.59 | 0.44 |
+   | repetition | 29 | 0.42 | 0.39 |
+   | repair | 9 | 0.14 | 0.17 |
+   | false start | 21 | 0.00 | 0.00 |
+   | partial word | 6 | 0.00 | 0.29 |
+
+   Only hesitations are learned well. Even with perfect inputs the model finds no false starts and almost no
+   repairs: those are not recognizer failures. One likely contributor, not tested: in Switchboard they are
+   heuristic (silver) labels, so their definition may differ from the NPTEL gold.
+4. **Precision is low too**: of the 49 tokens the model restored, 9 are correct (6 of 11 restored hesitations are
+   an "uh" where the gold has none).
+
+What this implies: better phone evidence can add at most about 25 correct hesitations (the missing "uh"s that
+either recognizer heard), taking recall from 0.24 (36 of 153) to about 0.40, and only if the model then restores
+every one of them. Tagging words that are already in the transcript is the larger pool (61 tokens), but it needs a
+different output (a disfluency tag per word) and a model that finds false starts and repairs, which the current one
+does not.
+
+## Other phone recognizers (`scripts/recognizer_shootout.py`)
+
+The wav2vec2/espeak recognizer leaves out about half of the "uh"s (it was trained on phonemized written text). The
+lecture's 170 "uh" tokens (111 in the fit part, 59 held-out, spans from the forced alignment) were run through other
+CTC recognizers over the same padded segments; each cell is the share of "uh" spans that get a *vowel* token
+(fit / held-out), and the last columns show whether the model is just noisy: fluent words with any token, long pauses
+(>= 0.4 s between gold tokens) with a vowel token.
+
+| recognizer | writes | "uh" with a vowel | fluent words with a token | pauses with a vowel |
+|---|---|---|---|---|
+| current: `facebook/wav2vec2-xlsr-53-espeak-cv-ft` | IPA | 47% / 49% | 99% / 100% | 3% / 7% |
+| `Harveenchadha/vakyansh-wav2vec2-telugu-tem-100` (378 MB) | Telugu script | 2% / 0% | 70% / 73% | 1% / 2% |
+| **`anuragshas/wav2vec2-large-xlsr-53-telugu`** (1.26 GB) | Telugu script | **58% / 68%** | 98% / 99% | 2% / 5% |
+| `facebook/mms-1b-all`, adapter `tel` (3.86 GB) | Telugu script | 0% / 0% | 98% / 98% | 0% / 1% |
+| `facebook/mms-1b-all`, adapter `eng` | Latin letters | 1% / 2% | 99% / 99% | 1% / 2% |
+
+No Telugu *phoneme* recognizer was found on the Hub: the Telugu models are character-level, and MMS (also character-
+level) is trained to write clean orthography, which here means it writes nothing for a filler. Only the Telugu XLSR-53
+model hears the "uh"s (usually as `ఆ`). Mapped to Switchboard phones (`src/phones/telugu.py`, coarse: retroflex and
+aspirated consonants collapse onto the nearest English phone) and aligned per utterance with the G2P phones
+(`scripts/recognizer_phone_quality.py`), it is a much noisier stream for ordinary words:
+
+| phone stream vs G2P (fit / held-out) | current | XLSR-53 Telugu |
+|---|---|---|
+| "uh" not written as a vowel | 58.6% / 49.2% | **30.6% / 22.0%** |
+| phone error on recognized words (deleted + substituted) | **26.0% / 25.5%** | 46.9% / 44.5% |
+| stray phones per 100 words | **8.9 / 9.2** | 32.6 / 27.6 |
+
+The two hear different "uh"s: a vowel from at least one of them for 71% / 80% of the spans, from both for 45 / 24.
+This is evidence about the recognizers only. A model that reads both streams was then trained
+(`train_colab_2streams.ipynb`, `ckpt/seq_2streams`: input `... [SEP] <espeak phones> [REC2] <Telugu phones> [SEP]`,
+each stream with its own fitted error profile, `--two-streams --noise-profile2 configs/noise_profile_tel.json`).
+On the Switchboard dev windows with simulated noise it improves on the single-stream model (iid noise: slot F1
+0.851 -> 0.909, exact-unit 0.632 -> 0.676; fitted-channel noise: 0.796 -> 0.834; hesitation F1 under the fitted
+channel 0.426 -> 0.509). In that simulation the second stream is an *independently* corrupted copy of the same clean
+phones, which favours a second stream by construction; real recognizer errors are correlated, so the gain on real
+phones is expected to be smaller and has not been measured. The Telugu mapping is a first approximation.
+
+## Omitted phonemes on Switchboard (`scripts/swb_omitted_phonemes.py`)
+
+Switchboard has no audio and no phone-level transcription, only word transcripts and the lexicon. Per utterance, the
+phones of every spoken token (disfluencies included; exact, or corrupted by a simulated recognizer) are aligned with the
+G2P phones of the transcript with the disfluencies ignored. The phones of the first sequence that no G2P phone is
+aligned to are the *omitted phonemes*. All 4,876 sides (249,624 utterances, 3.1M tokens); "found" = at least half of a
+disfluent token's surviving phones are omitted phonemes.
+
+| phone sequence | omitted phonemes (% of phones) | of the omitted: disfluent / fluent-token / inserted noise | disfluent tokens found |
+|---|---|---|---|
+| exact | 10.3% | 97.7% / 2.3% / 0% | 98.9% |
+| noise del/sub/ins 4/7/2% | 11.4% | 77.8% / 8.5% / 13.7% | 88.7% |
+| noise 8/14/4% (training strength) | 12.0% | 66.0% / 13.1% / 20.9% | 79.8% |
+| noise 16/28/8% | 11.6% | 53.7% / 21.3% / 25.0% | 61.9% |
+
+By type at 8/14/4% noise (found / absorbed by the G2P): backchannel 98.9 / 1.0, false start 91.1 / 7.8, DM filler
+89.1 / 10.1, repair 79.1 / 19.5, hesitation 70.0 / 23.9 (6.0% lost), partial word 68.4 / 27.2, repetition 63.9 / 34.7
+(the aligner can pair the transcript's single copy with either copy). The noise is a simulation without whole-token
+dropout, so hesitations are optimistic here; repetition, repair and false-start labels are heuristic (silver) in
+Switchboard. The same test on the lecture with real recognizer phones is `scripts/omitted_phonemes.py` (sequence
+test) and `scripts/phoneme_omission.py` (by gold time spans); results in `results/omitted_phonemes.json` and
+`results/phoneme_omission.json`.
 
 ## Data
 

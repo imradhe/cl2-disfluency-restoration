@@ -66,27 +66,27 @@
   "held_out_replayed_by_profile": {
     "tokens": 17470,
     "token_dropped": {
-      "1": "61/1150 = 5.3%",
-      "2": "77/5920 = 1.3%",
-      "3+": "5/9810 = 0.1%"
+      "1": "62/1150 = 5.4%",
+      "2": "73/5920 = 1.2%",
+      "3+": "6/9810 = 0.1%"
     },
     "on_surviving_tokens": {
-      "del": 0.0391,
-      "sub": 0.2137,
-      "del+sub": 0.2528
+      "del": 0.0389,
+      "sub": 0.2143,
+      "del+sub": 0.2532
     },
     "inserted_phones_per_100_tokens": 7.2,
-    "tokens_followed_by_stray_phones": 0.017,
+    "tokens_followed_by_stray_phones": 0.018,
     "hesitations": {
       "n": 590,
-      "not_written_as_a_vowel": 0.508,
+      "not_written_as_a_vowel": 0.517,
       "written_as": {
-        "ax": 98,
-        "aa": 67,
-        "ah": 54,
-        "ao": 18,
-        "ae": 10,
-        "iy": 8
+        "ax": 104,
+        "aa": 68,
+        "ah": 51,
+        "ao": 14,
+        "ae": 9,
+        "er": 8
       }
     }
   },
@@ -99,12 +99,12 @@
     "global": {
       "del": 0.0427,
       "sub": 0.2175,
-      "ins": 0.0221
+      "ins": 0.022
     },
     "orphan": {
-      "p": 0.0247,
+      "p": 0.0251,
       "len": {
-        "1": 55,
+        "1": 56,
         "2": 6,
         "3": 4
       },
@@ -119,6 +119,7 @@
         "s": 3,
         "p": 3,
         "w": 2,
+        "uw": 2,
         "sh": 2,
         "er": 2,
         "ah": 2,
@@ -127,7 +128,6 @@
         "n": 2,
         "aa": 2,
         "y": 1,
-        "uw": 1,
         "m": 1,
         "ow": 1,
         "f": 1,

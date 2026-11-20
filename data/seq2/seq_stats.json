@@ -1,0 +1,59 @@
+{
+  "train": {
+    "sides": 4244,
+    "windows": 153076,
+    "words": 2503626,
+    "rec_phones": 8727399,
+    "slots_with_units": 201523,
+    "units_over_k": 5722,
+    "units": {
+      "FILLER_DM": 84055,
+      "FILLER_HESITATION": 58869,
+      "REPETITION": 54795,
+      "FILLER_BACKCHANNEL": 43571,
+      "PARTIAL_WORD": 25375,
+      "NOISE": 20700,
+      "REPAIR": 11067,
+      "FALSE_START": 5741
+    }
+  },
+  "dev": {
+    "sides": 346,
+    "windows": 7374,
+    "words": 140665,
+    "rec_phones": 524061,
+    "slots_with_units": 13208,
+    "units_over_k": 1821,
+    "units": {
+      "FILLER_DM": 7497,
+      "FILLER_HESITATION": 5867,
+      "REPETITION": 4239,
+      "FILLER_BACKCHANNEL": 3144,
+      "PARTIAL_WORD": 1858,
+      "NOISE": 1314,
+      "REPAIR": 946,
+      "FALSE_START": 480
+    }
+  },
+  "test": {
+    "sides": 286,
+    "windows": 5972,
+    "words": 114082,
+    "rec_phones": 425568,
+    "slots_with_units": 11113,
+    "units_over_k": 1270,
+    "units": {
+      "FILLER_DM": 5901,
+      "FILLER_HESITATION": 4683,
+      "REPETITION": 4271,
+      "FILLER_BACKCHANNEL": 2714,
+      "PARTIAL_WORD": 1331,
+      "NOISE": 1057,
+      "REPAIR": 702,
+      "FALSE_START": 353
+    }
+  },
+  "unit_classes": 5127,
+  "train_unit_coverage": 1.0,
+  "unknown_phones": {}
+}

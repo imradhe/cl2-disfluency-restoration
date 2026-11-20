@@ -1,0 +1,59 @@
+[16:12:34] audio 1937.0s
+[16:12:34] VAD: 176 chunks, 1812s of speech
+[16:12:34] ASR: 4209 words (45 filler spellings normalized)
+[16:12:34] phones: 15789 recognized
+W1119 16:12:35.971000 16797 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 8862.27it/s]
+[transformers] [1mBertModel LOAD REPORT[0m from: bert-base-uncased
+Key                                        | Status     |  | 
+-------------------------------------------+------------+--+-
+cls.predictions.bias                       | UNEXPECTED |  | 
+cls.seq_relationship.bias                  | UNEXPECTED |  | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED |  | 
+cls.seq_relationship.weight                | UNEXPECTED |  | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED |  | 
+cls.predictions.transform.dense.bias       | UNEXPECTED |  | 
+cls.predictions.transform.dense.weight     | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+[transformers] The new embeddings will be initialized from a multivariate normal distribution that has old embeddings' mean and covariance. As described in this article: https://nlp.stanford.edu/~johnhew/vocab-expansion.html. To disable this, use `mean_resizing=False`
+[16:12:43] 354 windows; 436 units predicted, 282 inserted
+{
+  "audio": "data/nptel/wav16k/english_001.wav",
+  "seconds": 1937.0,
+  "chunks": 176,
+  "asr_words": 4209,
+  "windows": 354,
+  "predicted_units": 436,
+  "predicted_by_type": {
+    "REPETITION": 101,
+    "NOISE": 154,
+    "FILLER_HESITATION": 41,
+    "PARTIAL_WORD": 75,
+    "FILLER_DM": 54,
+    "REPAIR": 4,
+    "FILLER_BACKCHANNEL": 7
+  },
+  "inserted_tokens": 282,
+  "skipped_types": [],
+  "none_bias": 0.0,
+  "normalized_fillers": 45,
+  "ckpt": "ckpt/seq_colab",
+  "whisper": "mlx-community/whisper-large-v3-turbo",
+  "elapsed_s": 8.7
+}
+
+--- restored tokens in context ---
+  a new topic that is on [REPETITION:stereo] stereo geometry so let us consider
+  setup we have two cameras and [REPETITION:in] in this these two cameras they
+  capital x in the first camera [REPETITION:whose] whose camera center is given as
+  camera given by the camera center [FILLER_HESITATION:uh] c prime [FILLER_HESITATION:uh] forms an image
+  the camera center [FILLER_HESITATION:uh] c prime [FILLER_HESITATION:uh] forms an image of that same
+  point at x prime in its [PARTIAL_WORD:own] own image plane so you have
+  point there are two image points [FILLER_DM:so] if they are viewable from the
+  line between c and c prime [FILLER_HESITATION:uh] which is called you know for
+  called you know for studio setup [FILLER_DM:well] as the baseline so that also
+  point is here which can be [REPETITION:interpreted] interpreted as the image of camera
+  interpreted as the image of camera [FILLER_HESITATION:uh] center of the other camera [REPETITION:and]
+  [FILLER_HESITATION:uh] center of the other camera [REPETITION:and] and the other point is shown

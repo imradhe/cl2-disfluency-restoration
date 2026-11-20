@@ -1,0 +1,249 @@
+{
+  "utterances": 249624,
+  "tokens": 3085832,
+  "levels": [
+    {
+      "level": "exact (no noise)",
+      "phones": 9630942,
+      "omitted": 991235,
+      "omitted_by": {
+        "disfluent token": 968781,
+        "fluent token": 22454
+      },
+      "disfluent_phones": 991154,
+      "disfluent_phones_omitted": 968781,
+      "token_fate": {
+        "found in the omitted phonemes": 433067,
+        "absorbed by the transcript's G2P": 4685
+      },
+      "by_type": {
+        "FILLER_HESITATION": {
+          "found in the omitted phonemes": 92481,
+          "absorbed by the transcript's G2P": 2052
+        },
+        "REPETITION": {
+          "found in the omitted phonemes": 85507,
+          "absorbed by the transcript's G2P": 896
+        },
+        "FILLER_BACKCHANNEL": {
+          "found in the omitted phonemes": 68109,
+          "absorbed by the transcript's G2P": 43
+        },
+        "FILLER_DM": {
+          "found in the omitted phonemes": 132767,
+          "absorbed by the transcript's G2P": 904
+        },
+        "REPAIR": {
+          "found in the omitted phonemes": 16948,
+          "absorbed by the transcript's G2P": 362
+        },
+        "PARTIAL_WORD": {
+          "found in the omitted phonemes": 28257,
+          "absorbed by the transcript's G2P": 307
+        },
+        "FALSE_START": {
+          "found in the omitted phonemes": 8998,
+          "absorbed by the transcript's G2P": 121
+        }
+      },
+      "type_phones": {
+        "FILLER_HESITATION": 118657,
+        "REPETITION": 215220,
+        "FILLER_BACKCHANNEL": 220306,
+        "FILLER_DM": 309600,
+        "REPAIR": 50228,
+        "PARTIAL_WORD": 48417,
+        "FALSE_START": 28726
+      }
+    },
+    {
+      "level": "noise del/sub/ins 4%/7%/2%",
+      "phones": 9430325,
+      "omitted": 1076455,
+      "omitted_by": {
+        "disfluent token": 837116,
+        "inserted noise": 147756,
+        "fluent token": 91583
+      },
+      "disfluent_phones": 951523,
+      "disfluent_phones_omitted": 837116,
+      "token_fate": {
+        "found in the omitted phonemes": 388296,
+        "lost (all phones deleted by the noise)": 4557,
+        "absorbed by the transcript's G2P": 44899
+      },
+      "by_type": {
+        "FILLER_HESITATION": {
+          "found in the omitted phonemes": 78789,
+          "absorbed by the transcript's G2P": 12887,
+          "lost (all phones deleted by the noise)": 2857
+        },
+        "REPETITION": {
+          "found in the omitted phonemes": 66590,
+          "absorbed by the transcript's G2P": 19248,
+          "lost (all phones deleted by the noise)": 565
+        },
+        "FILLER_BACKCHANNEL": {
+          "found in the omitted phonemes": 67872,
+          "absorbed by the transcript's G2P": 271,
+          "lost (all phones deleted by the noise)": 9
+        },
+        "FILLER_DM": {
+          "found in the omitted phonemes": 127714,
+          "absorbed by the transcript's G2P": 5603,
+          "lost (all phones deleted by the noise)": 354
+        },
+        "REPAIR": {
+          "found in the omitted phonemes": 15022,
+          "absorbed by the transcript's G2P": 2183,
+          "lost (all phones deleted by the noise)": 105
+        },
+        "PARTIAL_WORD": {
+          "found in the omitted phonemes": 23589,
+          "lost (all phones deleted by the noise)": 629,
+          "absorbed by the transcript's G2P": 4346
+        },
+        "FALSE_START": {
+          "found in the omitted phonemes": 8720,
+          "absorbed by the transcript's G2P": 361,
+          "lost (all phones deleted by the noise)": 38
+        }
+      },
+      "type_phones": {
+        "FILLER_HESITATION": 118657,
+        "REPETITION": 215220,
+        "FILLER_BACKCHANNEL": 220306,
+        "FILLER_DM": 309600,
+        "REPAIR": 50228,
+        "PARTIAL_WORD": 48417,
+        "FALSE_START": 28726
+      }
+    },
+    {
+      "level": "noise del/sub/ins 8%/14%/4%",
+      "phones": 9214975,
+      "omitted": 1108327,
+      "omitted_by": {
+        "disfluent token": 731595,
+        "inserted noise": 231814,
+        "fluent token": 144918
+      },
+      "disfluent_phones": 912168,
+      "disfluent_phones_omitted": 731595,
+      "token_fate": {
+        "found in the omitted phonemes": 349532,
+        "absorbed by the transcript's G2P": 78668,
+        "lost (all phones deleted by the noise)": 9552
+      },
+      "by_type": {
+        "FILLER_HESITATION": {
+          "found in the omitted phonemes": 66193,
+          "absorbed by the transcript's G2P": 22630,
+          "lost (all phones deleted by the noise)": 5710
+        },
+        "REPETITION": {
+          "found in the omitted phonemes": 55220,
+          "absorbed by the transcript's G2P": 29982,
+          "lost (all phones deleted by the noise)": 1201
+        },
+        "FILLER_BACKCHANNEL": {
+          "found in the omitted phonemes": 67405,
+          "absorbed by the transcript's G2P": 702,
+          "lost (all phones deleted by the noise)": 45
+        },
+        "FILLER_DM": {
+          "found in the omitted phonemes": 119164,
+          "absorbed by the transcript's G2P": 13499,
+          "lost (all phones deleted by the noise)": 1008
+        },
+        "REPAIR": {
+          "absorbed by the transcript's G2P": 3381,
+          "found in the omitted phonemes": 13699,
+          "lost (all phones deleted by the noise)": 230
+        },
+        "PARTIAL_WORD": {
+          "found in the omitted phonemes": 19542,
+          "absorbed by the transcript's G2P": 7763,
+          "lost (all phones deleted by the noise)": 1259
+        },
+        "FALSE_START": {
+          "found in the omitted phonemes": 8309,
+          "absorbed by the transcript's G2P": 711,
+          "lost (all phones deleted by the noise)": 99
+        }
+      },
+      "type_phones": {
+        "FILLER_HESITATION": 118657,
+        "REPETITION": 215220,
+        "FILLER_BACKCHANNEL": 220306,
+        "FILLER_DM": 309600,
+        "REPAIR": 50228,
+        "PARTIAL_WORD": 48417,
+        "FALSE_START": 28726
+      }
+    },
+    {
+      "level": "noise del/sub/ins 16%/28%/8%",
+      "phones": 8737849,
+      "omitted": 1009537,
+      "omitted_by": {
+        "fluent token": 215309,
+        "disfluent token": 542212,
+        "inserted noise": 252016
+      },
+      "disfluent_phones": 833485,
+      "disfluent_phones_omitted": 542212,
+      "token_fate": {
+        "absorbed by the transcript's G2P": 144917,
+        "found in the omitted phonemes": 271050,
+        "lost (all phones deleted by the noise)": 21785
+      },
+      "by_type": {
+        "FILLER_HESITATION": {
+          "absorbed by the transcript's G2P": 39826,
+          "found in the omitted phonemes": 43045,
+          "lost (all phones deleted by the noise)": 11662
+        },
+        "REPETITION": {
+          "found in the omitted phonemes": 38352,
+          "absorbed by the transcript's G2P": 45034,
+          "lost (all phones deleted by the noise)": 3017
+        },
+        "FILLER_BACKCHANNEL": {
+          "found in the omitted phonemes": 66064,
+          "absorbed by the transcript's G2P": 1884,
+          "lost (all phones deleted by the noise)": 204
+        },
+        "FILLER_DM": {
+          "found in the omitted phonemes": 92522,
+          "absorbed by the transcript's G2P": 37765,
+          "lost (all phones deleted by the noise)": 3384
+        },
+        "REPAIR": {
+          "absorbed by the transcript's G2P": 5401,
+          "found in the omitted phonemes": 11361,
+          "lost (all phones deleted by the noise)": 548
+        },
+        "PARTIAL_WORD": {
+          "found in the omitted phonemes": 12809,
+          "absorbed by the transcript's G2P": 13019,
+          "lost (all phones deleted by the noise)": 2736
+        },
+        "FALSE_START": {
+          "found in the omitted phonemes": 6897,
+          "absorbed by the transcript's G2P": 1988,
+          "lost (all phones deleted by the noise)": 234
+        }
+      },
+      "type_phones": {
+        "FILLER_HESITATION": 118657,
+        "REPETITION": 215220,
+        "FILLER_BACKCHANNEL": 220306,
+        "FILLER_DM": 309600,
+        "REPAIR": 50228,
+        "PARTIAL_WORD": 48417,
+        "FALSE_START": 28726
+      }
+    }
+  ]
+}

@@ -1,0 +1,212 @@
+{
+  "funnel": {
+    "FILLER_HESITATION": {
+      "written, tagged by rules": 22,
+      "gold": 59,
+      "missing": 32,
+      "  heard by espeak": 15,
+      "  heard by Telugu": 24,
+      "  heard by either": 25,
+      "restored by the model": 5
+    },
+    "FILLER_DM": {
+      "written, NOT tagged": 11,
+      "gold": 16,
+      "missing": 4,
+      "  heard by espeak": 2,
+      "  heard by Telugu": 2,
+      "  heard by either": 2,
+      "restored by the model": 1
+    },
+    "FALSE_START": {
+      "written, NOT tagged": 24,
+      "gold": 29,
+      "missing": 4,
+      "  heard by espeak": 4,
+      "  heard by Telugu": 2,
+      "  heard by either": 4,
+      "written, tagged by rules": 1
+    },
+    "REPETITION": {
+      "written, NOT tagged": 20,
+      "gold": 33,
+      "written, tagged by rules": 3,
+      "missing": 7,
+      "  heard by espeak": 3,
+      "  heard by Telugu": 2,
+      "  heard by either": 3,
+      "restored by the model": 3
+    },
+    "REPAIR": {
+      "written, NOT tagged": 6,
+      "gold": 9,
+      "missing": 2,
+      "  heard by espeak": 1,
+      "  heard by Telugu": 1,
+      "  heard by either": 1,
+      "written, tagged by rules": 1
+    },
+    "PARTIAL_WORD": {
+      "missing": 7,
+      "  heard by espeak": 5,
+      "  heard by Telugu": 5,
+      "  heard by either": 5,
+      "gold": 7
+    }
+  },
+  "untagged_words": {
+    "FILLER_DM": {
+      "is": 2,
+      "formed": 1,
+      "know": 6,
+      "you": 1,
+      "no": 1
+    },
+    "FALSE_START": {
+      "that": 2,
+      "is": 3,
+      "they": 1,
+      "are": 1,
+      "called": 1,
+      "also": 2,
+      "another": 1,
+      "this": 2,
+      "when": 2,
+      "the": 1,
+      "camera": 1,
+      "matrix": 1,
+      "you": 1,
+      "have": 1,
+      "a": 2,
+      "calibration": 1,
+      "for": 1
+    },
+    "REPETITION": {
+      "from": 1,
+      "these": 1,
+      "this": 1,
+      "is": 2,
+      "of": 4,
+      "a": 2,
+      "image": 2,
+      "the": 1,
+      "e": 1,
+      "c": 1,
+      "prime": 1,
+      "in": 2,
+      "that": 1
+    },
+    "REPAIR": {
+      "characteristics": 1,
+      "this": 1,
+      "which": 1,
+      "is": 1,
+      "i": 1,
+      "if": 1
+    }
+  },
+  "perfect_vs_real": {
+    "nptel_g2p_clean": {
+      "FALSE_START": {
+        "support": 21,
+        "predicted": 0,
+        "p": 0.0,
+        "r": 0.0,
+        "f1": 0.0
+      },
+      "FILLER_DM": {
+        "support": 16,
+        "predicted": 21,
+        "p": 0.5238,
+        "r": 0.6875,
+        "f1": 0.5946
+      },
+      "FILLER_HESITATION": {
+        "support": 59,
+        "predicted": 52,
+        "p": 0.9231,
+        "r": 0.8136,
+        "f1": 0.8649
+      },
+      "NOISE": {
+        "support": 0,
+        "predicted": 1,
+        "p": 0.0,
+        "r": 0.0,
+        "f1": 0.0
+      },
+      "PARTIAL_WORD": {
+        "support": 6,
+        "predicted": 0,
+        "p": 0.0,
+        "r": 0.0,
+        "f1": 0.0
+      },
+      "REPAIR": {
+        "support": 9,
+        "predicted": 5,
+        "p": 0.2,
+        "r": 0.1111,
+        "f1": 0.1429
+      },
+      "REPETITION": {
+        "support": 29,
+        "predicted": 37,
+        "p": 0.3784,
+        "r": 0.4828,
+        "f1": 0.4242
+      }
+    },
+    "nptel_recognized": {
+      "FALSE_START": {
+        "support": 21,
+        "predicted": 0,
+        "p": 0.0,
+        "r": 0.0,
+        "f1": 0.0
+      },
+      "FILLER_DM": {
+        "support": 16,
+        "predicted": 25,
+        "p": 0.36,
+        "r": 0.5625,
+        "f1": 0.439
+      },
+      "FILLER_HESITATION": {
+        "support": 59,
+        "predicted": 15,
+        "p": 0.9333,
+        "r": 0.2373,
+        "f1": 0.3784
+      },
+      "NOISE": {
+        "support": 0,
+        "predicted": 2,
+        "p": 0.0,
+        "r": 0.0,
+        "f1": 0.0
+      },
+      "PARTIAL_WORD": {
+        "support": 6,
+        "predicted": 1,
+        "p": 1.0,
+        "r": 0.1667,
+        "f1": 0.2857
+      },
+      "REPAIR": {
+        "support": 9,
+        "predicted": 3,
+        "p": 0.3333,
+        "r": 0.1111,
+        "f1": 0.1667
+      },
+      "REPETITION": {
+        "support": 29,
+        "predicted": 33,
+        "p": 0.3636,
+        "r": 0.4138,
+        "f1": 0.3871
+      }
+    }
+  }
+}
