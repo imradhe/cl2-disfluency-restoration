@@ -2,6 +2,7 @@
 .venv/
 __pycache__/
 *.pyc
+*.egg-info/
 .pytest_cache/
 .ipynb_checkpoints/
 .cache/
@@ -17,6 +18,9 @@ data/nptel/wav16k/
 # Large derived data (rebuilt by scripts/build_processed.py and scripts/build_gaps.py);
 # small stats / spot-check files stay tracked.
 data/processed/*.jsonl.gz
+data/restoration/*.jsonl.gz
+data/restoration/*.meta.json
+data/classification/
 data/gaps/*.jsonl.gz
 data/seq/*.jsonl.gz
 
@@ -26,6 +30,7 @@ ckpt/
 *.pth
 *.safetensors
 *.bin
+*.pkl
 
 # OS / editor
 .DS_Store

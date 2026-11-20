@@ -1,0 +1,90 @@
+{
+  "purpose": "Engineering validation; not a full-corpus benchmark",
+  "audio_used": false,
+  "probing_used": false,
+  "main_sample": {
+    "examples": 240,
+    "conversations": 20,
+    "parser": "en_core_web_sm 3.8.0"
+  },
+  "additional_model_and_balancing_sample": {
+    "examples": 24
+  },
+  "runs": {
+    "validation": {
+      "configurations": 25,
+      "fold_runs": 250,
+      "data_fingerprint": "2ea737db154e1d4bea243a97c93b892d692b4e539e70a2a1d4932e5771f33340",
+      "fold_sizes": [
+        24,
+        24,
+        24,
+        24,
+        24,
+        24,
+        24,
+        24,
+        24,
+        24
+      ]
+    },
+    "balancing_check": {
+      "configurations": 4,
+      "fold_runs": 40,
+      "data_fingerprint": "9af4873e6d056048d4bcad447ae8409162bcfda12f78eadfeea9ba22d75fd12d",
+      "fold_sizes": [
+        3,
+        3,
+        3,
+        3,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    "model_check": {
+      "configurations": 2,
+      "fold_runs": 20,
+      "data_fingerprint": "9af4873e6d056048d4bcad447ae8409162bcfda12f78eadfeea9ba22d75fd12d",
+      "fold_sizes": [
+        3,
+        3,
+        3,
+        3,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    "glmm_check": {
+      "configurations": 1,
+      "fold_runs": 10,
+      "data_fingerprint": "9af4873e6d056048d4bcad447ae8409162bcfda12f78eadfeea9ba22d75fd12d",
+      "fold_sizes": [
+        3,
+        3,
+        3,
+        3,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    }
+  },
+  "pretrained_checks": {
+    "frozen_encoder": "bert-base-uncased",
+    "fine_tuned_encoder": "bert-base-uncased",
+    "fine_tuning_epochs": 1,
+    "training_examples": 24
+  },
+  "unit_tests": 25
+}

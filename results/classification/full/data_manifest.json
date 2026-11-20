@@ -1,0 +1,39 @@
+{
+  "cache_version": 1,
+  "source": "data/processed/swb_tokens.jsonl.gz",
+  "source_sha256": "c2f7a82de3c57796f4de221704fc4c77cf056a77fe1593a189c8a814ccafb9e1",
+  "source_token_rows": 3131723,
+  "noise_rows_excluded": 45891,
+  "examples": 3085832,
+  "sides": 4876,
+  "conversations": 2438,
+  "class_counts": {
+    "O": 2631755,
+    "FILLER_HESITATION": 94533,
+    "REPETITION": 86403,
+    "FILLER_BACKCHANNEL": 68152,
+    "FILLER_DM": 133671,
+    "REPAIR": 17310,
+    "PARTIAL_WORD": 28564,
+    "PROLONGATION": 16017,
+    "FALSE_START": 9119,
+    "MISPRONUNCIATION": 308
+  },
+  "classes": [
+    "O",
+    "FILLER_HESITATION",
+    "FILLER_BACKCHANNEL",
+    "FILLER_DM",
+    "REPETITION",
+    "REPAIR",
+    "FALSE_START",
+    "PARTIAL_WORD",
+    "PROLONGATION",
+    "MISPRONUNCIATION"
+  ],
+  "label_source": "existing MS98 project-rule labels, including silver categories",
+  "context": "nearest two fluent words each side, same utterance, target hidden",
+  "audio_used": false,
+  "sample_limit": null,
+  "preparation_seconds": 12.862768000006326
+}

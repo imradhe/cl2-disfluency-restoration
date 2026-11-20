@@ -1,0 +1,335 @@
+{
+  "condition": "C",
+  "model": "rule",
+  "representation": "rules",
+  "balancing": "none",
+  "fold": 1,
+  "train_examples": 216,
+  "test_examples": 24,
+  "metrics": {
+    "exact": {
+      "per_tag": {
+        "FALSE_START": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 0,
+          "support": 3
+        },
+        "FILLER_BACKCHANNEL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 0,
+          "support": 2
+        },
+        "FILLER_DM": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 0,
+          "support": 1
+        },
+        "FILLER_HESITATION": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 0,
+          "support": 2
+        },
+        "PARTIAL_WORD": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 0,
+          "support": 1
+        },
+        "REPETITION": {
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.6666666666666666,
+          "tp": 1,
+          "predicted": 1,
+          "support": 2
+        }
+      },
+      "micro": {
+        "precision": 1.0,
+        "recall": 0.09090909090909091,
+        "f1": 0.16666666666666669,
+        "tp": 1,
+        "predicted": 1,
+        "support": 11
+      },
+      "macro_f1": 0.1111111111111111
+    },
+    "relaxed": {
+      "per_tag": {
+        "FALSE_START": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 0,
+          "support": 3
+        },
+        "FILLER_BACKCHANNEL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 0,
+          "support": 2
+        },
+        "FILLER_DM": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 0,
+          "support": 1
+        },
+        "FILLER_HESITATION": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 0,
+          "support": 2
+        },
+        "PARTIAL_WORD": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 0,
+          "support": 1
+        },
+        "REPETITION": {
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.6666666666666666,
+          "tp": 1,
+          "predicted": 1,
+          "support": 2
+        }
+      },
+      "micro": {
+        "precision": 1.0,
+        "recall": 0.09090909090909091,
+        "f1": 0.16666666666666669,
+        "tp": 1,
+        "predicted": 1,
+        "support": 11
+      },
+      "macro_f1": 0.1111111111111111
+    },
+    "tag_aware_wer": 0.07692307692307693,
+    "confusion": [
+      {
+        "gold": "B-FALSE_START",
+        "predicted": "<deleted>",
+        "count": 2
+      },
+      {
+        "gold": "B-FALSE_START",
+        "predicted": "O",
+        "count": 1
+      },
+      {
+        "gold": "B-FILLER_BACKCHANNEL",
+        "predicted": "O",
+        "count": 2
+      },
+      {
+        "gold": "B-FILLER_DM",
+        "predicted": "O",
+        "count": 1
+      },
+      {
+        "gold": "B-FILLER_HESITATION",
+        "predicted": "<deleted>",
+        "count": 2
+      },
+      {
+        "gold": "B-PARTIAL_WORD",
+        "predicted": "<deleted>",
+        "count": 1
+      },
+      {
+        "gold": "B-REPETITION",
+        "predicted": "<deleted>",
+        "count": 1
+      },
+      {
+        "gold": "B-REPETITION",
+        "predicted": "B-REPETITION",
+        "count": 1
+      },
+      {
+        "gold": "I-FALSE_START",
+        "predicted": "<deleted>",
+        "count": 1
+      },
+      {
+        "gold": "I-REPETITION",
+        "predicted": "<deleted>",
+        "count": 1
+      },
+      {
+        "gold": "O",
+        "predicted": "O",
+        "count": 143
+      }
+    ],
+    "restoration_only": {
+      "exact": {
+        "per_tag": {
+          "FALSE_START": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 0,
+            "support": 2
+          },
+          "FILLER_HESITATION": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 0,
+            "support": 2
+          },
+          "PARTIAL_WORD": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 0,
+            "support": 1
+          },
+          "REPETITION": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 0,
+            "support": 1
+          }
+        },
+        "micro": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 0,
+          "support": 6
+        },
+        "macro_f1": 0.0
+      },
+      "relaxed": {
+        "per_tag": {
+          "FALSE_START": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 0,
+            "support": 2
+          },
+          "FILLER_HESITATION": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 0,
+            "support": 2
+          },
+          "PARTIAL_WORD": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 0,
+            "support": 1
+          },
+          "REPETITION": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 0,
+            "support": 1
+          }
+        },
+        "micro": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 0,
+          "support": 6
+        },
+        "macro_f1": 0.0
+      },
+      "tag_aware_wer": 0.05128205128205128,
+      "confusion": [
+        {
+          "gold": "B-FALSE_START",
+          "predicted": "<deleted>",
+          "count": 2
+        },
+        {
+          "gold": "B-FILLER_HESITATION",
+          "predicted": "<deleted>",
+          "count": 2
+        },
+        {
+          "gold": "B-PARTIAL_WORD",
+          "predicted": "<deleted>",
+          "count": 1
+        },
+        {
+          "gold": "B-REPETITION",
+          "predicted": "<deleted>",
+          "count": 1
+        },
+        {
+          "gold": "I-FALSE_START",
+          "predicted": "<deleted>",
+          "count": 1
+        },
+        {
+          "gold": "I-REPETITION",
+          "predicted": "<deleted>",
+          "count": 1
+        },
+        {
+          "gold": "O",
+          "predicted": "O",
+          "count": 148
+        }
+      ]
+    }
+  },
+  "sampling": {
+    "policy": "none"
+  },
+  "provenance": {
+    "phone_source": [
+      "simulated_lexicon"
+    ],
+    "label_source": [
+      "ms98_project_rules"
+    ],
+    "word_origin": [
+      "simulated"
+    ]
+  }
+}

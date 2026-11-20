@@ -1,0 +1,69 @@
+{
+  "view": "context_timing",
+  "task": "binary",
+  "fold": 8,
+  "train_examples": 2777220,
+  "train_class_counts": {
+    "fluent": 2368298,
+    "disfluent": 408922
+  },
+  "natural_prevalence": {
+    "accuracy": 0.793355410677485,
+    "macro_f1": 0.6957799151788183,
+    "per_class": {
+      "fluent": {
+        "precision": 0.9539634617658025,
+        "recall": 0.7963690469412466,
+        "f1": 0.8680716024915648,
+        "support": 263457
+      },
+      "disfluent": {
+        "precision": 0.39502469609147706,
+        "recall": 0.7757723397187465,
+        "f1": 0.5234882278660719,
+        "support": 45155
+      }
+    },
+    "confusion": [
+      [
+        209809,
+        53648
+      ],
+      [
+        10125,
+        35030
+      ]
+    ],
+    "examples": 308612
+  },
+  "seconds": 3.113631999993231,
+  "balanced_test": {
+    "accuracy": 0.7871221348687854,
+    "macro_f1": 0.787094708866939,
+    "per_class": {
+      "fluent": {
+        "precision": 0.7807492420961455,
+        "recall": 0.7984719300188241,
+        "f1": 0.7895111403076586,
+        "support": 45155
+      },
+      "disfluent": {
+        "precision": 0.7937910718332201,
+        "recall": 0.7757723397187465,
+        "f1": 0.7846782774262194,
+        "support": 45155
+      }
+    },
+    "confusion": [
+      [
+        36055,
+        9100
+      ],
+      [
+        10125,
+        35030
+      ]
+    ],
+    "examples": 90310
+  }
+}

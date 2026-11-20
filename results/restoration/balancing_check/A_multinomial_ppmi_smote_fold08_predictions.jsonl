@@ -1,0 +1,2 @@
+{"id": "sw2006A-ms98-a-0005:16", "words": ["types", "of", "pollution", "like", "the", "toxic", "waste"], "tags": ["B-FILLER_DM", "O", "O", "O", "O", "B-FILLER_HESITATION", "B-FILLER_BACKCHANNEL"], "text": "types of pollution like the toxic waste", "inserted": [false, false, false, false, false, false, false], "observed_index": [0, 1, 2, 3, 4, 5, 6], "abstained_copies": 0}
+{"id": "sw2010A-ms98-a-0007:0", "words": ["no", "i", "haven't"], "tags": ["O", "O", "O"], "text": "no i haven't", "inserted": [false, false, false], "observed_index": [0, 1, 2], "abstained_copies": 0}

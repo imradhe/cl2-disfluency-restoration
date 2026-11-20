@@ -1,0 +1,177 @@
+{
+  "condition": "E",
+  "model": "logistic",
+  "representation": "ppmi",
+  "balancing": "none",
+  "fold": 2,
+  "train_examples": 21,
+  "test_examples": 3,
+  "metrics": {
+    "exact": {
+      "per_tag": {
+        "FILLER_BACKCHANNEL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 0,
+          "support": 1
+        },
+        "FILLER_HESITATION": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 1,
+          "predicted": 1,
+          "support": 1
+        }
+      },
+      "micro": {
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "tp": 1,
+        "predicted": 1,
+        "support": 2
+      },
+      "macro_f1": 0.5
+    },
+    "relaxed": {
+      "per_tag": {
+        "FILLER_BACKCHANNEL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 0,
+          "support": 1
+        },
+        "FILLER_HESITATION": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 1,
+          "predicted": 1,
+          "support": 1
+        }
+      },
+      "micro": {
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "tp": 1,
+        "predicted": 1,
+        "support": 2
+      },
+      "macro_f1": 0.5
+    },
+    "tag_aware_wer": 0.1,
+    "confusion": [
+      {
+        "gold": "B-FILLER_BACKCHANNEL",
+        "predicted": "O",
+        "count": 1
+      },
+      {
+        "gold": "B-FILLER_HESITATION",
+        "predicted": "B-FILLER_HESITATION",
+        "count": 1
+      },
+      {
+        "gold": "O",
+        "predicted": "O",
+        "count": 8
+      }
+    ],
+    "restoration_only": {
+      "exact": {
+        "per_tag": {
+          "FILLER_HESITATION": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "tp": 1,
+            "predicted": 1,
+            "support": 1
+          }
+        },
+        "micro": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 1,
+          "predicted": 1,
+          "support": 1
+        },
+        "macro_f1": 1.0
+      },
+      "relaxed": {
+        "per_tag": {
+          "FILLER_HESITATION": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "tp": 1,
+            "predicted": 1,
+            "support": 1
+          }
+        },
+        "micro": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 1,
+          "predicted": 1,
+          "support": 1
+        },
+        "macro_f1": 1.0
+      },
+      "tag_aware_wer": 0.0,
+      "confusion": [
+        {
+          "gold": "B-FILLER_HESITATION",
+          "predicted": "B-FILLER_HESITATION",
+          "count": 1
+        },
+        {
+          "gold": "O",
+          "predicted": "O",
+          "count": 9
+        }
+      ]
+    }
+  },
+  "sampling": {
+    "policy": "none",
+    "before": {
+      "word:B-FILLER_BACKCHANNEL": 2,
+      "gap:<none>": 132,
+      "word:O": 113,
+      "gap:[{\"label\":\"FILLER_HESITATION\",\"text\":\"uh\"}]": 2,
+      "gap:[{\"label\":\"FILLER_DM\",\"text\":\"so\"}]": 1,
+      "gap:[{\"label\":\"REPETITION\",\"copy\":0},{\"label\":\"REPETITION\",\"copy\":1}]": 1,
+      "gap:[{\"label\":\"FILLER_HESITATION\",\"text\":\"um\"}]": 3,
+      "word:B-FILLER_DM": 3,
+      "word:B-FILLER_HESITATION": 1,
+      "gap:[{\"label\":\"FILLER_DM\",\"text\":\"okay\"}]": 1,
+      "gap:[{\"label\":\"FILLER_DM\",\"text\":\"well\"}]": 1,
+      "word:B-PARTIAL_WORD": 1
+    },
+    "singleton_replication": [],
+    "representation": "ppmi"
+  },
+  "provenance": {
+    "phone_source": [
+      "simulated_lexicon"
+    ],
+    "label_source": [
+      "ms98_project_rules"
+    ],
+    "word_origin": [
+      "simulated"
+    ],
+    "parse_source": [
+      "unspecified"
+    ]
+  }
+}

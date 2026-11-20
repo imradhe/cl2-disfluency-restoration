@@ -1,0 +1,226 @@
+{
+  "protocol": {
+    "fingerprint": "9af4873e6d056048d4bcad447ae8409162bcfda12f78eadfeea9ba22d75fd12d",
+    "seed": 42,
+    "n_splits": 10,
+    "grouping": "conversation (both speaker sides together)",
+    "groups": {
+      "2022": 0,
+      "2015": 1,
+      "2001": 2,
+      "2009": 3,
+      "2014": 4,
+      "2020": 5,
+      "2012": 6,
+      "2018": 7,
+      "2010": 8,
+      "2027": 9,
+      "2007": 4,
+      "2023": 5,
+      "2017": 6,
+      "2025": 7,
+      "2006": 8,
+      "2008": 9,
+      "2024": 0,
+      "2005": 1,
+      "2019": 2,
+      "2013": 3
+    },
+    "fold_sizes": [
+      3,
+      3,
+      3,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ]
+  },
+  "provenance": {
+    "phone_source": [
+      "simulated_lexicon"
+    ],
+    "label_source": [
+      "ms98_project_rules"
+    ],
+    "word_origin": [
+      "simulated"
+    ],
+    "parse_source": [
+      "unspecified"
+    ]
+  },
+  "summary": [
+    {
+      "condition": "E",
+      "model": "glmm",
+      "representation": "numeric",
+      "balancing": "none",
+      "folds": 10,
+      "exact_micro_f1_mean": 0.0,
+      "exact_micro_f1_std": 0.0,
+      "relaxed_micro_f1_mean": 0.0,
+      "relaxed_micro_f1_std": 0.0,
+      "exact_macro_f1_mean": 0.0,
+      "exact_macro_f1_std": 0.0,
+      "restoration_exact_f1_mean": 0.0,
+      "restoration_exact_f1_std": 0.0,
+      "restoration_relaxed_f1_mean": 0.0,
+      "restoration_relaxed_f1_std": 0.0,
+      "tag_aware_wer_mean": 1.4738074017485783,
+      "tag_aware_wer_std": 0.4364822042044664,
+      "per_tag": {
+        "FALSE_START": {
+          "exact_precision_mean": 0.0,
+          "exact_precision_std": 0.0,
+          "exact_recall_mean": 0.0,
+          "exact_recall_std": 0.0,
+          "exact_f1_mean": 0.0,
+          "exact_f1_std": 0.0,
+          "relaxed_precision_mean": 0.0,
+          "relaxed_precision_std": 0.0,
+          "relaxed_recall_mean": 0.0,
+          "relaxed_recall_std": 0.0,
+          "relaxed_f1_mean": 0.0,
+          "relaxed_f1_std": 0.0
+        },
+        "FILLER_BACKCHANNEL": {
+          "exact_precision_mean": 0.0,
+          "exact_precision_std": 0.0,
+          "exact_recall_mean": 0.0,
+          "exact_recall_std": 0.0,
+          "exact_f1_mean": 0.0,
+          "exact_f1_std": 0.0,
+          "relaxed_precision_mean": 0.0,
+          "relaxed_precision_std": 0.0,
+          "relaxed_recall_mean": 0.0,
+          "relaxed_recall_std": 0.0,
+          "relaxed_f1_mean": 0.0,
+          "relaxed_f1_std": 0.0
+        },
+        "FILLER_DM": {
+          "exact_precision_mean": 0.0,
+          "exact_precision_std": 0.0,
+          "exact_recall_mean": 0.0,
+          "exact_recall_std": 0.0,
+          "exact_f1_mean": 0.0,
+          "exact_f1_std": 0.0,
+          "relaxed_precision_mean": 0.0,
+          "relaxed_precision_std": 0.0,
+          "relaxed_recall_mean": 0.0,
+          "relaxed_recall_std": 0.0,
+          "relaxed_f1_mean": 0.0,
+          "relaxed_f1_std": 0.0
+        },
+        "FILLER_HESITATION": {
+          "exact_precision_mean": 0.0,
+          "exact_precision_std": 0.0,
+          "exact_recall_mean": 0.0,
+          "exact_recall_std": 0.0,
+          "exact_f1_mean": 0.0,
+          "exact_f1_std": 0.0,
+          "relaxed_precision_mean": 0.0,
+          "relaxed_precision_std": 0.0,
+          "relaxed_recall_mean": 0.0,
+          "relaxed_recall_std": 0.0,
+          "relaxed_f1_mean": 0.0,
+          "relaxed_f1_std": 0.0
+        },
+        "MISPRONUNCIATION": {
+          "exact_precision_mean": 0.0,
+          "exact_precision_std": 0.0,
+          "exact_recall_mean": 0.0,
+          "exact_recall_std": 0.0,
+          "exact_f1_mean": 0.0,
+          "exact_f1_std": 0.0,
+          "relaxed_precision_mean": 0.0,
+          "relaxed_precision_std": 0.0,
+          "relaxed_recall_mean": 0.0,
+          "relaxed_recall_std": 0.0,
+          "relaxed_f1_mean": 0.0,
+          "relaxed_f1_std": 0.0
+        },
+        "NOISE": {
+          "exact_precision_mean": 0.0,
+          "exact_precision_std": 0.0,
+          "exact_recall_mean": 0.0,
+          "exact_recall_std": 0.0,
+          "exact_f1_mean": 0.0,
+          "exact_f1_std": 0.0,
+          "relaxed_precision_mean": 0.0,
+          "relaxed_precision_std": 0.0,
+          "relaxed_recall_mean": 0.0,
+          "relaxed_recall_std": 0.0,
+          "relaxed_f1_mean": 0.0,
+          "relaxed_f1_std": 0.0
+        },
+        "PARTIAL_WORD": {
+          "exact_precision_mean": 0.0,
+          "exact_precision_std": 0.0,
+          "exact_recall_mean": 0.0,
+          "exact_recall_std": 0.0,
+          "exact_f1_mean": 0.0,
+          "exact_f1_std": 0.0,
+          "relaxed_precision_mean": 0.0,
+          "relaxed_precision_std": 0.0,
+          "relaxed_recall_mean": 0.0,
+          "relaxed_recall_std": 0.0,
+          "relaxed_f1_mean": 0.0,
+          "relaxed_f1_std": 0.0
+        },
+        "PROLONGATION": {
+          "exact_precision_mean": 0.0,
+          "exact_precision_std": 0.0,
+          "exact_recall_mean": 0.0,
+          "exact_recall_std": 0.0,
+          "exact_f1_mean": 0.0,
+          "exact_f1_std": 0.0,
+          "relaxed_precision_mean": 0.0,
+          "relaxed_precision_std": 0.0,
+          "relaxed_recall_mean": 0.0,
+          "relaxed_recall_std": 0.0,
+          "relaxed_f1_mean": 0.0,
+          "relaxed_f1_std": 0.0
+        },
+        "REPAIR": {
+          "exact_precision_mean": 0.0,
+          "exact_precision_std": 0.0,
+          "exact_recall_mean": 0.0,
+          "exact_recall_std": 0.0,
+          "exact_f1_mean": 0.0,
+          "exact_f1_std": 0.0,
+          "relaxed_precision_mean": 0.0,
+          "relaxed_precision_std": 0.0,
+          "relaxed_recall_mean": 0.0,
+          "relaxed_recall_std": 0.0,
+          "relaxed_f1_mean": 0.0,
+          "relaxed_f1_std": 0.0
+        },
+        "REPETITION": {
+          "exact_precision_mean": 0.0,
+          "exact_precision_std": 0.0,
+          "exact_recall_mean": 0.0,
+          "exact_recall_std": 0.0,
+          "exact_f1_mean": 0.0,
+          "exact_f1_std": 0.0,
+          "relaxed_precision_mean": 0.0,
+          "relaxed_precision_std": 0.0,
+          "relaxed_recall_mean": 0.0,
+          "relaxed_recall_std": 0.0,
+          "relaxed_f1_mean": 0.0,
+          "relaxed_f1_std": 0.0
+        }
+      }
+    }
+  ],
+  "notes": [
+    "Dictionary-derived phone streams are simulations, not audio recognition.",
+    "MS98 project-rule labels are not NXT/Treebank gold labels.",
+    "The local add-0.1 trigram LM differs from the paper OANC/SRILM LM.",
+    "Syntactic surprisal is optional supplied data; missing values have availability flags.",
+    "GLMM uses Gaussian-Hermite marginal likelihood, not the paper lme4 estimator."
+  ]
+}

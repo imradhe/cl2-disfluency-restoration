@@ -1,0 +1,20 @@
+{
+  "full_corpus": true,
+  "examples": 3085832,
+  "conversations": 2438,
+  "speaker_sides": 4876,
+  "noise_rows_excluded": 45891,
+  "sample_limit": null,
+  "folds": 10,
+  "fold_fits": 120,
+  "all_source_counts_match": true,
+  "all_oof_class_supports_match": true,
+  "weighted_and_unweighted_folds_identical": true,
+  "source_sha256": "c2f7a82de3c57796f4de221704fc4c77cf056a77fe1593a189c8a814ccafb9e1",
+  "python": "3.12.16",
+  "numpy": "2.5.4",
+  "sklearn": "1.9.1",
+  "tests_passed": 28,
+  "audio_used": false,
+  "external_messages_sent": false
+}

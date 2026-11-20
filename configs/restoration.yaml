@@ -1,0 +1,17 @@
+# Transcript-only CL2 experiment matrix. E requires supplied dependency parses
+# or an installed --parser-model. No audio or recognition job is launched.
+data: data/restoration/examples.jsonl.gz
+out: results/restoration
+folds: 10
+seed: 42
+conditions: [A, B, C, D, E]
+models: [rule, logistic, multinomial, svm, mlp, glmm, bert]
+representations: [tfidf, ppmi]
+balancing: [none, under, smote, cluster]
+encoder: bert-base-uncased
+cache_dir: .cache/hf/hub
+epochs: 3
+batch_size: 8
+learning_rate: 0.00002
+save_models: true
+checkpoints: ckpt/restoration

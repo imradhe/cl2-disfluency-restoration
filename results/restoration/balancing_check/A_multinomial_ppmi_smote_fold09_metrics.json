@@ -1,0 +1,277 @@
+{
+  "condition": "A",
+  "model": "multinomial",
+  "representation": "ppmi",
+  "balancing": "smote",
+  "fold": 9,
+  "train_examples": 22,
+  "test_examples": 2,
+  "metrics": {
+    "exact": {
+      "per_tag": {
+        "FILLER_BACKCHANNEL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 1,
+          "support": 0
+        },
+        "FILLER_DM": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 2,
+          "support": 1
+        },
+        "FILLER_HESITATION": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 3,
+          "support": 0
+        },
+        "PARTIAL_WORD": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 2,
+          "support": 0
+        }
+      },
+      "micro": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "predicted": 8,
+        "support": 1
+      },
+      "macro_f1": 0.0
+    },
+    "relaxed": {
+      "per_tag": {
+        "FILLER_BACKCHANNEL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 1,
+          "support": 0
+        },
+        "FILLER_DM": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 2,
+          "support": 1
+        },
+        "FILLER_HESITATION": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 3,
+          "support": 0
+        },
+        "PARTIAL_WORD": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 2,
+          "support": 0
+        }
+      },
+      "micro": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "predicted": 8,
+        "support": 1
+      },
+      "macro_f1": 0.0
+    },
+    "tag_aware_wer": 0.5714285714285714,
+    "confusion": [
+      {
+        "gold": "<inserted>",
+        "predicted": "B-FILLER_HESITATION",
+        "count": 1
+      },
+      {
+        "gold": "B-FILLER_DM",
+        "predicted": "B-FILLER_DM",
+        "count": 1
+      },
+      {
+        "gold": "O",
+        "predicted": "B-FILLER_BACKCHANNEL",
+        "count": 1
+      },
+      {
+        "gold": "O",
+        "predicted": "B-FILLER_DM",
+        "count": 1
+      },
+      {
+        "gold": "O",
+        "predicted": "B-FILLER_HESITATION",
+        "count": 2
+      },
+      {
+        "gold": "O",
+        "predicted": "B-PARTIAL_WORD",
+        "count": 2
+      },
+      {
+        "gold": "O",
+        "predicted": "O",
+        "count": 7
+      }
+    ],
+    "restoration_only": {
+      "exact": {
+        "per_tag": {
+          "FILLER_DM": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 0,
+            "support": 1
+          },
+          "FILLER_HESITATION": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 2,
+            "support": 0
+          }
+        },
+        "micro": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 2,
+          "support": 1
+        },
+        "macro_f1": 0.0
+      },
+      "relaxed": {
+        "per_tag": {
+          "FILLER_DM": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 0,
+            "support": 1
+          },
+          "FILLER_HESITATION": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 2,
+            "support": 0
+          }
+        },
+        "micro": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 2,
+          "support": 1
+        },
+        "macro_f1": 0.0
+      },
+      "tag_aware_wer": 0.21428571428571427,
+      "confusion": [
+        {
+          "gold": "<inserted>",
+          "predicted": "B-FILLER_HESITATION",
+          "count": 1
+        },
+        {
+          "gold": "B-FILLER_DM",
+          "predicted": "O",
+          "count": 1
+        },
+        {
+          "gold": "O",
+          "predicted": "B-FILLER_HESITATION",
+          "count": 1
+        },
+        {
+          "gold": "O",
+          "predicted": "O",
+          "count": 12
+        }
+      ]
+    }
+  },
+  "sampling": {
+    "policy": "smote",
+    "before": {
+      "word:O": 108,
+      "gap:<none>": 129,
+      "gap:[{\"label\":\"FILLER_HESITATION\",\"text\":\"um\"}]": 4,
+      "word:B-FILLER_BACKCHANNEL": 3,
+      "gap:[{\"label\":\"FILLER_HESITATION\",\"text\":\"uh\"}]": 2,
+      "gap:[{\"label\":\"REPETITION\",\"copy\":0},{\"label\":\"REPETITION\",\"copy\":1}]": 1,
+      "word:B-FILLER_DM": 3,
+      "word:B-FILLER_HESITATION": 1,
+      "gap:[{\"label\":\"FILLER_DM\",\"text\":\"okay\"}]": 1,
+      "gap:[{\"label\":\"FILLER_DM\",\"text\":\"well\"}]": 1,
+      "word:B-PARTIAL_WORD": 1
+    },
+    "singleton_replication": [
+      "gap:[{\"label\":\"FILLER_DM\",\"text\":\"okay\"}]",
+      "gap:[{\"label\":\"FILLER_DM\",\"text\":\"well\"}]",
+      "gap:[{\"label\":\"REPETITION\",\"copy\":0},{\"label\":\"REPETITION\",\"copy\":1}]",
+      "word:B-FILLER_HESITATION",
+      "word:B-PARTIAL_WORD"
+    ],
+    "after": {
+      "gap:<none>": 129,
+      "gap:[{\"label\":\"FILLER_DM\",\"text\":\"okay\"}]": 129,
+      "gap:[{\"label\":\"FILLER_DM\",\"text\":\"well\"}]": 129,
+      "gap:[{\"label\":\"FILLER_HESITATION\",\"text\":\"uh\"}]": 129,
+      "gap:[{\"label\":\"FILLER_HESITATION\",\"text\":\"um\"}]": 129,
+      "gap:[{\"label\":\"REPETITION\",\"copy\":0},{\"label\":\"REPETITION\",\"copy\":1}]": 129,
+      "word:B-FILLER_BACKCHANNEL": 129,
+      "word:B-FILLER_DM": 129,
+      "word:B-FILLER_HESITATION": 129,
+      "word:B-PARTIAL_WORD": 129,
+      "word:O": 129
+    },
+    "representation": "ppmi",
+    "iterations": [
+      50
+    ],
+    "iteration_limit_reached": false
+  },
+  "provenance": {
+    "phone_source": [
+      "simulated_lexicon"
+    ],
+    "label_source": [
+      "ms98_project_rules"
+    ],
+    "word_origin": [
+      "simulated"
+    ],
+    "parse_source": [
+      "unspecified"
+    ]
+  }
+}

@@ -1,0 +1,334 @@
+{
+  "condition": "A",
+  "model": "multinomial",
+  "representation": "tfidf",
+  "balancing": "none",
+  "fold": 0,
+  "train_examples": 216,
+  "test_examples": 24,
+  "metrics": {
+    "exact": {
+      "per_tag": {
+        "FILLER_BACKCHANNEL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 0,
+          "support": 1
+        },
+        "FILLER_DM": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 0,
+          "support": 7
+        },
+        "FILLER_HESITATION": {
+          "precision": 1.0,
+          "recall": 0.16666666666666666,
+          "f1": 0.2857142857142857,
+          "tp": 1,
+          "predicted": 1,
+          "support": 6
+        },
+        "REPETITION": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 0,
+          "support": 2
+        }
+      },
+      "micro": {
+        "precision": 1.0,
+        "recall": 0.0625,
+        "f1": 0.11764705882352941,
+        "tp": 1,
+        "predicted": 1,
+        "support": 16
+      },
+      "macro_f1": 0.07142857142857142
+    },
+    "relaxed": {
+      "per_tag": {
+        "FILLER_BACKCHANNEL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 0,
+          "support": 1
+        },
+        "FILLER_DM": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 0,
+          "support": 7
+        },
+        "FILLER_HESITATION": {
+          "precision": 1.0,
+          "recall": 0.16666666666666666,
+          "f1": 0.2857142857142857,
+          "tp": 1,
+          "predicted": 1,
+          "support": 6
+        },
+        "REPETITION": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 0,
+          "support": 2
+        }
+      },
+      "micro": {
+        "precision": 1.0,
+        "recall": 0.0625,
+        "f1": 0.11764705882352941,
+        "tp": 1,
+        "predicted": 1,
+        "support": 16
+      },
+      "macro_f1": 0.07142857142857142
+    },
+    "tag_aware_wer": 0.09433962264150944,
+    "confusion": [
+      {
+        "gold": "B-FILLER_BACKCHANNEL",
+        "predicted": "<deleted>",
+        "count": 1
+      },
+      {
+        "gold": "B-FILLER_DM",
+        "predicted": "<deleted>",
+        "count": 3
+      },
+      {
+        "gold": "B-FILLER_DM",
+        "predicted": "O",
+        "count": 4
+      },
+      {
+        "gold": "B-FILLER_HESITATION",
+        "predicted": "<deleted>",
+        "count": 3
+      },
+      {
+        "gold": "B-FILLER_HESITATION",
+        "predicted": "B-FILLER_HESITATION",
+        "count": 1
+      },
+      {
+        "gold": "B-FILLER_HESITATION",
+        "predicted": "O",
+        "count": 2
+      },
+      {
+        "gold": "B-REPETITION",
+        "predicted": "<deleted>",
+        "count": 2
+      },
+      {
+        "gold": "O",
+        "predicted": "O",
+        "count": 143
+      }
+    ],
+    "restoration_only": {
+      "exact": {
+        "per_tag": {
+          "FILLER_BACKCHANNEL": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 0,
+            "support": 1
+          },
+          "FILLER_DM": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 0,
+            "support": 3
+          },
+          "FILLER_HESITATION": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 0,
+            "support": 3
+          },
+          "REPETITION": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 0,
+            "support": 2
+          }
+        },
+        "micro": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 0,
+          "support": 9
+        },
+        "macro_f1": 0.0
+      },
+      "relaxed": {
+        "per_tag": {
+          "FILLER_BACKCHANNEL": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 0,
+            "support": 1
+          },
+          "FILLER_DM": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 0,
+            "support": 3
+          },
+          "FILLER_HESITATION": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 0,
+            "support": 3
+          },
+          "REPETITION": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 0,
+            "support": 2
+          }
+        },
+        "micro": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 0,
+          "support": 9
+        },
+        "macro_f1": 0.0
+      },
+      "tag_aware_wer": 0.05660377358490566,
+      "confusion": [
+        {
+          "gold": "B-FILLER_BACKCHANNEL",
+          "predicted": "<deleted>",
+          "count": 1
+        },
+        {
+          "gold": "B-FILLER_DM",
+          "predicted": "<deleted>",
+          "count": 3
+        },
+        {
+          "gold": "B-FILLER_HESITATION",
+          "predicted": "<deleted>",
+          "count": 3
+        },
+        {
+          "gold": "B-REPETITION",
+          "predicted": "<deleted>",
+          "count": 2
+        },
+        {
+          "gold": "O",
+          "predicted": "O",
+          "count": 150
+        }
+      ]
+    }
+  },
+  "sampling": {
+    "policy": "none",
+    "before": {
+      "word:O": 1158,
+      "gap:<none>": 1362,
+      "gap:[{\"label\":\"FILLER_HESITATION\",\"text\":\"um\"}]": 12,
+      "gap:[{\"label\":\"REPETITION\",\"copy\":0}]": 7,
+      "word:B-FILLER_BACKCHANNEL": 21,
+      "gap:[{\"label\":\"REPETITION\",\"text\":\"is\"}]": 1,
+      "word:B-FILLER_DM": 12,
+      "word:I-FILLER_DM": 1,
+      "gap:[{\"label\":\"REPETITION\",\"text\":\"is\"},{\"label\":\"REPETITION\",\"text\":\"there\"},{\"label\":\"REPAIR\",\"text\":\"is\"},{\"label\":\"REPAIR\",\"text\":\"there\"},{\"label\":\"FILLER_HESITATION\",\"text\":\"um\"},{\"label\":\"PARTIAL_WORD\",\"text\":\"an\"}]": 1,
+      "gap:[{\"label\":\"FILLER_DM\",\"text\":\"right\"},{\"label\":\"FILLER_DM\",\"text\":\"right\"}]": 1,
+      "gap:[{\"label\":\"REPETITION\",\"copy\":0},{\"label\":\"REPETITION\",\"copy\":1}]": 2,
+      "word:B-FILLER_HESITATION": 14,
+      "gap:[{\"label\":\"FILLER_DM\",\"text\":\"okay\"}]": 1,
+      "gap:[{\"label\":\"FILLER_HESITATION\",\"text\":\"uh\"},{\"label\":\"PARTIAL_WORD\",\"text\":\"h\"}]": 1,
+      "gap:[{\"label\":\"REPETITION\",\"text\":\"about\"},{\"label\":\"FILLER_HESITATION\",\"text\":\"uh\"}]": 1,
+      "word:B-PROLONGATION": 6,
+      "gap:[{\"label\":\"FILLER_DM\",\"text\":\"yes\"}]": 1,
+      "gap:[{\"label\":\"FILLER_DM\",\"text\":\"yeah\"}]": 3,
+      "word:B-REPAIR": 1,
+      "gap:[{\"label\":\"REPAIR\",\"copy\":1}]": 1,
+      "gap:[{\"label\":\"FILLER_HESITATION\",\"text\":\"uh\"}]": 13,
+      "gap:[{\"label\":\"FILLER_DM\",\"text\":\"know\"}]": 2,
+      "gap:[{\"label\":\"REPETITION\",\"text\":\"a\"}]": 1,
+      "gap:[{\"label\":\"FILLER_DM\",\"text\":\"well\"}]": 7,
+      "gap:[{\"label\":\"REPETITION\",\"copy\":0},{\"label\":\"REPETITION\",\"copy\":0}]": 1,
+      "gap:[{\"label\":\"PARTIAL_WORD\",\"text\":\"ozo\"}]": 1,
+      "word:B-REPETITION": 4,
+      "gap:[{\"label\":\"REPETITION\",\"copy\":1}]": 1,
+      "gap:[{\"label\":\"FILLER_DM\",\"text\":\"i\"},{\"label\":\"FILLER_DM\",\"text\":\"mean\"}]": 1,
+      "gap:[{\"label\":\"FILLER_DM\",\"text\":\"so\"}]": 2,
+      "gap:[{\"label\":\"REPAIR\",\"copy\":0},{\"label\":\"REPAIR\",\"text\":\"that's\"},{\"label\":\"FILLER_HESITATION\",\"text\":\"uh\"}]": 1,
+      "gap:[{\"label\":\"REPETITION\",\"copy\":0},{\"label\":\"PARTIAL_WORD\",\"text\":\"th\"}]": 1,
+      "gap:[{\"label\":\"PARTIAL_WORD\",\"text\":\"i\"}]": 1,
+      "gap:[{\"label\":\"FILLER_DM\",\"text\":\"kind\"}]": 1,
+      "gap:[{\"label\":\"FILLER_DM\",\"text\":\"of\"}]": 1,
+      "word:B-FALSE_START": 1,
+      "gap:[{\"label\":\"FALSE_START\",\"text\":\"i'm\"}]": 1,
+      "gap:[{\"label\":\"FALSE_START\",\"text\":\"california\"},{\"label\":\"FALSE_START\",\"text\":\"my\"},{\"label\":\"PARTIAL_WORD\",\"text\":\"mo\"}]": 1,
+      "word:B-PARTIAL_WORD": 4,
+      "gap:[{\"label\":\"FILLER_DM\",\"text\":\"you\"},{\"label\":\"FILLER_DM\",\"text\":\"know\"}]": 2,
+      "gap:[{\"label\":\"FILLER_BACKCHANNEL\",\"text\":\"uh-huh\"},{\"label\":\"FILLER_DM\",\"text\":\"so\"}]": 1,
+      "gap:[{\"label\":\"FALSE_START\",\"text\":\"only\"},{\"label\":\"FALSE_START\",\"text\":\"known\"},{\"label\":\"FALSE_START\",\"text\":\"the\"}]": 1,
+      "gap:[{\"label\":\"FALSE_START\",\"text\":\"dog\"},{\"label\":\"PARTIAL_WORD\",\"text\":\"wh\"}]": 1,
+      "gap:[{\"label\":\"PARTIAL_WORD\",\"text\":\"th\"}]": 1,
+      "word:I-FILLER_HESITATION": 1,
+      "gap:[{\"label\":\"REPETITION\",\"text\":\"a\"},{\"label\":\"FILLER_HESITATION\",\"text\":\"uh\"}]": 1,
+      "gap:[{\"label\":\"FILLER_DM\",\"text\":\"right\"}]": 1,
+      "gap:[{\"label\":\"PARTIAL_WORD\",\"text\":\"re\"}]": 1
+    },
+    "singleton_replication": [],
+    "representation": "tfidf",
+    "iterations": [
+      36
+    ],
+    "iteration_limit_reached": false
+  },
+  "provenance": {
+    "phone_source": [
+      "simulated_lexicon"
+    ],
+    "label_source": [
+      "ms98_project_rules"
+    ],
+    "word_origin": [
+      "simulated"
+    ]
+  }
+}

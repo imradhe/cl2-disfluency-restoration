@@ -1,0 +1,2 @@
+{"id": "sw2007A-ms98-a-0004:16", "words": ["like", "you", "um", "say", "there's", "industry"], "tags": ["O", "O", "B-FILLER_HESITATION", "O", "O", "B-FILLER_BACKCHANNEL"], "text": "like you um say there's industry", "inserted": [false, false, true, false, false, false], "observed_index": [0, 1, null, 2, 3, 4], "abstained_copies": 0}
+{"id": "sw2014A-ms98-a-0006:0", "words": ["right"], "tags": ["B-FILLER_HESITATION"], "text": "right", "inserted": [false], "observed_index": [0], "abstained_copies": 0}

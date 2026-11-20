@@ -1,0 +1,323 @@
+{
+  "condition": "A",
+  "model": "multinomial",
+  "representation": "ppmi",
+  "balancing": "cluster",
+  "fold": 3,
+  "train_examples": 21,
+  "test_examples": 3,
+  "metrics": {
+    "exact": {
+      "per_tag": {
+        "FILLER_BACKCHANNEL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 3,
+          "support": 0
+        },
+        "FILLER_DM": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 6,
+          "support": 0
+        },
+        "FILLER_HESITATION": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 2,
+          "support": 1
+        },
+        "PARTIAL_WORD": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 10,
+          "support": 0
+        },
+        "REPETITION": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 0,
+          "support": 1
+        }
+      },
+      "micro": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "predicted": 21,
+        "support": 2
+      },
+      "macro_f1": 0.0
+    },
+    "relaxed": {
+      "per_tag": {
+        "FILLER_BACKCHANNEL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 3,
+          "support": 0
+        },
+        "FILLER_DM": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 6,
+          "support": 0
+        },
+        "FILLER_HESITATION": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 2,
+          "support": 1
+        },
+        "PARTIAL_WORD": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 10,
+          "support": 0
+        },
+        "REPETITION": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 0,
+          "support": 1
+        }
+      },
+      "micro": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "predicted": 21,
+        "support": 2
+      },
+      "macro_f1": 0.0
+    },
+    "tag_aware_wer": 0.9583333333333334,
+    "confusion": [
+      {
+        "gold": "<inserted>",
+        "predicted": "B-FILLER_DM",
+        "count": 3
+      },
+      {
+        "gold": "<inserted>",
+        "predicted": "B-FILLER_HESITATION",
+        "count": 2
+      },
+      {
+        "gold": "B-FILLER_HESITATION",
+        "predicted": "B-FILLER_DM",
+        "count": 1
+      },
+      {
+        "gold": "B-REPETITION",
+        "predicted": "<deleted>",
+        "count": 1
+      },
+      {
+        "gold": "I-REPETITION",
+        "predicted": "<deleted>",
+        "count": 1
+      },
+      {
+        "gold": "O",
+        "predicted": "B-FILLER_BACKCHANNEL",
+        "count": 3
+      },
+      {
+        "gold": "O",
+        "predicted": "B-FILLER_DM",
+        "count": 2
+      },
+      {
+        "gold": "O",
+        "predicted": "B-PARTIAL_WORD",
+        "count": 10
+      },
+      {
+        "gold": "O",
+        "predicted": "O",
+        "count": 6
+      }
+    ],
+    "restoration_only": {
+      "exact": {
+        "per_tag": {
+          "FILLER_DM": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 4,
+            "support": 0
+          },
+          "FILLER_HESITATION": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 2,
+            "support": 1
+          },
+          "REPETITION": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 0,
+            "support": 1
+          }
+        },
+        "micro": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 6,
+          "support": 2
+        },
+        "macro_f1": 0.0
+      },
+      "relaxed": {
+        "per_tag": {
+          "FILLER_DM": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 4,
+            "support": 0
+          },
+          "FILLER_HESITATION": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 2,
+            "support": 1
+          },
+          "REPETITION": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 0,
+            "support": 1
+          }
+        },
+        "micro": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 6,
+          "support": 2
+        },
+        "macro_f1": 0.0
+      },
+      "tag_aware_wer": 0.3333333333333333,
+      "confusion": [
+        {
+          "gold": "<inserted>",
+          "predicted": "B-FILLER_DM",
+          "count": 3
+        },
+        {
+          "gold": "<inserted>",
+          "predicted": "B-FILLER_HESITATION",
+          "count": 2
+        },
+        {
+          "gold": "B-FILLER_HESITATION",
+          "predicted": "B-FILLER_DM",
+          "count": 1
+        },
+        {
+          "gold": "B-REPETITION",
+          "predicted": "<deleted>",
+          "count": 1
+        },
+        {
+          "gold": "I-REPETITION",
+          "predicted": "<deleted>",
+          "count": 1
+        },
+        {
+          "gold": "O",
+          "predicted": "O",
+          "count": 21
+        }
+      ]
+    }
+  },
+  "sampling": {
+    "policy": "cluster",
+    "before": {
+      "word:O": 100,
+      "gap:<none>": 121,
+      "gap:[{\"label\":\"FILLER_HESITATION\",\"text\":\"um\"}]": 3,
+      "word:B-FILLER_BACKCHANNEL": 3,
+      "gap:[{\"label\":\"FILLER_HESITATION\",\"text\":\"uh\"}]": 2,
+      "gap:[{\"label\":\"FILLER_DM\",\"text\":\"so\"}]": 1,
+      "word:B-FILLER_DM": 3,
+      "word:B-FILLER_HESITATION": 1,
+      "gap:[{\"label\":\"FILLER_DM\",\"text\":\"okay\"}]": 1,
+      "gap:[{\"label\":\"FILLER_DM\",\"text\":\"well\"}]": 1,
+      "word:B-PARTIAL_WORD": 1
+    },
+    "singleton_replication": [],
+    "after": {
+      "gap:<none>": 1,
+      "gap:[{\"label\":\"FILLER_DM\",\"text\":\"okay\"}]": 1,
+      "gap:[{\"label\":\"FILLER_DM\",\"text\":\"so\"}]": 1,
+      "gap:[{\"label\":\"FILLER_DM\",\"text\":\"well\"}]": 1,
+      "gap:[{\"label\":\"FILLER_HESITATION\",\"text\":\"uh\"}]": 1,
+      "gap:[{\"label\":\"FILLER_HESITATION\",\"text\":\"um\"}]": 1,
+      "word:B-FILLER_BACKCHANNEL": 1,
+      "word:B-FILLER_DM": 1,
+      "word:B-FILLER_HESITATION": 1,
+      "word:B-PARTIAL_WORD": 1,
+      "word:O": 1
+    },
+    "representation": "ppmi",
+    "iterations": [
+      28
+    ],
+    "iteration_limit_reached": false
+  },
+  "provenance": {
+    "phone_source": [
+      "simulated_lexicon"
+    ],
+    "label_source": [
+      "ms98_project_rules"
+    ],
+    "word_origin": [
+      "simulated"
+    ],
+    "parse_source": [
+      "unspecified"
+    ]
+  }
+}

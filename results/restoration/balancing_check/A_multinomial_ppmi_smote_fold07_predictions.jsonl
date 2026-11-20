@@ -1,0 +1,2 @@
+{"id": "sw2018A-ms98-a-0006:8", "words": ["mean", "there", "really", "is"], "tags": ["B-FILLER_DM", "O", "O", "O"], "text": "mean there really is", "inserted": [false, false, false, false], "observed_index": [0, 1, 2, 3], "abstained_copies": 0}
+{"id": "sw2025A-ms98-a-0003:0", "words": ["i", "personally", "think", "to", "set", "a", "mark"], "tags": ["B-FILLER_DM", "B-PARTIAL_WORD", "O", "O", "O", "O", "O"], "text": "i personally think to set a mark", "inserted": [false, false, false, false, false, false, false], "observed_index": [0, 1, 2, 3, 4, 5, 6], "abstained_copies": 0}

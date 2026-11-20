@@ -1,0 +1,2 @@
+{"id": "sw2020A-ms98-a-0004:8", "words": ["uh"], "tags": ["O"], "text": "uh", "inserted": [false], "observed_index": [0], "abstained_copies": 0}
+{"id": "sw2023A-ms98-a-0008:0", "words": ["yeah", "um", "we", "got", "in", "a", "spot", "of"], "tags": ["B-FILLER_BACKCHANNEL", "B-FILLER_HESITATION", "O", "O", "O", "O", "O", "O"], "text": "yeah um we got in a spot of", "inserted": [false, true, false, false, false, false, false, false], "observed_index": [0, null, 1, 2, 3, 4, 5, 6], "abstained_copies": 0}

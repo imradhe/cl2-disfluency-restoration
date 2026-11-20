@@ -1,0 +1,2 @@
+condition,model,representation,balancing,folds,exact_micro_f1_mean,exact_micro_f1_std,relaxed_micro_f1_mean,relaxed_micro_f1_std,exact_macro_f1_mean,exact_macro_f1_std,restoration_exact_f1_mean,restoration_exact_f1_std,restoration_relaxed_f1_mean,restoration_relaxed_f1_std,tag_aware_wer_mean,tag_aware_wer_std
+E,glmm,numeric,none,10,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.4738074017485783,0.4364822042044664

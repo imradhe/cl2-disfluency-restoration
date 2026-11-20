@@ -1,0 +1,45 @@
+{
+  "catalog_id": "LDC2009T26",
+  "title": "NXT Switchboard Annotations",
+  "catalog_url": "https://catalog.ldc.upenn.edu/LDC2009T26",
+  "source_paper": "https://aclanthology.org/2021.scil-1.9/",
+  "corpus_present": false,
+  "status": "NXT acquisition deferred at user request; use the full existing MS98 project-labelled corpus.",
+  "downloaded_material": "Official documentation and file inventory only; NOT the corpus.",
+  "documentation": [
+    {
+      "file": "00README-SWBD.txt",
+      "url": "https://catalog.ldc.upenn.edu/docs/LDC2009T26/00README-SWBD.txt",
+      "bytes": 4259,
+      "sha256": "667ae9d07dbac6dd25352b7a2faec6fe6d757fe3a6d6fbb8389be7e1bcead8d0"
+    },
+    {
+      "file": "00LICENSE-SWBD.txt",
+      "url": "https://catalog.ldc.upenn.edu/docs/LDC2009T26/00LICENSE-SWBD.txt",
+      "bytes": 23257,
+      "sha256": "4d79f44e87fcc76c13c4565b1fcef4524515ddf5a852cc9049ed559789e81d4d"
+    },
+    {
+      "file": "file.tbl",
+      "url": "https://catalog.ldc.upenn.edu/docs/LDC2009T26/file.tbl",
+      "bytes": 549408,
+      "sha256": "80292659bac14463891b21c0065b937e7c527a7dfcf35c13629c4c5fed098eef"
+    }
+  ],
+  "paper_reference_counts": {
+    "reparandum_positive": 14520,
+    "filler_positive": 12050,
+    "fluent_pool": 558361,
+    "balanced_reparandum_task": 29040,
+    "balanced_filler_task": 24100
+  },
+  "requested_experiments": [
+    "disfluent vs fluent",
+    "filler vs fluent",
+    "reparandum vs fluent",
+    "multiclass fluent/filler/reparandum with per-class precision, recall and F1"
+  ],
+  "fallback_policy": "Do not substitute MS98, SwDA, corrected/reannotated Switchboard, or synthetic data as the exact NXT release.",
+  "active_dataset": "data/processed/swb_tokens.jsonl.gz",
+  "external_contact_authorized": false
+}

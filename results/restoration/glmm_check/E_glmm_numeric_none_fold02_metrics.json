@@ -1,0 +1,304 @@
+{
+  "condition": "E",
+  "model": "glmm",
+  "representation": "numeric",
+  "balancing": "none",
+  "fold": 2,
+  "train_examples": 21,
+  "test_examples": 3,
+  "metrics": {
+    "exact": {
+      "per_tag": {
+        "FILLER_BACKCHANNEL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 0,
+          "support": 1
+        },
+        "FILLER_HESITATION": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 0,
+          "support": 1
+        },
+        "REPETITION": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 8,
+          "support": 0
+        }
+      },
+      "micro": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "predicted": 8,
+        "support": 2
+      },
+      "macro_f1": 0.0
+    },
+    "relaxed": {
+      "per_tag": {
+        "FILLER_BACKCHANNEL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 0,
+          "support": 1
+        },
+        "FILLER_HESITATION": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 0,
+          "support": 1
+        },
+        "REPETITION": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 8,
+          "support": 0
+        }
+      },
+      "micro": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "predicted": 8,
+        "support": 2
+      },
+      "macro_f1": 0.0
+    },
+    "tag_aware_wer": 1.5,
+    "confusion": [
+      {
+        "gold": "<inserted>",
+        "predicted": "B-REPETITION",
+        "count": 8
+      },
+      {
+        "gold": "<inserted>",
+        "predicted": "I-REPETITION",
+        "count": 5
+      },
+      {
+        "gold": "B-FILLER_BACKCHANNEL",
+        "predicted": "O",
+        "count": 1
+      },
+      {
+        "gold": "B-FILLER_HESITATION",
+        "predicted": "I-REPETITION",
+        "count": 1
+      },
+      {
+        "gold": "O",
+        "predicted": "O",
+        "count": 8
+      }
+    ],
+    "restoration_only": {
+      "exact": {
+        "per_tag": {
+          "FILLER_HESITATION": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 0,
+            "support": 1
+          },
+          "REPETITION": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 8,
+            "support": 0
+          }
+        },
+        "micro": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 8,
+          "support": 1
+        },
+        "macro_f1": 0.0
+      },
+      "relaxed": {
+        "per_tag": {
+          "FILLER_HESITATION": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 0,
+            "support": 1
+          },
+          "REPETITION": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 8,
+            "support": 0
+          }
+        },
+        "micro": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 8,
+          "support": 1
+        },
+        "macro_f1": 0.0
+      },
+      "tag_aware_wer": 1.4,
+      "confusion": [
+        {
+          "gold": "<inserted>",
+          "predicted": "B-REPETITION",
+          "count": 8
+        },
+        {
+          "gold": "<inserted>",
+          "predicted": "I-REPETITION",
+          "count": 5
+        },
+        {
+          "gold": "B-FILLER_HESITATION",
+          "predicted": "I-REPETITION",
+          "count": 1
+        },
+        {
+          "gold": "O",
+          "predicted": "O",
+          "count": 9
+        }
+      ]
+    }
+  },
+  "sampling": {
+    "policy": "none",
+    "before": {
+      "word:B-FILLER_BACKCHANNEL": 2,
+      "gap:<none>": 132,
+      "word:O": 113,
+      "gap:[{\"label\":\"FILLER_HESITATION\",\"text\":\"uh\"}]": 2,
+      "gap:[{\"label\":\"FILLER_DM\",\"text\":\"so\"}]": 1,
+      "gap:[{\"label\":\"REPETITION\",\"copy\":0},{\"label\":\"REPETITION\",\"copy\":1}]": 1,
+      "gap:[{\"label\":\"FILLER_HESITATION\",\"text\":\"um\"}]": 3,
+      "word:B-FILLER_DM": 3,
+      "word:B-FILLER_HESITATION": 1,
+      "gap:[{\"label\":\"FILLER_DM\",\"text\":\"okay\"}]": 1,
+      "gap:[{\"label\":\"FILLER_DM\",\"text\":\"well\"}]": 1,
+      "word:B-PARTIAL_WORD": 1
+    },
+    "singleton_replication": [],
+    "representation": "numeric",
+    "glmm_converged": true,
+    "glmm_diagnostics": [
+      {
+        "class": "gap:<none>",
+        "converged": true,
+        "iterations": 40,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+      },
+      {
+        "class": "gap:[{\"label\":\"FILLER_DM\",\"text\":\"okay\"}]",
+        "converged": true,
+        "iterations": 114,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+      },
+      {
+        "class": "gap:[{\"label\":\"FILLER_DM\",\"text\":\"so\"}]",
+        "converged": true,
+        "iterations": 97,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+      },
+      {
+        "class": "gap:[{\"label\":\"FILLER_DM\",\"text\":\"well\"}]",
+        "converged": true,
+        "iterations": 84,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+      },
+      {
+        "class": "gap:[{\"label\":\"FILLER_HESITATION\",\"text\":\"uh\"}]",
+        "converged": true,
+        "iterations": 185,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+      },
+      {
+        "class": "gap:[{\"label\":\"FILLER_HESITATION\",\"text\":\"um\"}]",
+        "converged": true,
+        "iterations": 188,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+      },
+      {
+        "class": "gap:[{\"label\":\"REPETITION\",\"copy\":0},{\"label\":\"REPETITION\",\"copy\":1}]",
+        "converged": true,
+        "iterations": 76,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+      },
+      {
+        "class": "word:B-FILLER_BACKCHANNEL",
+        "converged": true,
+        "iterations": 188,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+      },
+      {
+        "class": "word:B-FILLER_DM",
+        "converged": true,
+        "iterations": 216,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+      },
+      {
+        "class": "word:B-FILLER_HESITATION",
+        "converged": true,
+        "iterations": 84,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+      },
+      {
+        "class": "word:B-PARTIAL_WORD",
+        "converged": true,
+        "iterations": 58,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+      },
+      {
+        "class": "word:O",
+        "converged": true,
+        "iterations": 37,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+      }
+    ]
+  },
+  "provenance": {
+    "phone_source": [
+      "simulated_lexicon"
+    ],
+    "label_source": [
+      "ms98_project_rules"
+    ],
+    "word_origin": [
+      "simulated"
+    ],
+    "parse_source": [
+      "unspecified"
+    ]
+  }
+}

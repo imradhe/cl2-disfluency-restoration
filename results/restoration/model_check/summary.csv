@@ -1,0 +1,3 @@
+condition,model,representation,balancing,folds,exact_micro_f1_mean,exact_micro_f1_std,relaxed_micro_f1_mean,relaxed_micro_f1_std,exact_macro_f1_mean,exact_macro_f1_std,restoration_exact_f1_mean,restoration_exact_f1_std,restoration_relaxed_f1_mean,restoration_relaxed_f1_std,tag_aware_wer_mean,tag_aware_wer_std
+E,logistic,ppmi,none,10,0.1,0.22498285257018433,0.1,0.22498285257018433,0.07222222222222222,0.1657381543352922,0.15,0.3374742788552764,0.15,0.3374742788552764,0.15741373822256172,0.10381664838806945
+E,mlp,ppmi,none,10,0.1,0.22498285257018433,0.1,0.22498285257018433,0.07222222222222222,0.1657381543352922,0.15,0.3374742788552764,0.15,0.3374742788552764,0.14491373822256176,0.09069369328161686

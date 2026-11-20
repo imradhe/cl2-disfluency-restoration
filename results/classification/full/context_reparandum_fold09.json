@@ -1,0 +1,69 @@
+{
+  "view": "context",
+  "task": "reparandum",
+  "fold": 9,
+  "train_examples": 2496167,
+  "train_class_counts": {
+    "fluent": 2368464,
+    "reparandum": 127703
+  },
+  "natural_prevalence": {
+    "accuracy": 0.7843882679143922,
+    "macro_f1": 0.5612179887413637,
+    "per_class": {
+      "fluent": {
+        "precision": 0.9818681058561758,
+        "recall": 0.7877215704296767,
+        "f1": 0.8741446637767348,
+        "support": 263291
+      },
+      "reparandum": {
+        "precision": 0.14999847917997383,
+        "recall": 0.7202950412619586,
+        "f1": 0.24829131370599267,
+        "support": 13693
+      }
+    },
+    "confusion": [
+      [
+        207400,
+        55891
+      ],
+      [
+        3830,
+        9863
+      ]
+    ],
+    "examples": 276984
+  },
+  "seconds": 2.479165708005894,
+  "balanced_test": {
+    "accuracy": 0.7541079383626671,
+    "macro_f1": 0.7538264852265983,
+    "per_class": {
+      "fluent": {
+        "precision": 0.7380121759354265,
+        "recall": 0.7879208354633754,
+        "f1": 0.762150324950551,
+        "support": 13693
+      },
+      "reparandum": {
+        "precision": 0.7725385760162921,
+        "recall": 0.7202950412619586,
+        "f1": 0.7455026455026456,
+        "support": 13693
+      }
+    },
+    "confusion": [
+      [
+        10789,
+        2904
+      ],
+      [
+        3830,
+        9863
+      ]
+    ],
+    "examples": 27386
+  }
+}
