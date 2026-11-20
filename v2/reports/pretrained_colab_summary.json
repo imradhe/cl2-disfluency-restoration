@@ -1,0 +1,98 @@
+{
+  "source_notebook": "https://colab.research.google.com/drive/1Ggn5l8IchTkdxOjfBNkehDqVPjXMAigH",
+  "model": "bert-base-uncased",
+  "gpu": "NVIDIA L4",
+  "epochs": 3,
+  "parameters": 113020348,
+  "train_windows": 151606,
+  "test_conversations": 143,
+  "test_windows": 7261,
+  "metric": "typed restored-token micro-F1",
+  "reported_to_four_decimal_places": true,
+  "evaluation": {
+    "dev_noisy": {
+      "precision": 0.7636,
+      "recall": 0.6856,
+      "f1": 0.7225,
+      "gold_tokens": 24031
+    },
+    "test_clean": {
+      "precision": 0.8539,
+      "recall": 0.8025,
+      "f1": 0.8274,
+      "gold_tokens": 19955
+    },
+    "test_noisy": {
+      "precision": 0.7671,
+      "recall": 0.6964,
+      "f1": 0.73,
+      "gold_tokens": 19955
+    },
+    "test_no_phones": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "gold_tokens": 19955
+    }
+  },
+  "per_type": {
+    "FALSE_START": {
+      "gold_tokens": 353,
+      "clean_f1": 0.1584,
+      "noisy_precision": 0.1313,
+      "noisy_recall": 0.1105,
+      "noisy_f1": 0.12
+    },
+    "FILLER_BACKCHANNEL": {
+      "gold_tokens": 2714,
+      "clean_f1": 0.8193,
+      "noisy_precision": 0.7525,
+      "noisy_recall": 0.7638,
+      "noisy_f1": 0.7581
+    },
+    "FILLER_DM": {
+      "gold_tokens": 5901,
+      "clean_f1": 0.9038,
+      "noisy_precision": 0.8753,
+      "noisy_recall": 0.8539,
+      "noisy_f1": 0.8645
+    },
+    "FILLER_HESITATION": {
+      "gold_tokens": 4683,
+      "clean_f1": 0.9271,
+      "noisy_precision": 0.762,
+      "noisy_recall": 0.6938,
+      "noisy_f1": 0.7263
+    },
+    "PARTIAL_WORD": {
+      "gold_tokens": 1331,
+      "clean_f1": 0.3619,
+      "noisy_precision": 0.3687,
+      "noisy_recall": 0.1908,
+      "noisy_f1": 0.2515
+    },
+    "REPAIR": {
+      "gold_tokens": 702,
+      "clean_f1": 0.382,
+      "noisy_precision": 0.3541,
+      "noisy_recall": 0.2835,
+      "noisy_f1": 0.3149
+    },
+    "REPETITION": {
+      "gold_tokens": 4271,
+      "clean_f1": 0.8538,
+      "noisy_precision": 0.8029,
+      "noisy_recall": 0.7125,
+      "noisy_f1": 0.755
+    }
+  },
+  "best_epoch": 3,
+  "stop_offset": 1.5,
+  "runtime_minutes_reported": 37.6,
+  "checkpoint_in_colab": "/content/cl2_v2/v2/checkpoints/pretrained_colab",
+  "archive_in_colab": "/content/v2_pretrained_bert_results.zip",
+  "archive_mib_reported": 201.2,
+  "local_checkpoint_downloaded": true,
+  "local_checkpoint": "v2/checkpoints/pretrained_colab",
+  "verified_metrics": "v2/reports/pretrained_colab_f1.json"
+}

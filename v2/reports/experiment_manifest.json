@@ -1,0 +1,36 @@
+{
+  "python": "3.12.16",
+  "torch": "2.15.0",
+  "transformers": "5.22.2",
+  "training_start_source_sha256": {
+    "v2/restoration.py": "dd88eb9f5f49886fea07325594007e95555d65511a7ba048112fd1a35e679ddb",
+    "v2/build_data.py": "cb3c65fdff2d24f99f86e06adbada8a3a35980aeb556a13af20762878d54c928",
+    "v2/train.py": "fbd1c331f37e2d4ba5baa3741a0dc32fb8aa48152bab22c9c7c1ff03d9b550be",
+    "v2/predict.py": "9ed37a194a38915424f3869d60d78ff92149cc30e94919243deaa291f559dc83",
+    "configs/labels.yaml": "b3abf4f62d6d3cee88ecb47e8bb1b46096fcaa35a7d27a85e1896dce85b55bab",
+    "src/swb/label.py": "3417d2a7351c65b6b315085417286221fd37e571cf134e015fc553053888e221",
+    "src/phones/noise.py": "19647e1bb64170b49248ce03e28efad17b77dd9aa005ee751ff5949f02e95d78"
+  },
+  "final_source_sha256": {
+    "v2/predict.py": "f9150ab67575b188fa80b8b4d1ebedd3dd5c65eddd30920eeac40f3cbf081b12",
+    "v2/summarize.py": "db011f783ebbf4fba5730c9d5fce0b30767c806a439766281db82e86ea501c91",
+    "v2/train.py": "fbd1c331f37e2d4ba5baa3741a0dc32fb8aa48152bab22c9c7c1ff03d9b550be",
+    "v2/test_restoration.py": "c7f9591e9efd350a56c02b61c500557912a85b2214e550a8b868fd38cc6033c6",
+    "v2/calibrate.py": "2aefce0c924c4442066ae40c0e13c13fda111033bc58c41ee77dbe3c45959898",
+    "v2/build_data.py": "cb3c65fdff2d24f99f86e06adbada8a3a35980aeb556a13af20762878d54c928",
+    "v2/switchboard_stats.py": "dd27882c5e67af92b687654f80f84a9f911cf2a753f29d6b5c901d25515fa8a4",
+    "v2/restoration.py": "dd88eb9f5f49886fea07325594007e95555d65511a7ba048112fd1a35e679ddb",
+    "configs/labels.yaml": "b3abf4f62d6d3cee88ecb47e8bb1b46096fcaa35a7d27a85e1896dce85b55bab",
+    "src/swb/label.py": "3417d2a7351c65b6b315085417286221fd37e571cf134e015fc553053888e221",
+    "src/phones/noise.py": "19647e1bb64170b49248ce03e28efad17b77dd9aa005ee751ff5949f02e95d78"
+  },
+  "checkpoint_sha256": {
+    "v2/checkpoints/bert_compact/model.pt": "01b7465fbdd08c0e107dc4ee6083b2986414294b839b64ca8e7bc2ba47d6ff1e",
+    "v2/checkpoints/bert_compact/model_f1_decoder.pt": "8fb7a1215f0813add38d35d0b2bafb332db38d95852a8de16a6d5581a6e64ea6"
+  },
+  "verification": {
+    "targeted_tests_passed": 25,
+    "test_command": ".venv/bin/python -m pytest -q v2/test_restoration.py tests/test_seq.py",
+    "inference_cli_load_verified": true
+  }
+}

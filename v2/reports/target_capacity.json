@@ -1,0 +1,159 @@
+{
+  "target_classes": 4504,
+  "max_insertions_per_gap": 8,
+  "splits": {
+    "train": {
+      "FALSE_START": {
+        "gold_tokens": 8286,
+        "beyond_capacity": 67,
+        "target_not_in_train_vocabulary": 0,
+        "representable": 8219,
+        "canonical_target_coverage_within_first_k": 0.9919140719285542
+      },
+      "FILLER_BACKCHANNEL": {
+        "gold_tokens": 62294,
+        "beyond_capacity": 682,
+        "target_not_in_train_vocabulary": 0,
+        "representable": 61612,
+        "canonical_target_coverage_within_first_k": 0.9890519151122098
+      },
+      "FILLER_DM": {
+        "gold_tokens": 120273,
+        "beyond_capacity": 716,
+        "target_not_in_train_vocabulary": 0,
+        "representable": 119557,
+        "canonical_target_coverage_within_first_k": 0.9940468766888662
+      },
+      "FILLER_HESITATION": {
+        "gold_tokens": 83983,
+        "beyond_capacity": 204,
+        "target_not_in_train_vocabulary": 0,
+        "representable": 83779,
+        "canonical_target_coverage_within_first_k": 0.9975709369753403
+      },
+      "PARTIAL_WORD": {
+        "gold_tokens": 25375,
+        "beyond_capacity": 298,
+        "target_not_in_train_vocabulary": 0,
+        "representable": 25077,
+        "canonical_target_coverage_within_first_k": 0.988256157635468
+      },
+      "REPAIR": {
+        "gold_tokens": 15662,
+        "beyond_capacity": 214,
+        "target_not_in_train_vocabulary": 0,
+        "representable": 15448,
+        "canonical_target_coverage_within_first_k": 0.986336355510152
+      },
+      "REPETITION": {
+        "gold_tokens": 77893,
+        "beyond_capacity": 418,
+        "target_not_in_train_vocabulary": 0,
+        "representable": 77475,
+        "canonical_target_coverage_within_first_k": 0.9946336641289975
+      }
+    },
+    "dev": {
+      "FALSE_START": {
+        "gold_tokens": 480,
+        "beyond_capacity": 9,
+        "target_not_in_train_vocabulary": 45,
+        "representable": 427,
+        "canonical_target_coverage_within_first_k": 0.8895833333333333
+      },
+      "FILLER_BACKCHANNEL": {
+        "gold_tokens": 3144,
+        "beyond_capacity": 62,
+        "target_not_in_train_vocabulary": 0,
+        "representable": 3082,
+        "canonical_target_coverage_within_first_k": 0.9802798982188295
+      },
+      "FILLER_DM": {
+        "gold_tokens": 7497,
+        "beyond_capacity": 45,
+        "target_not_in_train_vocabulary": 0,
+        "representable": 7452,
+        "canonical_target_coverage_within_first_k": 0.9939975990396158
+      },
+      "FILLER_HESITATION": {
+        "gold_tokens": 5867,
+        "beyond_capacity": 15,
+        "target_not_in_train_vocabulary": 0,
+        "representable": 5852,
+        "canonical_target_coverage_within_first_k": 0.9974433270836884
+      },
+      "PARTIAL_WORD": {
+        "gold_tokens": 1858,
+        "beyond_capacity": 30,
+        "target_not_in_train_vocabulary": 69,
+        "representable": 1759,
+        "canonical_target_coverage_within_first_k": 0.9467168998923574
+      },
+      "REPAIR": {
+        "gold_tokens": 946,
+        "beyond_capacity": 13,
+        "target_not_in_train_vocabulary": 46,
+        "representable": 887,
+        "canonical_target_coverage_within_first_k": 0.9376321353065539
+      },
+      "REPETITION": {
+        "gold_tokens": 4239,
+        "beyond_capacity": 32,
+        "target_not_in_train_vocabulary": 8,
+        "representable": 4199,
+        "canonical_target_coverage_within_first_k": 0.9905638122198632
+      }
+    },
+    "test": {
+      "FALSE_START": {
+        "gold_tokens": 353,
+        "beyond_capacity": 1,
+        "target_not_in_train_vocabulary": 30,
+        "representable": 322,
+        "canonical_target_coverage_within_first_k": 0.9121813031161473
+      },
+      "FILLER_BACKCHANNEL": {
+        "gold_tokens": 2714,
+        "beyond_capacity": 13,
+        "target_not_in_train_vocabulary": 0,
+        "representable": 2701,
+        "canonical_target_coverage_within_first_k": 0.9952100221075902
+      },
+      "FILLER_DM": {
+        "gold_tokens": 5901,
+        "beyond_capacity": 12,
+        "target_not_in_train_vocabulary": 0,
+        "representable": 5889,
+        "canonical_target_coverage_within_first_k": 0.9979664463650229
+      },
+      "FILLER_HESITATION": {
+        "gold_tokens": 4683,
+        "beyond_capacity": 6,
+        "target_not_in_train_vocabulary": 0,
+        "representable": 4677,
+        "canonical_target_coverage_within_first_k": 0.9987187700192185
+      },
+      "PARTIAL_WORD": {
+        "gold_tokens": 1331,
+        "beyond_capacity": 13,
+        "target_not_in_train_vocabulary": 80,
+        "representable": 1238,
+        "canonical_target_coverage_within_first_k": 0.9301277235161532
+      },
+      "REPAIR": {
+        "gold_tokens": 702,
+        "beyond_capacity": 2,
+        "target_not_in_train_vocabulary": 23,
+        "representable": 678,
+        "canonical_target_coverage_within_first_k": 0.9658119658119658
+      },
+      "REPETITION": {
+        "gold_tokens": 4271,
+        "beyond_capacity": 20,
+        "target_not_in_train_vocabulary": 8,
+        "representable": 4243,
+        "canonical_target_coverage_within_first_k": 0.9934441582767501
+      }
+    }
+  }
+}

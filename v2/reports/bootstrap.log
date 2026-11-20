@@ -1,0 +1,29 @@
+{
+  "test_clean": {
+    "conversations": 143,
+    "resamples": 10000,
+    "wer_reduction": 0.021411998179607122,
+    "paired_95_percent_ci": [
+      0.020147464347390155,
+      0.02267645653871677
+    ]
+  },
+  "test_noisy": {
+    "conversations": 143,
+    "resamples": 10000,
+    "wer_reduction": 0.014973477472638152,
+    "paired_95_percent_ci": [
+      0.01379738315407633,
+      0.016143226388161555
+    ]
+  },
+  "test_noisy_f1_decoder": {
+    "conversations": 143,
+    "resamples": 10000,
+    "wer_reduction": 0.0007535232808851287,
+    "paired_95_percent_ci": [
+      -0.001302701505321445,
+      0.0027375393764925617
+    ]
+  }
+}

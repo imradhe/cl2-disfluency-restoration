@@ -1,0 +1,805 @@
+{
+  "selection": "lowest transcript WER on the same fixed noisy development subset; typed restored-token F1 breaks ties",
+  "selected_stop_logit_offset": 1.5,
+  "best_f1_stop_logit_offset": 0.5,
+  "development_trials": [
+    {
+      "stop_logit_offset": -1.0,
+      "condition": "noisy",
+      "windows": 1000,
+      "conversations": 172,
+      "reference_tokens": 18398,
+      "flat_wer": 0.149255353842809,
+      "restored_wer": 0.4990216327861724,
+      "flat_edit_errors": 2746,
+      "restored_edit_errors": 9181,
+      "window_exact_match": 0.196,
+      "flat_window_exact_match": 0.236,
+      "typed_restored_token": {
+        "tp": 1156,
+        "predicted": 9806,
+        "support": 2743,
+        "precision": 0.11788700795431369,
+        "recall": 0.4214363835216916,
+        "f1": 0.18423778787154355
+      },
+      "type_only": {
+        "tp": 1377,
+        "predicted": 9806,
+        "support": 2743,
+        "precision": 0.1404242300632266,
+        "recall": 0.5020051039008385,
+        "f1": 0.21945971790580926
+      },
+      "slot_detection": {
+        "tp": 916,
+        "predicted": 2347,
+        "support": 1442,
+        "precision": 0.3902854708138049,
+        "recall": 0.6352288488210819,
+        "f1": 0.4835048825547638
+      },
+      "per_type": {
+        "FALSE_START": {
+          "tp": 1,
+          "predicted": 122,
+          "support": 66,
+          "precision": 0.00819672131147541,
+          "recall": 0.015151515151515152,
+          "f1": 0.010638297872340424
+        },
+        "FILLER_BACKCHANNEL": {
+          "tp": 209,
+          "predicted": 1258,
+          "support": 360,
+          "precision": 0.16613672496025436,
+          "recall": 0.5805555555555556,
+          "f1": 0.2583436341161928
+        },
+        "FILLER_DM": {
+          "tp": 522,
+          "predicted": 3551,
+          "support": 838,
+          "precision": 0.14700084483244158,
+          "recall": 0.6229116945107399,
+          "f1": 0.23786739576213262
+        },
+        "FILLER_HESITATION": {
+          "tp": 252,
+          "predicted": 2082,
+          "support": 663,
+          "precision": 0.12103746397694524,
+          "recall": 0.38009049773755654,
+          "f1": 0.18360655737704917
+        },
+        "PARTIAL_WORD": {
+          "tp": 11,
+          "predicted": 520,
+          "support": 205,
+          "precision": 0.021153846153846155,
+          "recall": 0.05365853658536585,
+          "f1": 0.0303448275862069
+        },
+        "REPAIR": {
+          "tp": 5,
+          "predicted": 175,
+          "support": 112,
+          "precision": 0.02857142857142857,
+          "recall": 0.044642857142857144,
+          "f1": 0.03484320557491289
+        },
+        "REPETITION": {
+          "tp": 156,
+          "predicted": 2098,
+          "support": 499,
+          "precision": 0.07435653002859867,
+          "recall": 0.312625250501002,
+          "f1": 0.1201386214863304
+        }
+      },
+      "word_tags": {
+        "PROLONGATION": {
+          "tp": 0,
+          "predicted": 0,
+          "support": 81,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "MISPRONUNCIATION": {
+          "tp": 0,
+          "predicted": 0,
+          "support": 3,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "overflow_gold_units_counted_as_misses": 36
+    },
+    {
+      "stop_logit_offset": 0.0,
+      "condition": "noisy",
+      "windows": 1000,
+      "conversations": 172,
+      "reference_tokens": 18398,
+      "flat_wer": 0.149255353842809,
+      "restored_wer": 0.1961626263724318,
+      "flat_edit_errors": 2746,
+      "restored_edit_errors": 3609,
+      "window_exact_match": 0.26,
+      "flat_window_exact_match": 0.236,
+      "typed_restored_token": {
+        "tp": 816,
+        "predicted": 3245,
+        "support": 2743,
+        "precision": 0.2514637904468413,
+        "recall": 0.2974845060153117,
+        "f1": 0.2725450901803607
+      },
+      "type_only": {
+        "tp": 958,
+        "predicted": 3245,
+        "support": 2743,
+        "precision": 0.29522342064714946,
+        "recall": 0.34925264309150567,
+        "f1": 0.31997327989311963
+      },
+      "slot_detection": {
+        "tp": 613,
+        "predicted": 1120,
+        "support": 1442,
+        "precision": 0.5473214285714286,
+        "recall": 0.4251040221914008,
+        "f1": 0.4785323965651835
+      },
+      "per_type": {
+        "FALSE_START": {
+          "tp": 0,
+          "predicted": 28,
+          "support": 66,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "FILLER_BACKCHANNEL": {
+          "tp": 186,
+          "predicted": 812,
+          "support": 360,
+          "precision": 0.229064039408867,
+          "recall": 0.5166666666666667,
+          "f1": 0.3174061433447099
+        },
+        "FILLER_DM": {
+          "tp": 422,
+          "predicted": 1463,
+          "support": 838,
+          "precision": 0.2884483937115516,
+          "recall": 0.5035799522673031,
+          "f1": 0.36679704476314645
+        },
+        "FILLER_HESITATION": {
+          "tp": 146,
+          "predicted": 502,
+          "support": 663,
+          "precision": 0.2908366533864542,
+          "recall": 0.22021116138763197,
+          "f1": 0.25064377682403427
+        },
+        "PARTIAL_WORD": {
+          "tp": 2,
+          "predicted": 26,
+          "support": 205,
+          "precision": 0.07692307692307693,
+          "recall": 0.00975609756097561,
+          "f1": 0.017316017316017316
+        },
+        "REPAIR": {
+          "tp": 1,
+          "predicted": 35,
+          "support": 112,
+          "precision": 0.02857142857142857,
+          "recall": 0.008928571428571428,
+          "f1": 0.013605442176870748
+        },
+        "REPETITION": {
+          "tp": 59,
+          "predicted": 379,
+          "support": 499,
+          "precision": 0.15567282321899736,
+          "recall": 0.11823647294589178,
+          "f1": 0.13439635535307518
+        }
+      },
+      "word_tags": {
+        "PROLONGATION": {
+          "tp": 0,
+          "predicted": 0,
+          "support": 81,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "MISPRONUNCIATION": {
+          "tp": 0,
+          "predicted": 0,
+          "support": 3,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "overflow_gold_units_counted_as_misses": 36
+    },
+    {
+      "stop_logit_offset": 0.5,
+      "condition": "noisy",
+      "windows": 1000,
+      "conversations": 172,
+      "reference_tokens": 18398,
+      "flat_wer": 0.149255353842809,
+      "restored_wer": 0.1489292314381998,
+      "flat_edit_errors": 2746,
+      "restored_edit_errors": 2740,
+      "window_exact_match": 0.276,
+      "flat_window_exact_match": 0.236,
+      "typed_restored_token": {
+        "tp": 675,
+        "predicted": 1829,
+        "support": 2743,
+        "precision": 0.36905412793876435,
+        "recall": 0.24608093328472475,
+        "f1": 0.2952755905511811
+      },
+      "type_only": {
+        "tp": 776,
+        "predicted": 1829,
+        "support": 2743,
+        "precision": 0.4242755604155276,
+        "recall": 0.2829019321910317,
+        "f1": 0.33945756780402453
+      },
+      "slot_detection": {
+        "tp": 478,
+        "predicted": 751,
+        "support": 1442,
+        "precision": 0.6364846870838882,
+        "recall": 0.3314840499306519,
+        "f1": 0.43593251253989973
+      },
+      "per_type": {
+        "FALSE_START": {
+          "tp": 0,
+          "predicted": 4,
+          "support": 66,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "FILLER_BACKCHANNEL": {
+          "tp": 172,
+          "predicted": 605,
+          "support": 360,
+          "precision": 0.28429752066115704,
+          "recall": 0.4777777777777778,
+          "f1": 0.35647668393782384
+        },
+        "FILLER_DM": {
+          "tp": 357,
+          "predicted": 820,
+          "support": 838,
+          "precision": 0.4353658536585366,
+          "recall": 0.42601431980906923,
+          "f1": 0.4306393244873341
+        },
+        "FILLER_HESITATION": {
+          "tp": 113,
+          "predicted": 279,
+          "support": 663,
+          "precision": 0.4050179211469534,
+          "recall": 0.17043740573152338,
+          "f1": 0.23991507430997877
+        },
+        "PARTIAL_WORD": {
+          "tp": 1,
+          "predicted": 7,
+          "support": 205,
+          "precision": 0.14285714285714285,
+          "recall": 0.004878048780487805,
+          "f1": 0.009433962264150943
+        },
+        "REPAIR": {
+          "tp": 0,
+          "predicted": 7,
+          "support": 112,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "REPETITION": {
+          "tp": 32,
+          "predicted": 107,
+          "support": 499,
+          "precision": 0.29906542056074764,
+          "recall": 0.06412825651302605,
+          "f1": 0.1056105610561056
+        }
+      },
+      "word_tags": {
+        "PROLONGATION": {
+          "tp": 0,
+          "predicted": 0,
+          "support": 81,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "MISPRONUNCIATION": {
+          "tp": 0,
+          "predicted": 0,
+          "support": 3,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "overflow_gold_units_counted_as_misses": 36
+    },
+    {
+      "stop_logit_offset": 1.0,
+      "condition": "noisy",
+      "windows": 1000,
+      "conversations": 172,
+      "reference_tokens": 18398,
+      "flat_wer": 0.149255353842809,
+      "restored_wer": 0.13452549190129362,
+      "flat_edit_errors": 2746,
+      "restored_edit_errors": 2475,
+      "window_exact_match": 0.267,
+      "flat_window_exact_match": 0.236,
+      "typed_restored_token": {
+        "tp": 520,
+        "predicted": 1077,
+        "support": 2743,
+        "precision": 0.4828226555246054,
+        "recall": 0.1895734597156398,
+        "f1": 0.2722513089005235
+      },
+      "type_only": {
+        "tp": 589,
+        "predicted": 1077,
+        "support": 2743,
+        "precision": 0.5468895078922934,
+        "recall": 0.2147283995625228,
+        "f1": 0.30837696335078535
+      },
+      "slot_detection": {
+        "tp": 354,
+        "predicted": 496,
+        "support": 1442,
+        "precision": 0.7137096774193549,
+        "recall": 0.24549237170596394,
+        "f1": 0.3653250773993808
+      },
+      "per_type": {
+        "FALSE_START": {
+          "tp": 0,
+          "predicted": 1,
+          "support": 66,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "FILLER_BACKCHANNEL": {
+          "tp": 144,
+          "predicted": 398,
+          "support": 360,
+          "precision": 0.36180904522613067,
+          "recall": 0.4,
+          "f1": 0.3799472295514512
+        },
+        "FILLER_DM": {
+          "tp": 281,
+          "predicted": 490,
+          "support": 838,
+          "precision": 0.573469387755102,
+          "recall": 0.3353221957040573,
+          "f1": 0.42319277108433734
+        },
+        "FILLER_HESITATION": {
+          "tp": 75,
+          "predicted": 144,
+          "support": 663,
+          "precision": 0.5208333333333334,
+          "recall": 0.11312217194570136,
+          "f1": 0.18587360594795538
+        },
+        "PARTIAL_WORD": {
+          "tp": 1,
+          "predicted": 1,
+          "support": 205,
+          "precision": 1.0,
+          "recall": 0.004878048780487805,
+          "f1": 0.009708737864077669
+        },
+        "REPAIR": {
+          "tp": 0,
+          "predicted": 3,
+          "support": 112,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "REPETITION": {
+          "tp": 19,
+          "predicted": 40,
+          "support": 499,
+          "precision": 0.475,
+          "recall": 0.03807615230460922,
+          "f1": 0.07050092764378478
+        }
+      },
+      "word_tags": {
+        "PROLONGATION": {
+          "tp": 0,
+          "predicted": 0,
+          "support": 81,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "MISPRONUNCIATION": {
+          "tp": 0,
+          "predicted": 0,
+          "support": 3,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "overflow_gold_units_counted_as_misses": 36
+    },
+    {
+      "stop_logit_offset": 1.5,
+      "condition": "noisy",
+      "windows": 1000,
+      "conversations": 172,
+      "reference_tokens": 18398,
+      "flat_wer": 0.149255353842809,
+      "restored_wer": 0.134362430698989,
+      "flat_edit_errors": 2746,
+      "restored_edit_errors": 2472,
+      "window_exact_match": 0.265,
+      "flat_window_exact_match": 0.236,
+      "typed_restored_token": {
+        "tp": 372,
+        "predicted": 636,
+        "support": 2743,
+        "precision": 0.5849056603773585,
+        "recall": 0.13561793656580387,
+        "f1": 0.2201834862385321
+      },
+      "type_only": {
+        "tp": 413,
+        "predicted": 636,
+        "support": 2743,
+        "precision": 0.64937106918239,
+        "recall": 0.15056507473569086,
+        "f1": 0.2444510210121338
+      },
+      "slot_detection": {
+        "tp": 245,
+        "predicted": 314,
+        "support": 1442,
+        "precision": 0.7802547770700637,
+        "recall": 0.16990291262135923,
+        "f1": 0.27904328018223234
+      },
+      "per_type": {
+        "FALSE_START": {
+          "tp": 0,
+          "predicted": 0,
+          "support": 66,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "FILLER_BACKCHANNEL": {
+          "tp": 104,
+          "predicted": 244,
+          "support": 360,
+          "precision": 0.4262295081967213,
+          "recall": 0.28888888888888886,
+          "f1": 0.3443708609271523
+        },
+        "FILLER_DM": {
+          "tp": 218,
+          "predicted": 306,
+          "support": 838,
+          "precision": 0.7124183006535948,
+          "recall": 0.26014319809069214,
+          "f1": 0.38111888111888115
+        },
+        "FILLER_HESITATION": {
+          "tp": 41,
+          "predicted": 73,
+          "support": 663,
+          "precision": 0.5616438356164384,
+          "recall": 0.06184012066365008,
+          "f1": 0.11141304347826088
+        },
+        "PARTIAL_WORD": {
+          "tp": 0,
+          "predicted": 0,
+          "support": 205,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "REPAIR": {
+          "tp": 0,
+          "predicted": 3,
+          "support": 112,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "REPETITION": {
+          "tp": 9,
+          "predicted": 10,
+          "support": 499,
+          "precision": 0.9,
+          "recall": 0.018036072144288578,
+          "f1": 0.03536345776031434
+        }
+      },
+      "word_tags": {
+        "PROLONGATION": {
+          "tp": 0,
+          "predicted": 0,
+          "support": 81,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "MISPRONUNCIATION": {
+          "tp": 0,
+          "predicted": 0,
+          "support": 3,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "overflow_gold_units_counted_as_misses": 36
+    },
+    {
+      "stop_logit_offset": 2.0,
+      "condition": "noisy",
+      "windows": 1000,
+      "conversations": 172,
+      "reference_tokens": 18398,
+      "flat_wer": 0.149255353842809,
+      "restored_wer": 0.1363191651266442,
+      "flat_edit_errors": 2746,
+      "restored_edit_errors": 2508,
+      "window_exact_match": 0.259,
+      "flat_window_exact_match": 0.236,
+      "typed_restored_token": {
+        "tp": 259,
+        "predicted": 358,
+        "support": 2743,
+        "precision": 0.723463687150838,
+        "recall": 0.0944221655122129,
+        "f1": 0.16704288939051917
+      },
+      "type_only": {
+        "tp": 281,
+        "predicted": 358,
+        "support": 2743,
+        "precision": 0.7849162011173184,
+        "recall": 0.1024425811155669,
+        "f1": 0.18123186069009994
+      },
+      "slot_detection": {
+        "tp": 162,
+        "predicted": 186,
+        "support": 1442,
+        "precision": 0.8709677419354839,
+        "recall": 0.11234396671289876,
+        "f1": 0.19901719901719903
+      },
+      "per_type": {
+        "FALSE_START": {
+          "tp": 0,
+          "predicted": 0,
+          "support": 66,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "FILLER_BACKCHANNEL": {
+          "tp": 66,
+          "predicted": 125,
+          "support": 360,
+          "precision": 0.528,
+          "recall": 0.18333333333333332,
+          "f1": 0.2721649484536082
+        },
+        "FILLER_DM": {
+          "tp": 160,
+          "predicted": 192,
+          "support": 838,
+          "precision": 0.8333333333333334,
+          "recall": 0.1909307875894988,
+          "f1": 0.3106796116504854
+        },
+        "FILLER_HESITATION": {
+          "tp": 30,
+          "predicted": 37,
+          "support": 663,
+          "precision": 0.8108108108108109,
+          "recall": 0.04524886877828054,
+          "f1": 0.08571428571428572
+        },
+        "PARTIAL_WORD": {
+          "tp": 0,
+          "predicted": 0,
+          "support": 205,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "REPAIR": {
+          "tp": 0,
+          "predicted": 0,
+          "support": 112,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "REPETITION": {
+          "tp": 3,
+          "predicted": 4,
+          "support": 499,
+          "precision": 0.75,
+          "recall": 0.006012024048096192,
+          "f1": 0.011928429423459244
+        }
+      },
+      "word_tags": {
+        "PROLONGATION": {
+          "tp": 0,
+          "predicted": 0,
+          "support": 81,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "MISPRONUNCIATION": {
+          "tp": 0,
+          "predicted": 0,
+          "support": 3,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "overflow_gold_units_counted_as_misses": 36
+    },
+    {
+      "stop_logit_offset": 3.0,
+      "condition": "noisy",
+      "windows": 1000,
+      "conversations": 172,
+      "reference_tokens": 18398,
+      "flat_wer": 0.149255353842809,
+      "restored_wer": 0.145070116316991,
+      "flat_edit_errors": 2746,
+      "restored_edit_errors": 2669,
+      "window_exact_match": 0.245,
+      "flat_window_exact_match": 0.236,
+      "typed_restored_token": {
+        "tp": 78,
+        "predicted": 91,
+        "support": 2743,
+        "precision": 0.8571428571428571,
+        "recall": 0.02843601895734597,
+        "f1": 0.055045871559633024
+      },
+      "type_only": {
+        "tp": 83,
+        "predicted": 91,
+        "support": 2743,
+        "precision": 0.9120879120879121,
+        "recall": 0.03025884068538097,
+        "f1": 0.05857445306986591
+      },
+      "slot_detection": {
+        "tp": 47,
+        "predicted": 50,
+        "support": 1442,
+        "precision": 0.94,
+        "recall": 0.03259361997226075,
+        "f1": 0.06300268096514745
+      },
+      "per_type": {
+        "FALSE_START": {
+          "tp": 0,
+          "predicted": 0,
+          "support": 66,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "FILLER_BACKCHANNEL": {
+          "tp": 23,
+          "predicted": 30,
+          "support": 360,
+          "precision": 0.7666666666666667,
+          "recall": 0.06388888888888888,
+          "f1": 0.11794871794871793
+        },
+        "FILLER_DM": {
+          "tp": 46,
+          "predicted": 51,
+          "support": 838,
+          "precision": 0.9019607843137255,
+          "recall": 0.05489260143198091,
+          "f1": 0.10348706411698538
+        },
+        "FILLER_HESITATION": {
+          "tp": 9,
+          "predicted": 10,
+          "support": 663,
+          "precision": 0.9,
+          "recall": 0.013574660633484163,
+          "f1": 0.026745913818722142
+        },
+        "PARTIAL_WORD": {
+          "tp": 0,
+          "predicted": 0,
+          "support": 205,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "REPAIR": {
+          "tp": 0,
+          "predicted": 0,
+          "support": 112,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "REPETITION": {
+          "tp": 0,
+          "predicted": 0,
+          "support": 499,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "word_tags": {
+        "PROLONGATION": {
+          "tp": 0,
+          "predicted": 0,
+          "support": 81,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "MISPRONUNCIATION": {
+          "tp": 0,
+          "predicted": 0,
+          "support": 3,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "overflow_gold_units_counted_as_misses": 36
+    }
+  ]
+}
