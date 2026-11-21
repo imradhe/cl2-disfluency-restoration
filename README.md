@@ -66,6 +66,15 @@ Results: `results/classification/full/summary.csv` and `summary.json`. Intermedi
 are written after every fit, and `--resume` reuses completed folds with matching settings.
 The compact cached arrays are under `data/classification/full/` and excluded from Git.
 
+The [full-corpus GloVe comparison](results/classification/glove50/README.md) additionally evaluates
+frozen versus task-fine-tuned embeddings with an MLP on the same folds. Adapted embedding tables
+and usable final models are saved locally; their locations are recorded in that report.
+The [comparison across modelling techniques](results/classification/model_comparison/README.md)
+holds GloVe inputs and folds fixed across OvR logistic, multinomial logistic, linear SVM and MLP,
+with both frozen and task-updated embedding variants. It also includes a frozen-feature variational
+GLMM with Gaussian context-word random intercepts. The [full-corpus BERT run](results/classification/bert_full/README.md)
+is training on the Mac GPU; that record contains progress and the resumable command.
+
 ## Prepare and run
 
 Build a small sample spanning 20 conversations:
@@ -100,6 +109,13 @@ The full configuration is a substantial experiment matrix. Start with a sample a
 models/representations. `--fold-manifest` reuses a validated fold assignment across runs on the same data.
 
 ## Models and representations
+
+See [method and embedding coverage](docs/method-embedding-coverage.md) for the distinction between
+implemented methods, small integration runs, and completed full-corpus benchmarks.
+The new `scripts/classify_embeddings.py` compares frozen versus task-updated static vectors,
+transformer encoders and sentence encoders on the full transcript-only classification data, using
+the same conversation folds. Pretrained encoders are fine-tuned; random embeddings are trained
+from scratch. The existing BERT restoration model already fine-tunes its encoder end to end.
 
 | Model | CLI value | Behaviour |
 |---|---|---|
